@@ -1,0 +1,7 @@
+# Documentos internos: no subir a GitHub
+docs/
+*.pdf
+.claude/
+
+# Copia antigua (carpeta bloqueada, borrar a mano)
+/site/
