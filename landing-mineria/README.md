@@ -10,7 +10,7 @@ Página estática (HTML/CSS/JS) en `site/`, servida con nginx.
 
 ## Antes de publicar (en `site/index.html`, objeto `CONFIG`)
 - `whatsapp`: confirmar número comercial.
-- `leadEndpoint`: endpoint real del CRM (hoy `/api/leads`).
+- Formulario: sin CRM, abre WhatsApp con el mensaje armado (nombre, empresa, actividad, necesidad, origen y referencia).
 - Confirmar `https://proshop.lat/privacidad`.
 
 ## Prueba local

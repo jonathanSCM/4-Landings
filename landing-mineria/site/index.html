@@ -554,10 +554,10 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 
       <div class="thanks" id="thanks" tabindex="-1" hidden>
         <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
-        <h3>Recibimos tu solicitud</h3>
-        <p>Nuestro equipo revisará tus datos para coordinar el diagnóstico. Si necesitas atención inmediata, puedes escribirnos por WhatsApp.</p>
-        <ol><li>Revisamos lo que nos cuentas.</li><li>Te escribimos para acordar el día y la hora de los 20 minutos.</li><li>Conversamos sobre tu operación, sin compromiso.</li></ol>
-        <a class="btn btn-wa" href="#" data-wa="thanks">Hablar por WhatsApp</a>
+        <h3>Recibimos tus datos</h3>
+        <p>Te llevamos a WhatsApp con tu mensaje ya escrito: solo presiona <b>enviar</b> y coordinamos tu diagnóstico.</p>
+        <ol><li>Envías el mensaje por WhatsApp.</li><li>Te respondemos para acordar el día y la hora de los 20 minutos.</li><li>Conversamos sobre tu operación, sin compromiso.</li></ol>
+        <a class="btn btn-wa" href="#" data-wa="thanks" id="wa-lead">Enviar mi solicitud por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -611,9 +611,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <script>
 /* ===== Configuración (confirmar antes de publicar) ===== */
 const CONFIG = {
-  whatsapp: '51929234847',          // PENDIENTE: confirmar +51 900 534 161 (scope) vs número publicado hoy
+  whatsapp: '51900534161',          // PENDIENTE: confirmar operativamente +51 900 534 161 (scope)
   waText: 'Hola, llego desde la página de software para minería. Quiero un diagnóstico gratuito para mi empresa minera.',
-  leadEndpoint: '/api/leads',       // PENDIENTE: endpoint del CRM de ProShop
   landing: 'software-mineria',
   industry: 'mineria',
   gtmId: '',                        // PENDIENTE: ID del contenedor de GTM (GTM-XXXXXXX). Vacío = no se carga GTM
@@ -821,27 +820,24 @@ form.addEventListener('submit', async e => {
   d.consent = form.elements.consent.checked;
   if (d.website) return; // honeypot
   if (!validate(d)) return;
-  sending = true; const b = $('#submit'); b.disabled = true; b.textContent = 'Enviando…';
-  const payload = {
-    submission_id: subId,
-    nombre: d.nombre.trim(), empresa: d.empresa.trim(), actividad: d.actividad.trim(),
-    whatsapp: d.whatsapp.replace(/[\s\-().]/g,''), necesidad: (d.necesidad||'').trim(),
-    consentimiento: true, pais: 'PE', geo: geo, cookies: getConsent() || 'sin_respuesta', landing: CONFIG.landing, categoria: CONFIG.industry,
-    fecha: new Date().toISOString(), ...attr
-  };
-  try {
-    const r = await fetch(CONFIG.leadEndpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)});
-    if (!r.ok) throw new Error('http ' + r.status);
-    sent = true;
-    track('generate_lead');                         // una sola vez, tras respuesta positiva
-    form.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
-    history.replaceState(null, '', '#gracias');
-    th.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'center'});
-  } catch(err) {
-    msg.className = 'msg bad';
-    msg.textContent = 'No pudimos registrar tu solicitud. Revisa los campos o contáctanos por WhatsApp.';
-    b.disabled = false; b.textContent = 'Solicitar mi diagnóstico gratuito'; sending = false;
-  }
+  sending = true;
+  const ref = subId.replace(/-/g,'').slice(0, 8);
+  const tel = d.whatsapp.replace(/[\s\-().]/g,'');
+  const nec = (d.necesidad||'').trim().slice(0, 800);
+  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel];
+  if (nec) lines.push('Necesito mejorar: ' + nec);
+  const origen = attr.utm_campaign || attr.utm_source || (attr.gclid ? 'google-ads' : '');
+  if (origen) lines.push('Origen: ' + origen);
+  lines.push('Ref: ' + ref);
+  const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+  sent = true;
+  // Sin CRM: generate_lead marca el envío válido del formulario; la conversación ocurre en WhatsApp.
+  track('generate_lead', {lead_ref: ref, canal_entrega: 'whatsapp', geo_country: geo ? geo.pais : ''});
+  form.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
+  history.replaceState(null, '', '#gracias');
+  th.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'center'});
+  const wl = $('#wa-lead'); wl.href = url;
+  setTimeout(() => { location.href = url; }, 1800);
 });
 
 /* ===== Eventos de interacción ===== */
