@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software a medida para transporte y logística | ProShop Perú</title>
+<meta name="description" content="Controla despachos, vehículos, conductores y entregas con software a medida para transporte y logística. Diagnóstico gratuito de 20 minutos.">
+<link rel="canonical" href="https://proshop.lat/software-transporte">
+<meta name="theme-color" content="#1e0b36">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Software a medida para transporte y logística | ProShop Perú">
+<meta property="og:description" content="Despachos, vehículos, conductores, estados de entrega e incidencias en un solo sistema. Diagnóstico gratuito de 20 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://proshop.lat/software-transporte">
+<meta property="og:locale" content="es_PE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "ProShop", "url": "https://proshop.lat/", "logo": "https://proshop.lat/img/logo-proshop.png", "areaServed": "PE"}, {"@type": "WebPage", "name": "Software a medida para transporte y logística", "url": "https://proshop.lat/software-transporte", "inLanguage": "es-PE", "isPartOf": {"@type": "WebSite", "url": "https://proshop.lat/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Es para transporte de carga o reparto?", "acceptedAnswer": {"@type": "Answer", "text": "Evaluamos ambos tipos de operación, pero los módulos dependen de cómo funciona cada empresa."}}, {"@type": "Question", "name": "¿Necesito aplicaciones para conductores?", "acceptedAnswer": {"@type": "Answer", "text": "Solo si el proceso lo justifica; puede definirse una implementación por etapas."}}, {"@type": "Question", "name": "¿Permite seguimiento por GPS?", "acceptedAnswer": {"@type": "Answer", "text": "Se puede estudiar técnicamente según equipos, permisos, cobertura y presupuesto."}}, {"@type": "Question", "name": "¿Podemos mantener las herramientas que ya usamos?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, primero evaluamos cuáles conviene integrar y cuáles sustituir."}}]}]}
+</script>
+<style>
+:root{
+  color-scheme: light;
+  --purple:#1e0b36; --purple-2:#2c1052; --purple-3:#4b1a86;
+  --paper:light-dark(#f7f5fa,#150a26); --paper-2:light-dark(#efebf5,#1b0f30);
+  --card:light-dark(#ffffff,#1f1236); --ink:light-dark(#1b0f30,#f3eefa);
+  --ink-2:light-dark(#554a6a,#c7bcd9); --ink-3:light-dark(#857a9b,#9a8eb2);
+  --rule:light-dark(#e3dded,#31254a);
+  --accent:#22e3a6; --accent-ink:light-dark(#5a2bc0,#22e3a6); --on-accent:#16082b;
+  --mint:light-dark(#0f9d74,#22e3a6); --danger:light-dark(#c0392b,#ff7a6b);
+  --gold:light-dark(#9a6b00,#f0c25a); --gold-fill:#e8b84a;
+  --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --shell:1200px; --gutter:clamp(20px,4vw,48px); --sec-y:clamp(64px,9vw,120px);
+  --r-card:16px; --r-md:12px; --r-btn:10px; --r-pill:999px;
+  --sombra:0 1px 2px rgba(30,11,54,.05),0 10px 30px rgba(30,11,54,.08);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.hero-grid>*,.form-wrap>*,.panel>*,.trust-grid>*{min-width:0}
+.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--sec-y) 0}
+h1,h2,h3{line-height:1.08;letter-spacing:-.03em;font-weight:800}
+h1{font-size:clamp(2.3rem,5.6vw,4.2rem);letter-spacing:-.04em}
+h2{font-size:clamp(1.8rem,3.8vw,2.8rem);margin-bottom:16px}
+h3{font-size:1.12rem;letter-spacing:-.015em;line-height:1.3}
+.lead{color:var(--ink-2);font-size:1.1rem;max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 1rem var(--sans);padding:14px 24px;border-radius:var(--r-btn);border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .18s var(--ease),box-shadow .18s,background .18s;min-height:48px}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 8px 24px rgba(34,227,166,.28)}
+.btn-primary:hover{box-shadow:0 12px 32px rgba(34,227,166,.4)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-wa{background:#25d366;color:#06240f}
+.btn[disabled]{opacity:.6;cursor:progress;transform:none}
+
+/* ---------- header ---------- */
+header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .shell{display:flex;align-items:center;justify-content:space-between;height:64px}
+.top img{height:30px;width:auto}
+.top .btn{padding:9px 16px;min-height:40px;font-size:.92rem}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(1100px 520px at 88% -10%,var(--purple-3),transparent 62%),var(--purple);color:#fff;padding:clamp(48px,7vw,88px) 0 clamp(56px,8vw,104px);overflow:hidden}
+.hero-grid{display:grid;gap:56px;grid-template-columns:1fr 1.05fr;align-items:center}
+.hero .tag{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:#d9cfec;margin-bottom:22px}
+.hero .tag::before{content:"";width:28px;height:2px;background:var(--gold-fill)}
+.hero p.sub{margin:22px 0 30px;color:#d9cfec;font-size:1.14rem;max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.micro{margin-top:18px;font-size:.92rem;color:#b9abd2}
+
+/* hero stage: Excel -> tablero */
+.stage{position:relative;width:100%;aspect-ratio:1.12/1;min-height:360px}
+.dash,.chaos{position:absolute;inset:0;border-radius:18px;overflow:hidden}
+.dash{background:#150a26;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.5);color:#f3eefa;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1b0f30;border-bottom:1px solid #31254a;flex:none}
+.bar i{width:9px;height:9px;border-radius:50%;background:#3a2c57}
+.bar span{margin-left:10px;color:#9a8eb2;font-size:.72rem}
+.dash-body{padding:16px;display:grid;gap:12px;flex:1;align-content:start}
+.dash-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dash-head h2{font-size:1rem;margin:0;letter-spacing:-.01em}
+.seg{display:inline-flex;background:#1f1236;border:1px solid #31254a;border-radius:var(--r-pill);padding:3px}
+.seg button{font:600 .74rem var(--sans);color:#c7bcd9;background:none;border:0;border-radius:var(--r-pill);padding:6px 12px;cursor:pointer;min-height:32px;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.seg button[data-cur="oro"][aria-pressed="true"]{background:var(--gold-fill)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:#1f1236;border:1px solid #31254a;border-radius:10px;padding:10px 12px}
+.kpi small{display:block;color:#9a8eb2;font-size:.68rem}
+.kpi b{font-size:clamp(.92rem,1.5vw,1.15rem);display:block;white-space:nowrap}
+.kpi b.pos{color:var(--accent)}
+.kpi b.au{color:var(--gold-fill)}
+.chart{display:flex;align-items:flex-end;gap:14px;height:88px;padding:10px 12px 0;background:#1f1236;border:1px solid #31254a;border-radius:10px}
+.chart div{flex:1;display:flex;gap:4px;align-items:flex-end;height:100%}
+.chart span{flex:1;border-radius:3px 3px 0 0;background:var(--accent);height:0;transition:height .9s var(--ease)}
+.chart span+span{background:#7a4fd0}
+.units{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.unit{display:flex;justify-content:space-between;gap:8px;background:#1f1236;border:1px solid #31254a;border-radius:10px;padding:9px 12px;font-size:.78rem}
+.unit em{font-style:normal;font-weight:700;color:var(--accent)}
+.unit em.neg{color:#ff7a6b}
+.note-dash{font-size:.68rem;color:#9a8eb2}
+.legend{display:flex;gap:14px;font-size:.68rem;color:#9a8eb2}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;background:var(--accent)}
+.legend i+i,.legend span+span i{background:#7a4fd0}
+
+.chaos{display:none;background:#f4f2ee;color:#2a2a2a;border:1px solid #cfcac1;box-shadow:0 30px 70px rgba(0,0,0,.4);font:500 .72rem/1.35 Calibri,'Segoe UI',Arial,sans-serif;z-index:2}
+.js .chaos{display:block}
+.stage.play .chaos{animation:wipe 1.25s var(--ease) .9s forwards}
+.chaos .xl-bar{background:#217346;color:#fff;padding:7px 12px;font-weight:600;display:flex;justify-content:space-between}
+.chaos table{border-collapse:collapse;width:100%;table-layout:fixed}
+.chaos th{background:#e6e3dc;border:1px solid #cfcac1;font-weight:600;padding:3px;color:#555}
+.chaos td{border:1px solid #d6d1c7;padding:4px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chaos td.n{text-align:right}
+.chaos .ref{color:#c0392b;font-weight:700}
+.stage.play .chaos .ref{animation:shake .35s linear 0s 3}
+.chaos .hl{background:#fff2a8}
+.chaos .red{background:#ffd9d4}
+.chaos .gr{background:#d9ecd9}
+.chaos .sticky{position:absolute;right:16px;bottom:18px;width:150px;background:#ffe36e;color:#4a3b00;padding:10px 12px;font:600 .78rem/1.3 'Segoe UI',Arial,sans-serif;box-shadow:3px 6px 12px rgba(0,0,0,.25);transform:rotate(4deg)}
+.chaos .sticky2{right:auto;left:18px;bottom:46px;transform:rotate(-3deg);background:#ffc6bf;color:#5b1810}
+.scan{display:none}
+.js .scan{display:block;position:absolute;top:-4%;bottom:-4%;left:0;width:3px;background:var(--accent);box-shadow:0 0 24px 6px rgba(34,227,166,.7);z-index:3;opacity:0}
+.stage.play .scan{animation:scan 1.25s var(--ease) .9s forwards}
+@keyframes wipe{to{clip-path:inset(0 0 0 100%)}}
+@keyframes scan{0%{left:0;opacity:1}95%{opacity:1}100%{left:100%;opacity:0}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
+.js .chaos{clip-path:inset(0 0 0 0)}
+.stage-cap{margin-top:12px;font-size:.78rem;color:#b9abd2}
+
+/* ---------- problems ---------- */
+.problems{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--rule)}
+.prob{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) auto;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--rule)}
+.prob h3{font-size:clamp(1.25rem,2.2vw,1.7rem);letter-spacing:-.03em}
+.prob p{color:var(--ink-2)}
+.prob .cell{font:600 .8rem 'Consolas','Courier New',monospace;color:var(--danger);border:1px solid var(--danger);padding:3px 9px;border-radius:4px;white-space:nowrap}
+.closing{margin-top:36px;font-weight:700;font-size:clamp(1.2rem,2.2vw,1.55rem);max-width:30ch;letter-spacing:-.025em;line-height:1.25}
+
+/* ---------- explorer ---------- */
+.alt{background:var(--paper-2)}
+.explorer{margin-top:40px;background:var(--card);border:1px solid var(--rule);border-radius:20px;box-shadow:var(--sombra);overflow:hidden}
+.tabs{display:flex;gap:4px;padding:10px;border-bottom:1px solid var(--rule);overflow-x:auto;scrollbar-width:none}
+.tabs button{font:700 .95rem var(--sans);padding:12px 18px;border-radius:var(--r-btn);border:0;background:none;color:var(--ink-2);cursor:pointer;white-space:nowrap;min-height:44px;transition:background .2s,color .2s}
+.tabs button[aria-selected="true"]{background:var(--purple);color:#fff}
+.panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;padding:clamp(22px,4vw,44px);align-items:start}
+.panel[hidden]{display:none}
+.panel h3{font-size:1.5rem;margin-bottom:10px}
+.panel p{color:var(--ink-2)}
+.panel ul{list-style:none;padding:0;margin-top:16px;display:grid;gap:10px}
+.panel li{padding-left:24px;position:relative;color:var(--ink-2);font-size:.97rem}
+.panel li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:3px;background:var(--accent)}
+.sim{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-card);padding:20px}
+.sim-title{font-weight:700;margin-bottom:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.sim-title small{font-weight:500;color:var(--ink-3)}
+.bars-h{display:grid;gap:14px}
+.bh{display:grid;gap:6px;font-size:.9rem}
+.bh-top{display:flex;justify-content:space-between;gap:8px}
+.bh-top b{font-weight:700}
+.track{height:10px;border-radius:99px;background:var(--rule);overflow:hidden}
+.fill{height:100%;width:0;border-radius:99px;background:var(--mint);transition:width 1s var(--ease)}
+.fill.au{background:var(--gold-fill)}
+.fill.wa{background:#7a4fd0}
+.loan-form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.loan-form label{display:grid;gap:5px;font-weight:600;font-size:.82rem}
+.loan-form input,.loan-form select{font:inherit;padding:10px 12px;border-radius:var(--r-btn);border:1px solid var(--rule);background:var(--card);color:var(--ink);min-height:44px;width:100%}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 8px}
+.sum div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+.sum small{display:block;font-size:.72rem;color:var(--ink-3)}
+.sum b{font-size:1.02rem;font-variant-numeric:tabular-nums}
+.sum b.au{color:var(--gold)}
+.tbl{width:100%;border-collapse:collapse;font-size:.85rem}
+.tbl th{text-align:right;font-weight:600;color:var(--ink-3);padding:6px 4px;border-bottom:1px solid var(--rule)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{text-align:right;padding:7px 4px;border-bottom:1px solid var(--rule)}
+.tbl tbody tr{animation:rowin .4s var(--ease) both}
+@keyframes rowin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.concept{margin-top:12px;font-size:.78rem;color:var(--ink-3)}
+.note{margin-top:36px;padding:16px 20px;border-left:4px solid var(--accent);background:var(--card);border-radius:0 var(--r-md) var(--r-md) 0;color:var(--ink-2);font-size:.95rem}
+
+/* ---------- modules ---------- */
+.mods{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:36px;border-top:1px solid var(--rule)}
+.mod{padding:28px 32px 28px 0;border-bottom:1px solid var(--rule)}
+.mod:nth-child(even){padding:28px 0 28px 32px;border-left:1px solid var(--rule)}
+.mod h3{font-size:1.3rem;margin-bottom:6px}
+.mod p{color:var(--ink-2)}
+
+/* ---------- trust ---------- */
+.trust{background:var(--purple);color:#fff}
+.trust .lead{color:#d9cfec}
+.trust-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.trust ul{list-style:none;padding:0;display:grid;gap:14px}
+.trust li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);color:#e6ddf5}
+.trust li svg{flex:none;width:22px;height:22px;color:var(--accent);margin-top:2px}
+.badge{display:inline-block;margin-top:22px;font-size:.8rem;padding:6px 14px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.25);color:#d9cfec}
+
+/* ---------- timeline ---------- */
+.timeline{position:relative;margin-top:44px;display:grid;gap:36px;padding-left:64px}
+.timeline::before,.timeline .line{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:3px;border-radius:3px}
+.timeline::before{background:var(--rule)}
+.timeline .line{background:var(--accent);height:0;bottom:auto;transition:height .15s linear}
+.tstep{position:relative}
+.tstep .n{position:absolute;left:-64px;top:-4px;width:44px;height:44px;border-radius:50%;background:var(--card);border:2px solid var(--rule);display:grid;place-items:center;font-weight:800;transition:background .3s,border-color .3s,color .3s}
+.tstep.on .n{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tstep h3{font-size:1.35rem;margin-bottom:4px}
+.tstep p{color:var(--ink-2);max-width:56ch}
+
+/* ---------- form ---------- */
+.form-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+form,.thanks{background:var(--card);border:1px solid var(--rule);border-radius:20px;padding:30px;box-shadow:var(--sombra)}
+form{display:grid;gap:16px}
+label{font-weight:600;font-size:.92rem;display:grid;gap:6px}
+label .opt{font-weight:400;color:var(--ink-3)}
+form input,form select,form textarea{font:inherit;padding:12px 14px;border-radius:var(--r-btn);border:1px solid var(--rule);background:var(--paper);color:var(--ink);width:100%;min-height:48px;transition:border-color .2s,box-shadow .2s}
+form input:focus,form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,227,166,.25);outline:none}
+textarea{min-height:96px;resize:vertical}
+form input[aria-invalid="true"]{border-color:var(--danger)}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.88rem;color:var(--ink-2)}
+.check input{width:20px;min-height:20px;margin-top:3px;accent-color:#22e3a6}
+.err{color:var(--danger);font-size:.84rem;min-height:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.msg{padding:14px 16px;border-radius:var(--r-md);font-size:.95rem;display:none}
+.msg.bad{display:block;background:rgba(192,57,43,.1);border:1px solid var(--danger)}
+.thanks[hidden]{display:none}
+.thanks h3{font-size:1.6rem;margin-bottom:8px}
+.thanks p{color:var(--ink-2);margin-bottom:18px}
+.thanks ol{margin:0 0 22px 20px;color:var(--ink-2);display:grid;gap:6px}
+.wa-side{margin-top:26px}
+.checkmark{width:56px;height:56px;margin-bottom:16px}
+.checkmark circle{fill:none;stroke:var(--mint);stroke-width:3;stroke-dasharray:151;stroke-dashoffset:151;animation:draw .6s var(--ease) forwards}
+.checkmark path{fill:none;stroke:var(--mint);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .4s var(--ease) .5s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- faq ---------- */
+.faq{max-width:840px}
+details{border-bottom:1px solid var(--rule);padding:0}
+details:first-of-type{border-top:1px solid var(--rule)}
+summary{cursor:pointer;font-weight:700;font-size:1.1rem;padding:22px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--accent-ink);transition:transform .25s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--ink-2);max-width:62ch}
+
+/* ---------- final ---------- */
+.last{background:radial-gradient(900px 400px at 15% 120%,var(--purple-3),transparent 60%),var(--purple);color:#fff}
+.last h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:16ch}
+.last p{color:#d9cfec;margin:10px 0 28px;font-size:1.15rem}
+footer{padding:32px 0 96px;color:var(--ink-3);font-size:.88rem}
+footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:rgba(30,11,54,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.12);transition:transform .3s var(--ease)}
+.sticky-cta.hide{transform:translateY(110%)}
+.sticky-cta .btn{flex:1;padding:12px 10px;font-size:.95rem}
+
+/* ---------- banner de cookies ---------- */
+.cookie{position:fixed;left:16px;bottom:16px;z-index:70;max-width:420px;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:0 20px 60px rgba(30,11,54,.25);padding:20px;display:none}
+.cookie.show{display:block;animation:rowin .35s var(--ease) both}
+.cookie h2{font-size:1.05rem;margin:0 0 6px;letter-spacing:-.01em}
+.cookie p{font-size:.88rem;color:var(--ink-2);margin-bottom:14px}
+.cookie .row{display:flex;gap:10px}
+.cookie .btn{flex:1;padding:10px 14px;min-height:44px;font-size:.92rem}
+.cookie .btn-no{background:var(--paper-2);color:var(--ink);border-color:var(--rule)}
+.linkish{background:none;border:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;padding:0}
+@media (max-width:640px){.cookie{left:10px;right:10px;bottom:80px;max-width:none}}
+@media (max-width:960px){
+  .hero-grid,.form-wrap,.panel,.trust-grid{grid-template-columns:minmax(0,1fr)}
+  .stage{min-height:430px}
+  .prob{grid-template-columns:1fr;gap:8px}
+  .prob .cell{justify-self:start}
+  .mods{grid-template-columns:1fr}
+  .mod,.mod:nth-child(even){padding:24px 0;border-left:0}
+}
+@media (max-width:640px){
+  .sticky-cta{display:flex}
+  .top .btn{display:none}
+  .cta-row .btn{width:100%}
+  .seg button{padding:6px 9px;font-size:.7rem}
+  .dash-body{padding:12px;gap:10px}
+  .kpis{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .kpi b{font-size:.86rem}
+  .kpi{padding:8px}
+  .units{grid-template-columns:1fr}
+  .loan-form,.sum{grid-template-columns:1fr 1fr}
+  .sum{grid-template-columns:1fr}
+  .timeline{padding-left:56px}.tstep .n{left:-56px;width:40px;height:40px}.timeline::before,.timeline .line{left:18px}
+  form,.thanks{padding:22px}
+  .chaos .sticky{width:120px;font-size:.68rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .chaos,.js .scan{display:none}
+}
+/* transporte: caso real y estados */
+.case-img{margin:0}
+.case-img img{width:100%;height:auto;display:block;border-radius:var(--r-card);border:1px solid rgba(255,255,255,.14)}
+.case-img figcaption{font-size:.8rem;color:#d9cfec;margin-top:8px}
+.case-name{font-size:1.15rem;margin:22px 0 8px;color:#fff}
+.trust p.case{color:#d9cfec;margin:0 0 10px}
+.trust p.case b{color:#fff}
+.st{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.st.ok{background:#d6f8ec;color:#0b6b4c}.st.go{background:#ece3fb;color:#4b1a86}.st.late{background:#ffe1dc;color:#a3271a}.st.wait{background:#f6ecd2;color:#7a5a12}
+.tbl td .st{float:right}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="shell">
+    <a href="https://proshop.lat/" aria-label="ProShop, ir al inicio"><img src="img/logo-proshop.png" alt="ProShop" width="120" height="30"></a>
+    <a class="btn btn-primary" href="#diagnostico" data-cta="header">Solicitar diagnóstico gratuito</a>
+  </div>
+</header>
+
+<main>
+<!-- 01 HERO -->
+<section class="hero" id="inicio" style="padding-bottom:clamp(56px,8vw,104px)">
+  <div class="shell hero-grid">
+    <div>
+      <span class="tag">Software a medida para transporte y logística</span>
+      <h1>Tu operación de transporte crece. ¿También crece el desorden?</h1>
+      <p class="sub">Unifica despachos, responsables, vehículos, estados de entrega e información operativa en herramientas adaptadas a tu servicio.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#diagnostico" data-cta="hero">Solicitar diagnóstico gratuito</a>
+        <a class="btn btn-ghost" href="#" data-wa="hero">Hablar por WhatsApp</a>
+      </div>
+      <p class="micro">Conversamos 20 minutos sobre tu operación. Sin compromiso.</p>
+    </div>
+
+    <div>
+      <div class="stage" id="stage" role="img" aria-label="Ejemplo conceptual: una hoja de despachos desordenada se transforma en un tablero de operación ordenado, con datos ficticios.">
+        <div class="dash" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i><span>panel.tuempresa.com · Operación</span></div>
+          <div class="dash-body">
+            <div class="dash-head">
+              <h2>Despachos</h2>
+              <div class="seg" id="cur">
+                <button type="button" data-cur="hoy" aria-pressed="true">Hoy</button>
+                <button type="button" data-cur="sem" aria-pressed="false">Semana</button>
+                <button type="button" data-cur="mes" aria-pressed="false">Mes</button>
+              </div>
+            </div>
+            <div class="kpis">
+              <div class="kpi"><small>Servicios</small><b id="k1">—</b></div>
+              <div class="kpi"><small>En curso</small><b id="k2">—</b></div>
+              <div class="kpi"><small>Completados a tiempo</small><b id="k3" class="pos">—</b></div>
+            </div>
+            <div class="chart" id="chart"><div><span></span><span></span></div><div><span></span><span></span></div><div><span></span><span></span></div></div>
+            <div class="legend"><span><i></i>Servicios solicitados</span><span><i></i>Servicios completados</span></div>
+            <div class="units">
+              <div class="unit"><span>Incidencias abiertas</span><em id="u1">—</em></div>
+              <div class="unit"><span>Vehículos disponibles</span><em id="u2">—</em></div>
+            </div>
+            <p class="note-dash">Cada servicio con responsable, vehículo, estado e historial.</p>
+          </div>
+        </div>
+        <div class="chaos" aria-hidden="true">
+          <div class="xl-bar"><span>despachos_HOY_v4(final).xlsx</span><span>Modo de compatibilidad</span></div>
+          <table>
+            <colgroup><col style="width:9%"><col style="width:30%"><col style="width:19%"><col style="width:21%"><col style="width:21%"></colgroup>
+            <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+            <tbody>
+              <tr><th>1</th><td>Servicio</td><td>Conductor</td><td>Placa</td><td>¿Estado?</td></tr>
+              <tr><th>2</th><td>Ate → Callao</td><td>Jorge</td><td class="n">ABC-123</td><td>salió?</td></tr>
+              <tr><th>3</th><td>Surco → SJL</td><td>¿Luis o Raúl?</td><td class="n hl">B7Q-4??</td><td>ver chat</td></tr>
+              <tr><th>4</th><td class="red">sin hora</td><td>reparto zona N.</td><td class="n">—</td><td class="ref">#REF!</td></tr>
+              <tr><th>5</th><td>Lurín → Lima</td><td>Pedro</td><td class="n">C2M-881</td><td>en ruta</td></tr>
+              <tr><th>6</th><td>Lurín → Lima</td><td>Pedro (dup)</td><td class="n red">C2M-881</td><td>en ruta</td></tr>
+              <tr><th>7</th><td>Villa → Chorrillos</td><td>¿?</td><td class="n">—</td><td class="ref">#VALOR!</td></tr>
+              <tr><th>8</th><td>demora 2h</td><td>¿por qué?</td><td class="n gr">llamar</td><td>?</td></tr>
+              <tr><th>9</th><td></td><td>ENTREGADOS ???</td><td class="n hl">no cuadra</td><td></td></tr>
+              <tr><th>10</th><td>Callao → Ate</td><td>Mario</td><td class="n">D9K-302</td><td>urgente!!</td></tr>
+              <tr><th>11</th><td class="red">ayer?</td><td>devolución</td><td class="n">3O cajas</td><td class="ref">#REF!</td></tr>
+              <tr><th>12</th><td>SMP → Miraflores</td><td>Ana</td><td class="n gr">F1T-550</td><td>ok</td></tr>
+            </tbody>
+          </table>
+          <div class="sticky sticky2">¿Quién tiene el servicio de Surco?</div>
+          <div class="sticky">¿Por qué se demoró?</div>
+        </div>
+        <div class="scan" aria-hidden="true"></div>
+      </div>
+      <p class="stage-cap">Ejemplo conceptual con datos ficticios.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 PROBLEMAS -->
+<section id="problemas">
+  <div class="shell">
+    <h2>¿Te ocurre algo de esto?</h2>
+    <div class="problems">
+      <article class="prob">
+        <h3>Despachos difíciles de coordinar</h3>
+        <p>Las asignaciones pasan por llamadas, chats y archivos separados.</p>
+        <span class="cell" aria-hidden="true">“¿quién va a Surco?”</span>
+      </article>
+      <article class="prob">
+        <h3>Visibilidad limitada</h3>
+        <p>Operaciones no siempre sabe qué servicio está pendiente, en curso o completado.</p>
+        <span class="cell" aria-hidden="true">estado: ¿?</span>
+      </article>
+      <article class="prob">
+        <h3>Incidencias sin historial</h3>
+        <p>Es difícil reconstruir demoras, cambios y responsabilidades.</p>
+        <span class="cell" aria-hidden="true">¿por qué se demoró?</span>
+      </article>
+    </div>
+    <p class="closing">No necesitas seguir acumulando herramientas. Necesitas información conectada con tus procesos.</p>
+    <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="problems">Solicitar diagnóstico gratuito</a></div>
+  </div>
+</section>
+
+<!-- 03 SOLUCION -->
+<section class="alt" id="solucion">
+  <div class="shell">
+    <h2>Software construido alrededor de tu operación</h2>
+    <p class="lead">Toca cada ejemplo para ver cómo podría verse. Son pantallas conceptuales: lo definitivo lo acordamos contigo después del diagnóstico.</p>
+
+    <div class="explorer">
+      <div class="tabs" role="tablist" aria-label="Ejemplos de módulos">
+        <button role="tab" id="t1" aria-selected="true" aria-controls="p1">Gestión de despachos</button>
+        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Vehículos y conductores</button>
+        <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Seguimiento e incidencias</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+        <div>
+          <h3>Cada servicio, con su estado</h3>
+          <p>Registra solicitudes, asignaciones y estados de cada servicio en un solo lugar, sin depender de llamadas.</p>
+          <ul><li>Solicitud, asignación y cierre de cada despacho.</li><li>Estados definidos según tu operación: pendiente, en curso, completado…</li><li>Vista por cliente, ruta o responsable.</li></ul>
+        </div>
+        <div class="sim" aria-label="Ejemplo conceptual de despachos del día por estado">
+          <div class="sim-title">Despachos de hoy por estado <small>Ejemplo conceptual</small></div>
+          <div class="bars-h" data-bars>
+            <div class="bh"><div class="bh-top"><span>Completados</span><b>28</b></div><div class="track"><div class="fill" data-w="100"></div></div></div>
+            <div class="bh"><div class="bh-top"><span>En curso</span><b>11</b></div><div class="track"><div class="fill" data-w="39"></div></div></div>
+            <div class="bh"><div class="bh-top"><span>Asignados sin iniciar</span><b>6</b></div><div class="track"><div class="fill wa" data-w="21"></div></div></div>
+            <div class="bh"><div class="bh-top"><span>Pendientes de asignar</span><b>4</b></div><div class="track"><div class="fill au" data-w="14"></div></div></div>
+            <div class="bh"><div class="bh-top"><span>Con incidencia</span><b>2</b></div><div class="track"><div class="fill au" data-w="7"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+        <div>
+          <h3>Fichas y disponibilidad en un solo lugar</h3>
+          <p>Centraliza la información de vehículos y conductores, con reglas según la operación.</p>
+          <ul><li>Ficha por vehículo y por conductor.</li><li>Disponibilidad del día antes de asignar.</li><li>Avisos de documentos o mantenimientos por vencer, si la operación lo requiere.</li></ul>
+        </div>
+        <div class="sim" aria-label="Ejemplo conceptual de disponibilidad de vehículos">
+          <div class="sim-title">Disponibilidad de hoy <small>Ejemplo conceptual</small></div>
+          <table class="tbl"><thead><tr><th>Vehículo · conductor</th><th>Turno</th><th>Estado</th></tr></thead><tbody>
+            <tr><td>ABC-123 · Jorge R.</td><td>Mañana</td><td><span class="st go">En ruta</span></td></tr>
+            <tr><td>C2M-881 · Pedro L.</td><td>Mañana</td><td><span class="st go">En ruta</span></td></tr>
+            <tr><td>F1T-550 · Ana M.</td><td>Tarde</td><td><span class="st ok">Disponible</span></td></tr>
+            <tr><td>D9K-302 · Mario C.</td><td>Tarde</td><td><span class="st ok">Disponible</span></td></tr>
+            <tr><td>B7Q-418 · —</td><td>—</td><td><span class="st wait">Mantenimiento</span></td></tr>
+          </tbody></table>
+          <p class="concept">Datos ficticios. Las reglas de asignación se definen con cada empresa.</p>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+        <div>
+          <h3>Novedades con historial</h3>
+          <p>Consulta estados, novedades y evidencias definidas por el cliente, y reconstruye qué pasó en cada servicio.</p>
+          <ul><li>Registro de incidencias con hora y responsable.</li><li>Evidencias de entrega según lo que pida tu cliente.</li><li>Reportes consolidados para operaciones y gerencia.</li></ul>
+        </div>
+        <div class="sim" aria-label="Ejemplo conceptual de incidencias registradas">
+          <div class="sim-title">Incidencias de la semana <small>Ejemplo conceptual</small></div>
+          <table class="tbl"><thead><tr><th>Servicio</th><th>Registro</th><th>Estado</th></tr></thead><tbody>
+            <tr><td>Surco → SJL · demora</td><td>Lun 09:40</td><td><span class="st ok">Cerrada</span></td></tr>
+            <tr><td>Lurín → Lima · dirección errada</td><td>Mar 11:15</td><td><span class="st ok">Cerrada</span></td></tr>
+            <tr><td>Callao → Ate · cliente ausente</td><td>Mié 16:05</td><td><span class="st go">En revisión</span></td></tr>
+            <tr><td>SMP → Miraflores · carga dañada</td><td>Jue 10:30</td><td><span class="st late">Abierta</span></td></tr>
+          </tbody></table>
+          <p class="concept">Datos ficticios. Los tipos de incidencia se definen con cada empresa.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mods">
+      <article class="mod"><h3>Gestión de despachos</h3><p>Registrar solicitudes, asignaciones y estados de cada servicio.</p></article>
+      <article class="mod"><h3>Vehículos y conductores</h3><p>Centralizar fichas y disponibilidad, con reglas según la operación.</p></article>
+      <article class="mod"><h3>Seguimiento operativo</h3><p>Consultar estados, novedades y evidencias definidas por el cliente.</p></article>
+      <article class="mod"><h3>Reportes e integraciones</h3><p>Consolidar servicios y conectarlos con herramientas existentes cuando sea viable.</p></article>
+    </div>
+    <p class="note">Las funcionalidades definitivas se definen después del diagnóstico y la validación del alcance.</p>
+    <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="solution">Solicitar diagnóstico gratuito</a></div>
+  </div>
+</section>
+
+<!-- 04 CONFIANZA -->
+<section class="trust" id="experiencia">
+  <div class="shell trust-grid">
+    <div>
+      <h2>Experiencia real. Soluciones a medida.</h2>
+      <p class="lead">ProShop ha desarrollado plataformas de movilidad y delivery urbano para conductores. Esa experiencia es en taxi, reparto y mandados, no en transporte de carga: por eso, en tu caso, primero entendemos cómo funciona tu operación y después construimos el sistema por fases.</p>
+      <h3 class="case-name">GoBot · App de conductores (Bolivia)</h3>
+      <p class="case"><b>Lo que construimos.</b> Una app que recibe solicitudes cercanas mientras el conductor está en línea y reúne viajes, delivery y mandados en una sola herramienta.</p>
+      <span class="badge">Las demás pantallas de esta página son ejemplos conceptuales con datos ficticios</span>
+    </div>
+    <div>
+      <figure class="case-img">
+        <img src="img/proyectos/gobot.webp" alt="Pantalla real de la app GoBot para conductores, con el mapa de la zona y una solicitud lista para aceptar" width="800" height="620" loading="lazy" decoding="async">
+        <figcaption>Pantalla real de GoBot (movilidad y delivery urbano).</figcaption>
+      </figure>
+      <ul style="margin-top:18px">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Solicitudes cercanas mientras el conductor está en línea.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Tres tipos de servicio en una sola app: viajes, delivery y mandados.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Indicación de zonas y horarios con más demanda.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05 METODOLOGIA -->
+<section id="metodologia">
+  <div class="shell">
+    <h2>Así empezamos</h2>
+    <p class="lead">Sabes qué construiremos antes de empezar.</p>
+    <div class="timeline" id="timeline">
+      <span class="line" id="tline"></span>
+      <div class="tstep"><span class="n">1</span><h3>Conversamos</h3><p>Conocemos tu empresa y el proceso que hoy te genera más trabajo o errores.</p></div>
+      <div class="tstep"><span class="n">2</span><h3>Priorizamos</h3><p>Delimitamos la oportunidad y definimos qué conviene resolver primero.</p></div>
+      <div class="tstep"><span class="n">3</span><h3>Mostramos el enfoque</h3><p>Presentamos la propuesta y evaluamos la viabilidad de una demo o prototipo en 48 horas.</p></div>
+      <div class="tstep"><span class="n">4</span><h3>Desarrollamos por fases</h3><p>Implementamos, probamos y mejoramos según el alcance acordado.</p></div>
+    </div>
+    <div class="cta-row" style="margin-top:44px"><a class="btn btn-primary" href="#diagnostico" data-cta="method">Solicitar diagnóstico gratuito</a></div>
+  </div>
+</section>
+
+<!-- 06 FORMULARIO -->
+<section class="alt" id="diagnostico">
+  <div class="shell form-wrap">
+    <div>
+      <h2>Cuéntanos sobre tu empresa</h2>
+      <p class="lead">En 20 minutos revisaremos tu operación y el proceso que más te interesa mejorar. Te explicaremos los siguientes pasos sin compromiso.</p>
+      <div class="wa-side"><a class="btn btn-wa" href="#" data-wa="form">Hablar por WhatsApp</a></div>
+    </div>
+    <div>
+      <form id="lead-form" novalidate>
+        <div class="hp" aria-hidden="true"><label>No completar<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label for="f-nombre">Nombre *</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="e-nombre"><span class="err" id="e-nombre" data-for="nombre"></span>
+        <label for="f-empresa">Empresa *</label>
+        <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="e-empresa"><span class="err" id="e-empresa" data-for="empresa"></span>
+        <label for="f-actividad">Actividad empresarial *</label>
+        <input id="f-actividad" name="actividad" type="text" placeholder="Ej.: transporte de carga, reparto, distribución" required aria-describedby="e-actividad"><span class="err" id="e-actividad" data-for="actividad"></span>
+        <label for="f-wa">WhatsApp * <span class="opt">(con código de país, ej. +51 9XX XXX XXX)</span></label>
+        <input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+51 9XX XXX XXX" required aria-describedby="e-whatsapp"><span class="err" id="e-whatsapp" data-for="whatsapp"></span>
+        <label for="f-nec">¿Qué parte de tu operación necesitas mejorar? <span class="opt">(opcional)</span></label>
+        <textarea id="f-nec" name="necesidad"></textarea>
+        <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos personales para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
+        <span class="err" id="e-consent" data-for="consent"></span>
+        <button class="btn btn-primary" type="submit" id="submit">Solicitar mi diagnóstico gratuito</button>
+        <div class="msg" id="msg" role="alert"></div>
+      </form>
+
+      <div class="thanks" id="thanks" tabindex="-1" hidden>
+        <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
+        <h3>Recibimos tus datos</h3>
+        <p>Te llevamos a WhatsApp con tu mensaje ya escrito: solo presiona <b>enviar</b> y coordinamos tu diagnóstico.</p>
+        <ol><li>Envías el mensaje por WhatsApp.</li><li>Te respondemos para acordar el día y la hora de los 20 minutos.</li><li>Conversamos sobre tu operación, sin compromiso.</li></ol>
+        <a class="btn btn-wa" href="#" data-wa="thanks" id="wa-lead">Enviar mi solicitud por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 FAQ -->
+<section id="faq">
+  <div class="shell faq">
+    <h2>Preguntas frecuentes</h2>
+    <div style="margin-top:28px">
+      <details><summary>¿Es para transporte de carga o reparto?</summary><p>Evaluamos ambos tipos de operación, pero los módulos dependen de cómo funciona cada empresa.</p></details>
+      <details><summary>¿Necesito aplicaciones para conductores?</summary><p>Solo si el proceso lo justifica; puede definirse una implementación por etapas.</p></details>
+      <details><summary>¿Permite seguimiento por GPS?</summary><p>Se puede estudiar técnicamente según equipos, permisos, cobertura y presupuesto.</p></details>
+      <details><summary>¿Podemos mantener las herramientas que ya usamos?</summary><p>Sí, primero evaluamos cuáles conviene integrar y cuáles sustituir.</p></details>
+    </div>
+    <div class="cta-row" style="margin-top:32px"><a class="btn btn-primary" href="#diagnostico" data-cta="faq">Solicitar diagnóstico gratuito</a></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="last">
+  <div class="shell">
+    <h2>Solicitar diagnóstico gratuito</h2>
+    <p>Entendamos primero cómo funciona tu empresa.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#diagnostico" data-cta="final">Solicitar diagnóstico gratuito</a>
+      <a class="btn btn-ghost" href="#" data-wa="final">Hablar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell">
+    <span>© 2026 ProShop · Lima, Perú</span>
+    <span><a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a> · <a href="https://proshop.lat/privacidad">Política de privacidad</a> · <button type="button" class="linkish" id="ck-open">Preferencias de cookies</button> · <a href="https://proshop.lat/">proshop.lat</a></span>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie" role="dialog" aria-labelledby="ck-t" aria-describedby="ck-d">
+  <h2 id="ck-t">Cookies y medición</h2>
+  <p id="ck-d">Usamos cookies de analítica y publicidad para saber qué páginas funcionan y desde qué campaña llegas. También estimamos tu ubicación aproximada a partir de tu IP. Puedes rechazarlas y seguir usando la página. <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">Política de privacidad</a></p>
+  <div class="row"><button type="button" class="btn btn-no" id="ck-no">Rechazar</button><button type="button" class="btn btn-primary" id="ck-yes">Aceptar</button></div>
+</div>
+
+<div class="sticky-cta" id="sticky">
+  <a class="btn btn-primary" href="#diagnostico" data-cta="sticky">Diagnóstico gratuito</a>
+  <a class="btn btn-wa" href="#" data-wa="sticky">WhatsApp</a>
+</div>
+
+<script>
+/* ===== Configuración (confirmar antes de publicar) ===== */
+const CONFIG = {
+  whatsapp: '51900534161',          // PENDIENTE: confirmar operativamente +51 900 534 161 (scope)
+  waText: 'Hola, llego desde la landing de software para transporte. Quiero un diagnóstico gratuito para mejorar mis operaciones logísticas.',
+  landing: 'software-transporte',
+  industry: 'transporte',
+  gtmId: '',                        // PENDIENTE: ID del contenedor de GTM (GTM-XXXXXXX). Vacío = no se carga GTM
+  geoEndpoint: 'https://ipwho.is/'  // ubicación aproximada por IP (solo tras aceptar cookies). Ideal: resolverla también en el servidor del CRM
+};
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+/* ===== Medición ===== */
+window.dataLayer = window.dataLayer || [];
+const track = (event, extra={}) => window.dataLayer.push(Object.assign({event, landing: CONFIG.landing}, extra));
+const KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','fbclid'];
+const attr = (() => {
+  let s = {};
+  try { s = JSON.parse(sessionStorage.getItem('attr') || '{}'); } catch(e){}
+  const p = new URLSearchParams(location.search);
+  KEYS.forEach(k => { if (p.get(k)) s[k] = p.get(k); });
+  if (!s.landing_url) { s.landing_url = location.href; s.referrer = document.referrer || ''; }
+  try { sessionStorage.setItem('attr', JSON.stringify(s)); } catch(e){}
+  return s;
+})();
+
+/* ===== Consentimiento (Google Consent Mode v2) ===== */
+window.gtag = function(){ dataLayer.push(arguments); };
+gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+const CK = 'cookie_consent';
+const getConsent = () => { try { return localStorage.getItem(CK); } catch(e){ return null; } };
+const setConsent = v => { try { localStorage.setItem(CK, v); } catch(e){} };
+let gtmLoaded = false, geo = null;
+function loadGTM(){
+  if (gtmLoaded || !CONFIG.gtmId) return; gtmLoaded = true;
+  dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
+  const s = document.createElement('script'); s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(CONFIG.gtmId);
+  document.head.appendChild(s);
+}
+async function resolveGeo(){
+  try { const c = sessionStorage.getItem('geo'); if (c) { geo = JSON.parse(c); return; } } catch(e){}
+  try {
+    const ctl = new AbortController(); const to = setTimeout(() => ctl.abort(), 3000);
+    const r = await fetch(CONFIG.geoEndpoint, {signal: ctl.signal}); clearTimeout(to);
+    const j = await r.json();
+    if (j && j.success !== false && (j.country_code || j.country)) {
+      geo = {fuente:'ip', pais: j.country_code || j.country, region: j.region || '', ciudad: j.city || ''};
+      try { sessionStorage.setItem('geo', JSON.stringify(geo)); } catch(e){}
+      track('geo_resolved', {geo_country: geo.pais, geo_region: geo.region, geo_city: geo.ciudad});
+    }
+  } catch(e){ /* sin ubicación: el CRM puede resolverla en el servidor */ }
+}
+function applyConsent(v){
+  const g = v === 'granted' ? 'granted' : 'denied';
+  gtag('consent','update',{ad_storage:g,analytics_storage:g,ad_user_data:g,ad_personalization:g});
+  if (v === 'granted'){ loadGTM(); resolveGeo(); } else { geo = null; try { sessionStorage.removeItem('geo'); } catch(e){} }
+}
+const ck = $('#cookie');
+const showCk = () => { ck.classList.add('show'); };
+const answer = v => { setConsent(v); ck.classList.remove('show'); applyConsent(v); track('cookie_consent', {choice: v}); };
+$('#ck-yes').addEventListener('click', () => answer('granted'));
+$('#ck-no').addEventListener('click', () => answer('denied'));
+$('#ck-open').addEventListener('click', () => { showCk(); $('#ck-no').focus(); });
+const savedConsent = getConsent();
+if (savedConsent) applyConsent(savedConsent); else showCk();
+
+track('landing_view');
+$$('[data-cta]').forEach(a => a.addEventListener('click', () => track('diagnostic_cta_click', {location: a.dataset.cta})));
+$$('[data-wa]').forEach(a => {
+  a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.waText);
+  a.target = '_blank'; a.rel = 'noopener';
+  a.addEventListener('click', () => track('whatsapp_click', {location: a.dataset.wa})); // intención, no conversión
+});
+
+/* ===== Formatos ===== */
+const nf = v => Math.round(v).toLocaleString('es-PE');
+const pct = v => Math.round(v) + '%';
+function countTo(el, to, f, dur=900){
+  cancelAnimationFrame(el._raf);
+  const from = el._cur || 0; el._cur = to;
+  if (REDUCED) { el.textContent = f(to); return; }
+  const t0 = performance.now();
+  (function step(t){
+    const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = f(k === 1 ? to : from + (to - from) * e);
+    if (k < 1) el._raf = requestAnimationFrame(step);
+  })(t0);
+}
+
+/* ===== Hero: tablero ===== */
+const DATA = {
+  hoy:{k:[51,11,94],   u:[2,6],   c:[[14,12],[19,17],[18,16]]},
+  sem:{k:[318,14,91],  u:[7,5],   c:[[96,88],[108,99],[114,103]]},
+  mes:{k:[1290,16,90], u:[19,6],  c:[[402,365],[430,391],[458,412]]}
+};
+let cur = 'hoy';
+function renderDash(){
+  const d = DATA[cur];
+  countTo($('#k1'), d.k[0], nf); countTo($('#k2'), d.k[1], nf); countTo($('#k3'), d.k[2], pct);
+  countTo($('#u1'), d.u[0], nf); countTo($('#u2'), d.u[1], nf);
+  $('#u1').className = d.u[0] > 0 ? 'neg' : ''; $('#u2').className = '';
+  const max = Math.max(...d.c.flat());
+  $$('#chart div').forEach((g,i)=>{ const s = $$('span',g); s[0].style.height = (d.c[i][0]/max*100)+'%'; s[1].style.height = (d.c[i][1]/max*100)+'%'; });
+}
+$$('#cur button').forEach(b => b.addEventListener('click', () => {
+  cur = b.dataset.cur;
+  $$('#cur button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  renderDash();
+}));
+const stage = $('#stage');
+if (REDUCED) renderDash();
+else new IntersectionObserver((es, io) => es.forEach(e => {
+  if (e.isIntersecting){ stage.classList.add('play'); setTimeout(renderDash, 1900); io.disconnect(); }
+}), {threshold:.45}).observe(stage);
+
+/* ===== Explorador (pestañas) ===== */
+const tabs = $$('.tabs [role=tab]');
+function growBars(panel){ $$('.fill', panel).forEach(f => { f.style.width = '0'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ f.style.width = f.dataset.w + '%'; })); }); }
+function selectTab(t, focus){
+  tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; const p = $('#'+x.getAttribute('aria-controls')); p.hidden = !on; if (on) growBars(p); });
+  if (focus) t.focus();
+}
+tabs.forEach((t,i) => {
+  t.addEventListener('click', () => { selectTab(t); track('module_tab_view', {tab: t.textContent.trim()}); });
+  t.addEventListener('keydown', e => {
+    let n = null;
+    if (e.key === 'ArrowRight') n = tabs[(i+1)%tabs.length];
+    if (e.key === 'ArrowLeft') n = tabs[(i-1+tabs.length)%tabs.length];
+    if (e.key === 'Home') n = tabs[0];
+    if (e.key === 'End') n = tabs[tabs.length-1];
+    if (n){ e.preventDefault(); selectTab(n, true); }
+  });
+});
+const expIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ growBars($('#p1')); expIO.disconnect(); } }), {threshold:.3});
+expIO.observe($('.explorer'));
+
+/* ===== Línea de tiempo (progreso con scroll) ===== */
+const tl = $('#timeline'), tline = $('#tline'), steps = $$('.tstep');
+function tlUpdate(){
+  const r = tl.getBoundingClientRect(), vh = innerHeight;
+  const prog = Math.min(1, Math.max(0, (vh * .6 - r.top) / r.height));
+  tline.style.height = (prog * (r.height - 16)) + 'px';
+  steps.forEach(s => { const sr = s.getBoundingClientRect(); s.classList.toggle('on', sr.top < vh * .6); });
+}
+addEventListener('scroll', tlUpdate, {passive:true}); addEventListener('resize', tlUpdate); tlUpdate();
+
+/* ===== CTA móvil: se oculta sobre el formulario ===== */
+new IntersectionObserver(es => es.forEach(e => $('#sticky').classList.toggle('hide', e.isIntersecting)), {threshold:.15}).observe($('#diagnostico'));
+
+/* ===== Formulario ===== */
+const form = $('#lead-form'), msg = $('#msg');
+let started = false, sending = false, sent = false;
+const subId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+form.addEventListener('focusin', () => { if (!started) { started = true; track('lead_form_start'); } });
+const setErr = (n, t) => { const e = $('[data-for="'+n+'"]', form), i = form.elements[n]; e.textContent = t || ''; if (i) i.setAttribute('aria-invalid', t ? 'true' : 'false'); };
+function validate(d){
+  let ok = true, first = null;
+  const bad = (n, t) => { setErr(n, t); if (t){ ok = false; first = first || form.elements[n]; } };
+  ['nombre','empresa','actividad'].forEach(n => bad(n, (!d[n] || d[n].trim().length < 2) ? 'Completa este campo.' : ''));
+  bad('whatsapp', /^\+\d{8,15}$/.test((d.whatsapp||'').replace(/[\s\-().]/g,'')) ? '' : 'Escribe tu WhatsApp con código de país, por ejemplo +51 9XX XXX XXX.');
+  bad('consent', d.consent ? '' : 'Acepta el tratamiento de datos para continuar.');
+  if (first) first.focus();
+  return ok;
+}
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (sending || sent) return;
+  msg.className = 'msg'; msg.textContent = '';
+  const d = Object.fromEntries(new FormData(form).entries());
+  d.consent = form.elements.consent.checked;
+  if (d.website) return; // honeypot
+  if (!validate(d)) return;
+  sending = true;
+  const ref = subId.replace(/-/g,'').slice(0, 8);
+  const tel = d.whatsapp.replace(/[\s\-().]/g,'');
+  const nec = (d.necesidad||'').trim().slice(0, 800);
+  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel];
+  if (nec) lines.push('Necesito mejorar: ' + nec);
+  const origen = attr.utm_campaign || attr.utm_source || (attr.gclid ? 'google-ads' : '');
+  if (origen) lines.push('Origen: ' + origen);
+  lines.push('Ref: ' + ref);
+  const url = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+  sent = true;
+  // Sin CRM: generate_lead marca el envío válido del formulario; la conversación ocurre en WhatsApp.
+  track('generate_lead', {lead_ref: ref, canal_entrega: 'whatsapp', geo_country: geo ? geo.pais : ''});
+  form.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
+  history.replaceState(null, '', '#gracias');
+  th.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'center'});
+  const wl = $('#wa-lead'); wl.href = url;
+  setTimeout(() => { location.href = url; }, 1800);
+});
+
+/* ===== Eventos de interacción ===== */
+const sc = {50:false, 90:false};
+addEventListener('scroll', () => {
+  const p = (scrollY + innerHeight) / document.documentElement.scrollHeight * 100;
+  [50,90].forEach(k => { if (!sc[k] && p >= k){ sc[k] = true; track('scroll_depth', {percent: k}); } });
+}, {passive:true});
+$$('details').forEach(d => d.addEventListener('toggle', () => { if (d.open) track('faq_open', {question: d.querySelector('summary').textContent.trim()}); }));
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="mailto:"],a[href^="tel:"]');
+  if (a) track('contact_click', {type: a.href.startsWith('tel:') ? 'phone' : 'email'});
+});
+</script>
+</body>
+</html>
