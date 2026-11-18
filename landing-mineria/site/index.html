@@ -456,6 +456,19 @@ main,footer{overflow-x:clip}
   .top .btn-primary{animation:shine 3.4s ease-in-out 1.8s infinite,glowg 2.6s ease-in-out infinite}
   @keyframes glowg{50%{box-shadow:0 0 0 4px rgba(232,184,74,.35),0 10px 30px rgba(34,227,166,.45)}}
 }
+
+/* selector de país en WhatsApp */
+.tel{position:relative;display:flex;gap:0;border:1px solid var(--rule);border-radius:var(--r-btn);background:var(--paper);transition:border-color .2s,box-shadow .2s}
+.tel:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,227,166,.25)}
+.tel input{border:0!important;box-shadow:none!important;background:transparent!important;flex:1;min-width:0;transform:none!important}
+.cc-btn{display:flex;align-items:center;gap:7px;padding:0 12px;border:0;border-right:1px solid var(--rule);background:transparent;font:600 .95rem var(--sans);color:var(--ink);cursor:pointer;border-radius:var(--r-btn) 0 0 var(--r-btn);min-height:48px}
+.cc-btn img{border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.cc-btn:hover{background:var(--paper-2)}
+.cc-list{position:absolute;left:0;top:calc(100% + 6px);z-index:30;list-style:none;margin:0;padding:6px;width:min(280px,100%);max-height:260px;overflow:auto;background:var(--card);border:1px solid var(--rule);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+.cc-list li{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;font-size:.92rem}
+.cc-list li:hover,.cc-list li[aria-selected="true"],.cc-list li.act{background:var(--paper-2)}
+.cc-list li b{margin-left:auto;color:var(--ink-3);font-weight:600}
+.cc-list img{border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 </style>
 </head>
 <body>
@@ -714,8 +727,15 @@ main,footer{overflow-x:clip}
         <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="e-empresa"><span class="err" id="e-empresa" data-for="empresa"></span>
         <label for="f-actividad">Actividad empresarial *</label>
         <input id="f-actividad" name="actividad" type="text" value="Minería" required aria-describedby="e-actividad"><span class="err" id="e-actividad" data-for="actividad"></span>
-        <label for="f-wa">WhatsApp * <span class="opt">(con código de país, ej. +51 9XX XXX XXX)</span></label>
-        <input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+51 9XX XXX XXX" required aria-describedby="e-whatsapp"><span class="err" id="e-whatsapp" data-for="whatsapp"></span>
+        <label for="f-wa">WhatsApp *</label>
+        <div class="tel">
+          <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="País: Perú +51">
+            <img src="https://flagcdn.com/w40/pe.png" alt="" width="22" height="16" id="ccFlag"><span id="ccCode">+51</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul class="cc-list" id="ccList" role="listbox" hidden></ul>
+          <input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="9XX XXX XXX" required aria-describedby="e-whatsapp">
+        </div><span class="err" id="e-whatsapp" data-for="whatsapp"></span>
         <label for="f-nec">¿Qué parte de tu operación necesitas mejorar? <span class="opt">(opcional)</span></label>
         <textarea id="f-nec" name="necesidad"></textarea>
         <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos personales para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
@@ -781,6 +801,51 @@ main,footer{overflow-x:clip}
   <a class="btn btn-wa" href="#" data-wa="sticky">WhatsApp</a>
 </div>
 
+<script>
+/* ===== Selector de país del WhatsApp ===== */
+const COUNTRIES = [
+  ['pe','Perú','51'],['bo','Bolivia','591'],['cl','Chile','56'],['co','Colombia','57'],['ec','Ecuador','593'],
+  ['ar','Argentina','54'],['mx','México','52'],['py','Paraguay','595'],['uy','Uruguay','598'],['ve','Venezuela','58'],
+  ['br','Brasil','55'],['us','Estados Unidos','1'],['es','España','34']
+];
+const CC = {code: '51'};
+(function(){
+  const btn = document.getElementById('ccBtn'), list = document.getElementById('ccList'), flag = document.getElementById('ccFlag'), code = document.getElementById('ccCode'), input = document.getElementById('f-wa');
+  if (!btn) return;
+  list.innerHTML = COUNTRIES.map(([iso, name, c], i) => '<li role="option" data-i="' + i + '" aria-selected="' + (iso === 'pe') + '"><img src="https://flagcdn.com/w40/' + iso + '.png" alt="" width="22" height="16" loading="lazy">' + name + '<b>+' + c + '</b></li>').join('');
+  const items = [...list.children];
+  let act = 0;
+  const open = v => { list.hidden = !v; btn.setAttribute('aria-expanded', v); if (v) { act = COUNTRIES.findIndex(x => x[2] === CC.code); hi(); items[act].scrollIntoView({block: 'nearest'}); } };
+  const hi = () => items.forEach((li, k) => li.classList.toggle('act', k === act));
+  const pick = i => {
+    const [iso, name, c] = COUNTRIES[i];
+    CC.code = c; flag.src = 'https://flagcdn.com/w40/' + iso + '.png'; code.textContent = '+' + c;
+    btn.setAttribute('aria-label', 'País: ' + name + ' +' + c);
+    items.forEach((li, k) => li.setAttribute('aria-selected', k === i));
+    input.placeholder = c === '51' ? '9XX XXX XXX' : 'Número de WhatsApp';
+    open(false); input.focus();
+  };
+  btn.addEventListener('click', () => open(list.hidden));
+  list.addEventListener('click', e => { const li = e.target.closest('li'); if (li) pick(+li.dataset.i); });
+  btn.addEventListener('keydown', e => {
+    if (list.hidden && (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(true); return; }
+    if (list.hidden) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); act = Math.min(items.length - 1, act + 1); hi(); items[act].scrollIntoView({block: 'nearest'}); }
+    if (e.key === 'ArrowUp') { e.preventDefault(); act = Math.max(0, act - 1); hi(); items[act].scrollIntoView({block: 'nearest'}); }
+    if (e.key === 'Enter') { e.preventDefault(); pick(act); }
+    if (e.key === 'Escape') open(false);
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('.tel')) open(false); });
+  // si pegan un número con +código, se detecta el país
+  input.addEventListener('input', () => {
+    const v = input.value.trim();
+    if (!v.startsWith('+')) return;
+    const dig = v.replace(/\D/g, '');
+    const m = COUNTRIES.map((x, i) => [x[2], i]).filter(([c]) => dig.startsWith(c)).sort((a, b) => b[0].length - a[0].length)[0];
+    if (m) { pick(m[1]); input.value = dig.slice(m[0].length); }
+  });
+})();
+</script>
 <script>
 /* ===== Configuración (confirmar antes de publicar) ===== */
 const CONFIG = {
@@ -980,7 +1045,7 @@ function validate(d){
   let ok = true, first = null;
   const bad = (n, t) => { setErr(n, t); if (t){ ok = false; first = first || form.elements[n]; } };
   ['nombre','empresa','actividad'].forEach(n => bad(n, (!d[n] || d[n].trim().length < 2) ? 'Completa este campo.' : ''));
-  bad('whatsapp', /^\+\d{8,15}$/.test((d.whatsapp||'').replace(/[\s\-().]/g,'')) ? '' : 'Escribe tu WhatsApp con código de país, por ejemplo +51 9XX XXX XXX.');
+  bad('whatsapp', /^\+\d{8,15}$/.test(d.whatsapp) && d.whatsapp.length - CC.code.length - 1 >= 6 ? '' : 'Escribe tu número de WhatsApp.');
   bad('consent', d.consent ? '' : 'Acepta el tratamiento de datos para continuar.');
   if (first) first.focus();
   return ok;
@@ -990,6 +1055,7 @@ form.addEventListener('submit', async e => {
   if (sending || sent) return;
   msg.className = 'msg'; msg.textContent = '';
   const d = Object.fromEntries(new FormData(form).entries());
+  d.whatsapp = '+' + CC.code + (d.whatsapp || '').replace(/\D/g, '').replace(new RegExp('^' + CC.code), '');
   d.consent = form.elements.consent.checked;
   if (d.website) return; // honeypot
   if (!validate(d)) return;
