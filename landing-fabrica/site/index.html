@@ -504,6 +504,49 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .ops .hide-m{display:none}
   .ops td,.ops th{padding-left:12px;padding-right:12px}
 }
+
+/* CARRUSEL · Santa Isabel */
+.xp-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end;margin-bottom:36px}
+.xp-head .lead b{color:#fff}
+.xp-proofs .proof:first-child{margin-top:0}
+.carru-win{background:#08111e;border:1px solid rgba(255,255,255,.14);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.carru-bar{display:flex;align-items:center;gap:6px;padding:11px 16px;background:#0e1828;border-bottom:1px solid rgba(255,255,255,.08)}
+.carru-bar i{width:10px;height:10px;border-radius:50%;background:#2a3446}
+.carru-bar i:first-child{background:#ff5f57}.carru-bar i:nth-child(2){background:#febc2e}.carru-bar i:nth-child(3){background:#28c840}
+.carru-bar span{margin-left:12px;font-size:.78rem;color:#8a96a8;background:#08111e;border-radius:6px;padding:4px 12px}
+.carru-bar em{margin-left:auto;font-style:normal;font-size:.78rem;color:#8a96a8;font-variant-numeric:tabular-nums}
+.carru-stage{position:relative;aspect-ratio:16/7;background:#08111e;touch-action:pan-y;user-select:none}
+.cs{position:absolute;inset:0;margin:0;display:grid;place-items:center;padding:clamp(10px,2vw,22px);opacity:0;transform:scale(1.03);transition:opacity .6s var(--ease),transform .8s var(--ease);pointer-events:none}
+.cs.on{opacity:1;transform:none;pointer-events:auto}
+.cs img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:8px}
+.carru-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(8,17,30,.75);color:#fff;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);transition:background .2s,transform .2s;z-index:2}
+.carru-nav svg{width:22px;height:22px}
+.carru-nav:hover{background:var(--hi);color:#1a1d22;transform:translateY(-50%) scale(1.08)}
+.carru-nav.prev{left:12px}.carru-nav.next{right:12px}
+.carru-prog{height:3px;background:rgba(255,255,255,.08)}
+.carru-prog span{display:block;height:100%;width:0;background:var(--hi)}
+.carru-prog span.run{animation:cprog 5.5s linear forwards}
+@keyframes cprog{to{width:100%}}
+.carru-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:18px}
+.carru-caps{position:relative;min-height:3.2em;flex:1}
+.cc{position:absolute;inset:0;margin:0;color:rgba(255,255,255,.75);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.cc.on{position:relative;opacity:1;transform:none}
+.cc b{color:#fff;margin-right:6px}
+.carru-dots{display:flex;gap:8px;flex:none}
+.carru-dots button{width:10px;height:10px;border-radius:999px;border:0;background:rgba(255,255,255,.28);cursor:pointer;padding:0;transition:width .3s var(--ease),background .3s}
+.carru-dots button[aria-current="true"]{width:30px;background:var(--hi)}
+.carru-note{margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.5)}
+@media (max-width:960px){.xp-head{grid-template-columns:1fr;gap:20px}}
+@media (max-width:640px){
+  .carru-stage{aspect-ratio:auto}
+  .cs{position:absolute;padding:8px}
+  .cs.on{position:relative}
+  .cs img{width:100%;max-height:none;border-radius:6px}
+  .carru-nav{display:none}
+  .carru-bar span{display:none}
+  .carru-foot{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){.cs{transition:none}.carru-prog span.run{animation:none}}
 </style>
 </head>
 <body>
@@ -654,34 +697,49 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 
 <!-- 04 CONFIANZA -->
 <section class="trust" id="experiencia">
-  <div class="shell trust-grid">
-    <div>
-      <h2>Experiencia real. Soluciones a medida.</h2>
-      <p class="lead">No es un producto genérico: primero entendemos cómo trabaja tu planta y después construimos el sistema alrededor de tus procesos, por fases.</p>
-      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Ya lo hicimos en un taller de producción</b><span>Santa Isabel, taller de confección: su sistema lleva cada pedido desde la cotización hasta la entrega y muestra cada día qué está en producción, listo o atrasado.</span></div></div>
-      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Pensado para usarse en planta</b><span>Pantallas que el equipo actualiza desde el celular, sin volver a la oficina.</span></div></div>
-    </div>
-    <div>
-      <div class="ops" role="img" aria-label="Ejemplo conceptual de un panel de control de producción con órdenes, avance y alertas de material, con datos ficticios.">
-        <div class="ops-top"><b>Control de producción · Semana 46</b><small>Actualizado hace 2 min</small></div>
-        <div class="ops-kpis">
-          <div><small>Órdenes activas</small><b>24</b></div>
-          <div><small>En producción</small><b>9</b></div>
-          <div><small>Entregas a tiempo</small><b class="good">92%</b></div>
-          <div><small>Atrasadas</small><b class="warn">2</b></div>
-        </div>
-        <table>
-          <thead><tr><th>Orden</th><th>Avance</th><th class="hide-m">Entrega</th><th>Estado</th></tr></thead>
-          <tbody>
-            <tr><td>OP-121 · Comercial Sur<small>1 200 unid. · Acabado</small></td><td><div class="pbar"><i style="width:72%"></i></div></td><td class="hide-m">Jue 15</td><td><span class="tag-s go">En curso</span></td></tr>
-            <tr><td>OP-119 · Mayorista A.<small>300 unid. · Armado</small></td><td><div class="pbar"><i style="width:45%"></i></div></td><td class="hide-m">Mié 14</td><td><span class="tag-s late">Atrasada</span></td></tr>
-            <tr><td>OP-120 · Tienda Lima<small>60 unid. · Empaque</small></td><td><div class="pbar"><i style="width:100%"></i></div></td><td class="hide-m">Mar 13</td><td><span class="tag-s ok">Lista</span></td></tr>
-            <tr><td>OP-124 · Mayorista C.<small>500 unid. · Corte</small></td><td><div class="pbar"><i style="width:12%"></i></div></td><td class="hide-m">Vie 16</td><td><span class="tag-s wait">Falta material</span></td></tr>
-          </tbody>
-        </table>
-        <div class="ops-foot"><span class="ops-dot"></span><span><b>Alerta de material:</b> cajas de empaque bajo el mínimo — OP-124 no puede pasar a empaque sin reposición.</span></div>
+  <div class="shell">
+    <div class="xp-head">
+      <div>
+        <h2>Experiencia real. Soluciones a medida.</h2>
+        <p class="lead">Este es el sistema que desarrollamos para <b>Santa Isabel</b>, un taller de confección: lleva cada pedido desde la cotización hasta la entrega y muestra cada día qué está en producción, listo o atrasado.</p>
       </div>
-      <p class="ops-cap">Ejemplo conceptual con datos ficticios.</p>
+      <div class="xp-proofs">
+        <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Pantallas reales, en producción</b><span>No es una maqueta: es la herramienta que el taller usa a diario.</span></div></div>
+        <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Hecho alrededor de su proceso</b><span>Primero entendimos cómo trabajan; después construimos por fases.</span></div></div>
+      </div>
+    </div>
+
+    <div class="carru" id="carru" role="region" aria-roledescription="carrusel" aria-label="Pantallas del sistema de Santa Isabel">
+      <div class="carru-win">
+        <div class="carru-bar"><i></i><i></i><i></i><span>santa-isabel.proshop.lat</span><em id="cCount">1 / 4</em></div>
+        <div class="carru-stage" id="cStage">
+          <figure class="cs on" role="group" aria-roledescription="diapositiva" aria-label="1 de 4: Vista general">
+            <img src="img/santa-isabel/1-vista-general.webp" alt="Sistema de Santa Isabel: vista general" width="1600" height="669" decoding="async">
+          </figure>
+          <figure class="cs" role="group" aria-roledescription="diapositiva" aria-label="2 de 4: Tablero del día" aria-hidden="true">
+            <img src="img/santa-isabel/2-tablero.webp" alt="Sistema de Santa Isabel: tablero del día" width="1587" height="423" decoding="async">
+          </figure>
+          <figure class="cs" role="group" aria-roledescription="diapositiva" aria-label="3 de 4: Alertas" aria-hidden="true">
+            <img src="img/santa-isabel/3-alertas.webp" alt="Sistema de Santa Isabel: alertas" width="1520" height="567" decoding="async">
+          </figure>
+          <figure class="cs" role="group" aria-roledescription="diapositiva" aria-label="4 de 4: Carga por fecha" aria-hidden="true">
+            <img src="img/santa-isabel/4-carga.webp" alt="Sistema de Santa Isabel: carga por fecha" width="1528" height="337" decoding="async">
+          </figure>
+          <button type="button" class="carru-nav prev" aria-label="Pantalla anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button type="button" class="carru-nav next" aria-label="Pantalla siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+        <div class="carru-prog"><span id="cProg"></span></div>
+      </div>
+      <div class="carru-foot">
+        <div class="carru-caps" aria-live="polite">
+          <p class="cc on" data-i="0"><b>Vista general</b> Menú, indicadores del día y carga de los próximos 14 días en una sola pantalla.</p>
+          <p class="cc" data-i="1"><b>Tablero del día</b> Pedidos activos, en producción, terminados, entregas de la semana y atrasados, de un vistazo.</p>
+          <p class="cc" data-i="2"><b>Alertas</b> Lo que necesita atención hoy: pedidos atrasados y entregas que aún no entran a producción.</p>
+          <p class="cc" data-i="3"><b>Carga por fecha</b> Detecta los días con sobrecarga antes de comprometer nuevas entregas.</p>
+        </div>
+        <div class="carru-dots" id="cDots"><button type="button" aria-label="Ver Vista general" aria-current="true"></button><button type="button" aria-label="Ver Tablero del día"></button><button type="button" aria-label="Ver Alertas"></button><button type="button" aria-label="Ver Carga por fecha"></button></div>
+      </div>
+      <p class="carru-note">Pantallas reales del sistema de Santa Isabel, con datos de prueba.</p>
     </div>
   </div>
 </section>
@@ -1031,7 +1089,7 @@ document.addEventListener('click', e => {
   const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; prog.style.transform = 'scaleX(' + (m > 0 ? scrollY / m : 0) + ')'; };
   addEventListener('scroll', upd, {passive: true}); upd();
   // apariciones al hacer scroll
-  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.proof', '.ops', '#faq details', '.closing', '.explorer', '.form-wrap > div']
+  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.proof', '.carru', '#faq details', '.closing', '.explorer', '.form-wrap > div']
     .forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('[data-rv]:not(.tstep)').forEach(el => io.observe(el));
@@ -1056,6 +1114,43 @@ document.addEventListener('click', e => {
     c.addEventListener('mousemove', e => { if (!c.classList.contains('on') && c.hasAttribute('data-rv')) return; const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = 'perspective(800px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateY(-4px)'; });
     c.addEventListener('mouseleave', () => c.style.transform = '');
   });
+})();
+</script>
+<script>
+/* ===== Carrusel Santa Isabel ===== */
+(function(){
+  const root = document.getElementById('carru'); if (!root) return;
+  const slides = [...root.querySelectorAll('.cs')], caps = [...root.querySelectorAll('.cc')], dots = [...root.querySelectorAll('#cDots button')];
+  const prog = document.getElementById('cProg'), count = document.getElementById('cCount');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0, timer = null, paused = false, visible = false;
+  function go(n, user){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => { s.classList.toggle('on', k === i); s.setAttribute('aria-hidden', k === i ? 'false' : 'true'); });
+    caps.forEach((c, k) => c.classList.toggle('on', k === i));
+    dots.forEach((d, k) => k === i ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current'));
+    count.textContent = (i + 1) + ' / ' + slides.length;
+    if (user && window.dataLayer) dataLayer.push({event: 'carousel_view', landing: 'software-fabricas', slide: i + 1});
+    restart();
+  }
+  function restart(){
+    clearTimeout(timer); prog.classList.remove('run'); void prog.offsetWidth;
+    if (reduced || paused || !visible) return;
+    prog.classList.add('run'); timer = setTimeout(() => go(i + 1), 5500);
+  }
+  root.querySelector('.prev').addEventListener('click', () => go(i - 1, true));
+  root.querySelector('.next').addEventListener('click', () => go(i + 1, true));
+  dots.forEach((d, k) => d.addEventListener('click', () => go(k, true)));
+  root.addEventListener('mouseenter', () => { paused = true; restart(); });
+  root.addEventListener('mouseleave', () => { paused = false; restart(); });
+  root.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(i - 1, true); if (e.key === 'ArrowRight') go(i + 1, true); });
+  // swipe en celular
+  let x0 = null;
+  const stage = document.getElementById('cStage');
+  stage.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; paused = true; restart(); }, {passive: true});
+  stage.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1), true); x0 = null; paused = false; restart(); });
+  // solo avanza solo cuando está a la vista
+  new IntersectionObserver(es => es.forEach(e => { visible = e.isIntersecting; restart(); }), {threshold: .35}).observe(root);
 })();
 </script>
 </body>
