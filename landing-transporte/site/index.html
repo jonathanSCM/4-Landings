@@ -402,7 +402,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .mo [data-rv].prob{transform:translateX(-36px)}
   .mo [data-rv].on{opacity:1;transform:none}
   .mo .tstep[data-rv] .n{transform:scale(.4);transition:transform .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--d,0)*110ms + .2s)}
-  .mo .tstep[data-rv].on .n{transform:none}
+  .mo .tstep[data-rv].vis .n{transform:none}
   /* botones: brillo que cruza y flecha que empuja */
   .btn-primary{background-image:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%);background-size:260% 100%;background-repeat:no-repeat;background-position:130% 0;animation:shine 3.6s ease-in-out 2s infinite}
   @keyframes shine{0%,55%{background-position:130% 0}85%,100%{background-position:-30% 0}}
@@ -932,7 +932,7 @@ document.addEventListener('click', e => {
   // elementos que aparecen al hacer scroll, en cascada por grupo
   ['.problems .prob', '.mods .mod', '.timeline .tstep', '.trust li', '#faq details', '.closing', '.explorer', '.case-img', '.form-wrap > div']
     .forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add(e.target.classList.contains('tstep') ? 'vis' : 'on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('[data-rv]').forEach(el => io.observe(el));
   // los títulos se observan a través de su sección (un título recortado no dispara el observador)
   const ioS = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('h2').forEach(h => h.classList.add('on')); ioS.unobserve(e.target); } }), {threshold: 0, rootMargin: '0px 0px -25% 0px'});
