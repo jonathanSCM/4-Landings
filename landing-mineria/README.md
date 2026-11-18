@@ -9,7 +9,7 @@ Página estática (HTML/CSS/JS) en `site/`, servida con nginx.
 4. Health check: `/healthz`.
 
 ## Antes de publicar (en `site/index.html`, objeto `CONFIG`)
-- `whatsapp`: confirmar número comercial.
+- `whatsapp`: +51 900 534 161 (número comercial oficial).
 - Formulario: sin CRM, abre WhatsApp con el mensaje armado (nombre, empresa, actividad, necesidad, origen y referencia).
 - Confirmar `https://proshop.lat/privacidad`.
 

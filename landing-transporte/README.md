@@ -12,7 +12,7 @@ Build Pack: Dockerfile · Puerto: 8080 · Health check: `/healthz`.
 Dominio: `landing_transportes.proshop.lat` (ojo: con guion bajo puede fallar el certificado HTTPS).
 
 ## Antes de publicar (en `site/index.html`, objeto `CONFIG`)
-- `whatsapp`: confirmar +51 900 534 161.
+- `whatsapp`: +51 900 534 161 (número comercial oficial).
 - `gtmId`: ID del contenedor de GTM.
 - Confirmar `https://proshop.lat/privacidad` y la autorización del caso GoBot (movilidad/delivery, no carga).
 
