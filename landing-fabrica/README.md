@@ -11,13 +11,13 @@ No hay CRM: el formulario valida los datos y abre WhatsApp con el mensaje ya arm
 Build Pack: Dockerfile · Puerto: 8080 · Health check: `/healthz`.
 Dominio: `landing_fabricas.proshop.lat` (ojo: con guion bajo puede fallar el certificado HTTPS).
 
-## Antes de publicar (en `site/js/app.js`, objeto `CONFIG`)
+## Antes de publicar (en `site/index.html`, objeto `CONFIG`)
 - `whatsapp`: confirmar +51 900 534 161.
 - `gtmId`: ID del contenedor de GTM.
 - Confirmar `https://proshop.lat/privacidad` y la autorización del caso Santa Isabel.
 
 ## Editar textos
-Todo el contenido está en `site/index.html`.
+Todo el contenido está en `site/index.html` (mismo diseño que landing-mineria).
 
 ## Prueba local
 ```bash
