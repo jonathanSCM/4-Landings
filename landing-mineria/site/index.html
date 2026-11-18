@@ -13,6 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://landing_minerias.proshop.lat/">
 <meta property="og:locale" content="es_PE">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -347,10 +348,119 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .ops .hide-m{display:none}
   .ops td,.ops th{padding-left:12px;padding-right:12px}
 }
+
+/* MOVIMIENTO · minería (oro, brillo, energía) */
+main,footer{overflow-x:clip}
+.prog-au,.nugs,.spot{display:none}
+@media (prefers-reduced-motion:no-preference){
+  /* barra de progreso dorada */
+  .prog-au{display:block;position:fixed;left:0;top:0;height:4px;width:100%;z-index:80;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#b8862b,#ffd36b,#22e3a6);box-shadow:0 0 12px rgba(255,211,107,.7);pointer-events:none}
+  /* hero: pepitas de oro que suben y foco que sigue al mouse */
+  .hero{position:relative}
+  .hero>.shell{position:relative;z-index:1}
+  .nugs{display:block;position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .nugs i{position:absolute;bottom:-20px;width:var(--s);height:var(--s);border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff3c4,#e8b84a 55%,#9a6b00);box-shadow:0 0 10px rgba(232,184,74,.6);opacity:0;animation:rise var(--t) linear var(--d) infinite}
+  @keyframes rise{0%{transform:translate(0,0);opacity:0}10%{opacity:.85}90%{opacity:.6}100%{transform:translate(var(--x),-110vh);opacity:0}}
+  .spot{display:block;position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(420px circle at var(--mx,70%) var(--my,30%),rgba(34,227,166,.14),transparent 60%);transition:background .1s}
+  /* etiqueta */
+  .mo .hero .tag{opacity:0;animation:slidein .7s var(--ease) .05s forwards}
+  .mo .hero .tag::before{width:0;animation:growl .7s var(--ease) .3s forwards}
+  @keyframes slidein{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+  @keyframes growl{to{width:28px}}
+  /* titular: palabras que emergen desenfocadas */
+  .mo .hero h1 .w{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(.5em) scale(.92);animation:emerge .8s var(--ease) forwards;animation-delay:calc(var(--i)*80ms + .2s)}
+  @keyframes emerge{to{opacity:1;filter:none;transform:none}}
+  .mo .hero h1 .gold{background:linear-gradient(100deg,#e8b84a 0%,#fff3c4 35%,#e8b84a 55%,#ffd36b 75%,#e8b84a 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:emerge .8s var(--ease) forwards,goldrun 3.5s linear infinite;animation-delay:calc(var(--i)*80ms + .2s),1.2s}
+  @keyframes goldrun{to{background-position:-250% 0}}
+  .mo .hero h1 .x{position:relative}
+  .mo .hero h1 .x::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.09em;border-radius:4px;background:#ff6b5b;transform:scaleX(0) rotate(-3deg);transform-origin:left;animation:strike .5s var(--ease) forwards;animation-delay:calc(var(--i)*80ms + 1s)}
+  @keyframes strike{to{transform:scaleX(1) rotate(-3deg)}}
+  .mo .hero p.sub,.mo .hero .cta-row>*,.mo .hero .micro{opacity:0;animation:up .7s var(--ease) forwards}
+  .mo .hero p.sub{animation-delay:1.05s}
+  .mo .hero .cta-row>*:nth-child(1){animation-delay:1.25s}
+  .mo .hero .cta-row>*:nth-child(2){animation-delay:1.4s}
+  .mo .hero .micro{animation-delay:1.55s}
+  @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .mo .stage{animation:float 6s ease-in-out 3s infinite}
+  @keyframes float{50%{transform:translateY(-10px)}}
+
+  /* títulos de sección: palabras que suben desde una máscara + barra dorada */
+  .mo main>section:not(.hero) h2 .wm{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+  .mo main>section:not(.hero) h2 .wm>span{display:inline-block;transform:translateY(110%) rotate(6deg);transition:transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*60ms)}
+  .mo main>section:not(.hero) h2.in .wm>span{transform:none}
+  .mo main>section:not(.hero):not(.last) h2::after{content:"";display:block;height:5px;width:0;margin-top:14px;border-radius:5px;background:linear-gradient(90deg,#e8b84a,#ffd36b,#22e3a6,#e8b84a);background-size:300% 100%;transition:width .9s var(--ease) .45s;animation:goldrun 4s linear infinite}
+  .mo main>section:not(.hero):not(.last) h2.in::after{width:84px}
+  .mo .lead,.mo .closing{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease) .3s,transform .7s var(--ease) .3s}
+  .mo .lead.in,.mo .closing.in{opacity:1;transform:none}
+
+  /* problemas: entran desde la derecha con barra dorada */
+  .prob{position:relative}
+  .mo .prob{opacity:0;transform:translateX(60px);transition:opacity .6s var(--ease),transform .7s cubic-bezier(.2,.9,.3,1.2);transition-delay:calc(var(--d)*140ms)}
+  .mo .prob.in{opacity:1;transform:none}
+  .mo .prob::before{content:"";position:absolute;left:-18px;top:28px;bottom:28px;width:4px;border-radius:4px;background:linear-gradient(#ffd36b,#e8b84a);transform:scaleY(0);transform-origin:top;transition:transform .6s var(--ease);transition-delay:calc(var(--d)*140ms + .4s)}
+  .mo .prob.in::before{transform:none}
+  .prob:hover h3{color:var(--accent-ink)}
+  .prob h3{transition:color .2s}
+
+  /* explorador y módulos */
+  .mo .explorer{opacity:0;transform:translateY(40px) scale(.97);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .mo .explorer.in{opacity:1;transform:none}
+  .tabs button{transition:background .2s,color .2s,transform .2s var(--ease)}
+  .tabs button:hover{transform:translateY(-2px)}
+  .mo .panel:not([hidden]){animation:panelin .5s var(--ease)}
+  @keyframes panelin{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+  .mo .mod{opacity:0;transform:perspective(700px) rotateX(-35deg) translateY(20px);transform-origin:top;transition:opacity .6s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d)*110ms)}
+  .mo .mod.in{opacity:1;transform:none}
+  .mod h3{transition:color .2s,transform .2s}
+  .mod:hover h3{color:var(--accent-ink);transform:translateX(4px)}
+
+  /* experiencia: panel que gira en 3D y tarjetas */
+  .mo .ops{opacity:0;transform:perspective(1200px) rotateY(-14deg) rotateX(6deg) translateX(40px);transition:opacity .9s var(--ease),transform 1s var(--ease)}
+  .mo .ops.in{opacity:1;transform:perspective(1200px) rotateY(-4deg) rotateX(2deg)}
+  .ops:hover{transform:perspective(1200px) rotateY(0) rotateX(0)!important;transition:transform .5s var(--ease)}
+  .mo .ops tbody tr{opacity:0;transform:translateX(-14px);transition:opacity .4s,transform .4s;transition-delay:calc(var(--d)*120ms + .6s)}
+  .mo .ops.in tbody tr{opacity:1;transform:none}
+  .ops tbody tr{transition:background .2s}
+  .ops tbody tr:hover{background:#f6fff9}
+  .mo .proof{opacity:0;transform:translateX(-30px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--d)*150ms + .3s)}
+  .mo .proof.in{opacity:1;transform:none}
+
+  /* metodología: el número late cuando se activa */
+  .tstep .n{transition:background .3s,border-color .3s,color .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+  .tstep.on .n{transform:scale(1.12);box-shadow:0 0 0 0 rgba(34,227,166,.6);animation:ping 2.2s ease-out infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,227,166,.55)}80%,100%{box-shadow:0 0 0 14px rgba(34,227,166,0)}}
+  .mo .tstep h3,.mo .tstep p{opacity:.35;transition:opacity .5s}
+  .tstep.on h3,.tstep.on p{opacity:1!important}
+
+  /* formulario y FAQ */
+  .mo .form-wrap>div:last-child{opacity:0;transform:translateX(50px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .mo .form-wrap>div:last-child.in{opacity:1;transform:none}
+  form input:focus,form textarea:focus{transform:translateY(-1px)}
+  form input,form textarea{transition:border-color .2s,box-shadow .2s,transform .2s}
+  .mo #faq details{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s;transition-delay:calc(var(--d)*90ms)}
+  .mo #faq details.in{opacity:1;transform:none}
+  details[open] p{animation:up .4s var(--ease)}
+  summary:hover{color:var(--accent-ink)}
+  /* cierre */
+  .last{position:relative;overflow:hidden}
+  .last>.shell{position:relative;z-index:1}
+
+  /* botones: brillo dorado, ondas al clic, imán y rebote de WhatsApp */
+  .btn{position:relative;overflow:hidden;will-change:transform}
+  .btn-primary{background-image:linear-gradient(110deg,transparent 35%,rgba(255,243,196,.75) 50%,transparent 65%);background-size:260% 100%;background-repeat:no-repeat;background-position:130% 0;animation:shine 3.4s ease-in-out 1.8s infinite}
+  @keyframes shine{0%,50%{background-position:130% 0}80%,100%{background-position:-30% 0}}
+  .btn .rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+  @keyframes rip{to{transform:scale(4);opacity:0}}
+  .btn-wa,.btn-ghost[data-wa]{animation:hop 4.5s ease-in-out 2.5s infinite}
+  @keyframes hop{0%,84%,100%{transform:none}88%{transform:translateY(-6px)}92%{transform:translateY(0)}95%{transform:translateY(-3px)}}
+  .top .btn-primary{animation:shine 3.4s ease-in-out 1.8s infinite,glowg 2.6s ease-in-out infinite}
+  @keyframes glowg{50%{box-shadow:0 0 0 4px rgba(232,184,74,.35),0 10px 30px rgba(34,227,166,.45)}}
+}
 </style>
 </head>
 <body>
 
+<div class="prog-au" aria-hidden="true"></div>
 <header class="top">
   <div class="shell">
     <a href="https://proshop.lat/" aria-label="ProShop, ir al inicio"><img src="img/logo-proshop.png" alt="ProShop" width="120" height="30"></a>
@@ -361,6 +471,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <main>
 <!-- 01 HERO -->
 <section class="hero" id="inicio" style="padding-bottom:clamp(56px,8vw,104px)">
+  <div class="spot" aria-hidden="true"></div><div class="nugs" aria-hidden="true"></div>
   <div class="shell hero-grid">
     <div>
       <span class="tag">Software a medida para empresas y cooperativas mineras</span>
@@ -640,6 +751,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 
 <!-- CTA FINAL -->
 <section class="last">
+  <div class="nugs" aria-hidden="true"></div>
   <div class="shell">
     <h2>Solicitar diagnóstico gratuito</h2>
     <p>Entendamos primero cómo funciona tu empresa.</p>
@@ -912,6 +1024,75 @@ document.addEventListener('click', e => {
   const a = e.target.closest('a[href^="mailto:"],a[href^="tel:"]');
   if (a) track('contact_click', {type: a.href.startsWith('tel:') ? 'phone' : 'email'});
 });
+</script>
+<script>
+/* ===== Movimiento (minería) ===== */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const D = document; D.documentElement.classList.add('mo');
+  // pepitas de oro
+  D.querySelectorAll('.nugs').forEach(box => {
+    const n = innerWidth < 700 ? 9 : 18;
+    for (let k = 0; k < n; k++) {
+      const i = D.createElement('i');
+      i.style.cssText = '--s:' + (3 + Math.random() * 7).toFixed(1) + 'px;--t:' + (7 + Math.random() * 8).toFixed(1) + 's;--d:-' + (Math.random() * 12).toFixed(1) + 's;--x:' + (Math.random() * 120 - 60).toFixed(0) + 'px;left:' + (Math.random() * 100).toFixed(1) + '%';
+      box.appendChild(i);
+    }
+  });
+  // foco que sigue al mouse en el hero
+  const hero = D.querySelector('.hero'), spot = D.querySelector('.spot');
+  if (hero && spot && matchMedia('(hover: hover)').matches) hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    spot.style.setProperty('--mx', (e.clientX - r.left) + 'px'); spot.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+  // titular: palabras; "control," en oro y "Excel." tachado
+  const h1 = D.querySelector('.hero h1');
+  if (h1) {
+    const txt = h1.textContent.trim(); h1.setAttribute('aria-label', txt);
+    h1.innerHTML = txt.split(/\s+/).map((w, i) => '<span class="w' + (/^control/i.test(w) ? ' gold' : '') + (/^Excel/i.test(w) ? ' x' : '') + '" style="--i:' + i + '" aria-hidden="true">' + w + '</span>').join(' ');
+  }
+  // títulos de sección: cada palabra en su máscara
+  D.querySelectorAll('main > section:not(.hero) h2').forEach(h => {
+    const txt = h.textContent.trim(); h.setAttribute('aria-label', txt);
+    h.innerHTML = txt.split(/\s+/).map((w, i) => '<span class="wm" aria-hidden="true"><span style="--i:' + i + '">' + w + '</span></span>').join(' ');
+  });
+  // apariciones al hacer scroll (clase "in"; "on" la usa el script de la línea de tiempo)
+  const groups = ['.problems .prob', '.mods .mod', '.proof', '#faq details'];
+  groups.forEach(sel => D.querySelectorAll(sel).forEach((el, i) => el.style.setProperty('--d', i)));
+  D.querySelectorAll('.ops tbody tr').forEach((el, i) => el.style.setProperty('--d', i));
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in'); io.unobserve(e.target);
+    if (e.target.classList.contains('ops')) countUp(e.target);
+  }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
+  D.querySelectorAll(groups.join(',') + ', .lead, .closing, .explorer, .ops, .form-wrap > div:last-child').forEach(el => io.observe(el));
+  const ioH = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('h2').forEach(h => h.classList.add('in')); ioH.unobserve(e.target); } }), {rootMargin: '0px 0px -25% 0px'});
+  D.querySelectorAll('main > section:not(.hero)').forEach(el => ioH.observe(el));
+  // contadores del panel
+  function countUp(box){
+    box.querySelectorAll('.ops-kpis b').forEach(b => {
+      const raw = b.textContent, num = parseInt(raw.replace(/\D/g, ''), 10); if (!num) return;
+      const pct = raw.includes('%'), t0 = performance.now(), dur = 1200;
+      const fmt = v => (pct ? v + '%' : v.toLocaleString('es-PE').replace(/,/g, ' '));
+      (function step(t){ const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); b.textContent = fmt(Math.round(num * e)); if (k < 1) requestAnimationFrame(step); else b.textContent = raw; })(t0);
+    });
+  }
+  // barra de progreso
+  const prog = D.querySelector('.prog-au');
+  const upd = () => { const m = D.documentElement.scrollHeight - innerHeight; prog.style.transform = 'scaleX(' + (m > 0 ? scrollY / m : 0) + ')'; };
+  addEventListener('scroll', upd, {passive: true}); upd();
+  // botones: onda al hacer clic e imán al pasar el mouse
+  D.addEventListener('pointerdown', e => {
+    const b = e.target.closest('.btn'); if (!b) return;
+    const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height), s = D.createElement('span');
+    s.className = 'rip'; s.style.cssText = 'width:' + d + 'px;height:' + d + 'px;left:' + (e.clientX - r.left - d / 2) + 'px;top:' + (e.clientY - r.top - d / 2) + 'px';
+    b.appendChild(s); setTimeout(() => s.remove(), 650);
+  });
+  if (matchMedia('(hover: hover)').matches) D.querySelectorAll('.btn-primary, .btn-ghost, .btn-wa').forEach(b => {
+    b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .15) + 'px,' + ((e.clientY - r.top - r.height / 2) * .25 - 2) + 'px)'; });
+    b.addEventListener('mouseleave', () => b.style.transform = '');
+  });
+})();
 </script>
 </body>
 </html>
