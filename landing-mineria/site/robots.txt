@@ -1,0 +1,17 @@
+# Acceso permitido a buscadores y a los revisores de anuncios (LAND-8)
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: OAI-AdsBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://landing_minerias.proshop.lat/sitemap.xml
