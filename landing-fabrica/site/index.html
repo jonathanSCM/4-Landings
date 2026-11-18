@@ -6,7 +6,7 @@
 <title>Software a medida para fábricas y control de producción | ProShop Perú</title>
 <meta name="description" content="Organiza órdenes de producción, inventarios, avances y entregas con software adaptado a tu fábrica. Diagnóstico gratuito con ProShop.">
 <link rel="canonical" href="https://landing_fabricas.proshop.lat/">
-<meta name="theme-color" content="#1e0b36">
+<meta name="theme-color" content="#1a1d22">
 <meta name="color-scheme" content="light">
 <meta property="og:title" content="Software a medida para fábricas y control de producción | ProShop Perú">
 <meta property="og:description" content="Órdenes de producción, materiales, avance por etapas y entregas en un solo sistema. Diagnóstico gratuito de 20 minutos.">
@@ -23,18 +23,18 @@
 <style>
 :root{
   color-scheme: light;
-  --purple:#1e0b36; --purple-2:#2c1052; --purple-3:#4b1a86;
-  --paper:light-dark(#f7f5fa,#150a26); --paper-2:light-dark(#efebf5,#1b0f30);
-  --card:light-dark(#ffffff,#1f1236); --ink:light-dark(#1b0f30,#f3eefa);
-  --ink-2:light-dark(#554a6a,#c7bcd9); --ink-3:light-dark(#857a9b,#9a8eb2);
-  --rule:light-dark(#e3dded,#31254a);
-  --accent:#22e3a6; --accent-ink:light-dark(#5a2bc0,#22e3a6); --on-accent:#16082b;
+  --purple:#1a1d22; --purple-2:#23272e; --purple-3:#4a3626; --hi:#ff8a2a;
+  --paper:light-dark(#f5f4f1,#14171b); --paper-2:light-dark(#ecebe6,#1a1d22);
+  --card:light-dark(#ffffff,#20242a); --ink:light-dark(#1a1d22,#f3eefa);
+  --ink-2:light-dark(#4f545c,#c4c8cd); --ink-3:light-dark(#80858d,#9aa0a8);
+  --rule:light-dark(#e2e0da,#353a42);
+  --accent:#22e3a6; --accent-ink:light-dark(#c2560a,#22e3a6); --on-accent:#16082b;
   --mint:light-dark(#0f9d74,#22e3a6); --danger:light-dark(#c0392b,#ff7a6b);
-  --gold:light-dark(#9a6b00,#f0c25a); --gold-fill:#e8b84a;
+  --gold:light-dark(#9a6b00,#f0c25a); --gold-fill:#ff8a2a;
   --sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
   --shell:1200px; --gutter:clamp(20px,4vw,48px); --sec-y:clamp(64px,9vw,120px);
   --r-card:16px; --r-md:12px; --r-btn:10px; --r-pill:999px;
-  --sombra:0 1px 2px rgba(30,11,54,.05),0 10px 30px rgba(30,11,54,.08);
+  --sombra:0 1px 2px rgba(26,29,34,.05),0 10px 30px rgba(26,29,34,.08);
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0}
@@ -62,7 +62,7 @@ h3{font-size:1.12rem;letter-spacing:-.015em;line-height:1.3}
 .btn[disabled]{opacity:.6;cursor:progress;transform:none}
 
 /* ---------- header ---------- */
-header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+header.top{position:sticky;top:0;z-index:50;background:rgba(26,29,34,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
 .top .shell{display:flex;align-items:center;justify-content:space-between;height:64px}
 .top img{height:30px;width:auto}
 .top .btn{padding:9px 16px;min-height:40px;font-size:.92rem}
@@ -70,44 +70,44 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdr
 /* ---------- hero ---------- */
 .hero{background:radial-gradient(1100px 520px at 88% -10%,var(--purple-3),transparent 62%),var(--purple);color:#fff;padding:clamp(48px,7vw,88px) 0 clamp(56px,8vw,104px);overflow:hidden}
 .hero-grid{display:grid;gap:56px;grid-template-columns:1fr 1.05fr;align-items:center}
-.hero .tag{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:#d9cfec;margin-bottom:22px}
+.hero .tag{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:#d5d8dc;margin-bottom:22px}
 .hero .tag::before{content:"";width:28px;height:2px;background:var(--gold-fill)}
-.hero p.sub{margin:22px 0 30px;color:#d9cfec;font-size:1.14rem;max-width:52ch}
+.hero p.sub{margin:22px 0 30px;color:#d5d8dc;font-size:1.14rem;max-width:52ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.micro{margin-top:18px;font-size:.92rem;color:#b9abd2}
+.micro{margin-top:18px;font-size:.92rem;color:#aeb3ba}
 
 /* hero stage: Excel -> tablero */
 .stage{position:relative;width:100%;aspect-ratio:1.12/1;min-height:360px}
 .dash,.chaos{position:absolute;inset:0;border-radius:18px;overflow:hidden}
-.dash{background:#150a26;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.5);color:#f3eefa;display:flex;flex-direction:column}
-.bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1b0f30;border-bottom:1px solid #31254a;flex:none}
-.bar i{width:9px;height:9px;border-radius:50%;background:#3a2c57}
-.bar span{margin-left:10px;color:#9a8eb2;font-size:.72rem}
+.dash{background:#14171b;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.5);color:#f3eefa;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1a1d22;border-bottom:1px solid #353a42;flex:none}
+.bar i{width:9px;height:9px;border-radius:50%;background:#4a4f58}
+.bar span{margin-left:10px;color:#9aa0a8;font-size:.72rem}
 .dash-body{padding:16px;display:grid;gap:12px;flex:1;align-content:start}
 .dash-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .dash-head h2{font-size:1rem;margin:0;letter-spacing:-.01em}
-.seg{display:inline-flex;background:#1f1236;border:1px solid #31254a;border-radius:var(--r-pill);padding:3px}
-.seg button{font:600 .74rem var(--sans);color:#c7bcd9;background:none;border:0;border-radius:var(--r-pill);padding:6px 12px;cursor:pointer;min-height:32px;transition:background .2s,color .2s}
+.seg{display:inline-flex;background:#20242a;border:1px solid #353a42;border-radius:var(--r-pill);padding:3px}
+.seg button{font:600 .74rem var(--sans);color:#c4c8cd;background:none;border:0;border-radius:var(--r-pill);padding:6px 12px;cursor:pointer;min-height:32px;transition:background .2s,color .2s}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
 .seg button[data-cur="oro"][aria-pressed="true"]{background:var(--gold-fill)}
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.kpi{background:#1f1236;border:1px solid #31254a;border-radius:10px;padding:10px 12px}
-.kpi small{display:block;color:#9a8eb2;font-size:.68rem}
+.kpi{background:#20242a;border:1px solid #353a42;border-radius:10px;padding:10px 12px}
+.kpi small{display:block;color:#9aa0a8;font-size:.68rem}
 .kpi b{font-size:clamp(.92rem,1.5vw,1.15rem);display:block;white-space:nowrap}
 .kpi b.pos{color:var(--accent)}
 .kpi b.au{color:var(--gold-fill)}
-.chart{display:flex;align-items:flex-end;gap:14px;height:88px;padding:10px 12px 0;background:#1f1236;border:1px solid #31254a;border-radius:10px}
+.chart{display:flex;align-items:flex-end;gap:14px;height:88px;padding:10px 12px 0;background:#20242a;border:1px solid #353a42;border-radius:10px}
 .chart div{flex:1;display:flex;gap:4px;align-items:flex-end;height:100%}
 .chart span{flex:1;border-radius:3px 3px 0 0;background:var(--accent);height:0;transition:height .9s var(--ease)}
-.chart span+span{background:#7a4fd0}
+.chart span+span{background:#ff8a2a}
 .units{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.unit{display:flex;justify-content:space-between;gap:8px;background:#1f1236;border:1px solid #31254a;border-radius:10px;padding:9px 12px;font-size:.78rem}
+.unit{display:flex;justify-content:space-between;gap:8px;background:#20242a;border:1px solid #353a42;border-radius:10px;padding:9px 12px;font-size:.78rem}
 .unit em{font-style:normal;font-weight:700;color:var(--accent)}
 .unit em.neg{color:#ff7a6b}
-.note-dash{font-size:.68rem;color:#9a8eb2}
-.legend{display:flex;gap:14px;font-size:.68rem;color:#9a8eb2}
+.note-dash{font-size:.68rem;color:#9aa0a8}
+.legend{display:flex;gap:14px;font-size:.68rem;color:#9aa0a8}
 .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;background:var(--accent)}
-.legend i+i,.legend span+span i{background:#7a4fd0}
+.legend i+i,.legend span+span i{background:#ff8a2a}
 
 .chaos{display:none;background:#f4f2ee;color:#2a2a2a;border:1px solid #cfcac1;box-shadow:0 30px 70px rgba(0,0,0,.4);font:500 .72rem/1.35 Calibri,'Segoe UI',Arial,sans-serif;z-index:2}
 .js .chaos{display:block}
@@ -131,7 +131,7 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdr
 @keyframes scan{0%{left:0;opacity:1}95%{opacity:1}100%{left:100%;opacity:0}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
 .js .chaos{clip-path:inset(0 0 0 0)}
-.stage-cap{margin-top:12px;font-size:.78rem;color:#b9abd2}
+.stage-cap{margin-top:12px;font-size:.78rem;color:#aeb3ba}
 
 /* ---------- problems ---------- */
 .problems{display:grid;gap:0;margin-top:36px;border-top:1px solid var(--rule)}
@@ -164,7 +164,7 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdr
 .track{height:10px;border-radius:99px;background:var(--rule);overflow:hidden}
 .fill{height:100%;width:0;border-radius:99px;background:var(--mint);transition:width 1s var(--ease)}
 .fill.au{background:var(--gold-fill)}
-.fill.wa{background:#7a4fd0}
+.fill.wa{background:#ff8a2a}
 .loan-form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .loan-form label{display:grid;gap:5px;font-weight:600;font-size:.82rem}
 .loan-form input,.loan-form select{font:inherit;padding:10px 12px;border-radius:var(--r-btn);border:1px solid var(--rule);background:var(--card);color:var(--ink);min-height:44px;width:100%}
@@ -191,12 +191,12 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdr
 
 /* ---------- trust ---------- */
 .trust{background:var(--purple);color:#fff}
-.trust .lead{color:#d9cfec}
+.trust .lead{color:#d5d8dc}
 .trust-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
 .trust ul{list-style:none;padding:0;display:grid;gap:14px}
-.trust li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);color:#e6ddf5}
+.trust li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);color:#e4e6e9}
 .trust li svg{flex:none;width:22px;height:22px;color:var(--accent);margin-top:2px}
-.badge{display:inline-block;margin-top:22px;font-size:.8rem;padding:6px 14px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.25);color:#d9cfec}
+.badge{display:inline-block;margin-top:22px;font-size:.8rem;padding:6px 14px;border-radius:var(--r-pill);border:1px solid rgba(255,255,255,.25);color:#d5d8dc}
 
 /* ---------- timeline ---------- */
 .timeline{position:relative;margin-top:44px;display:grid;gap:36px;padding-left:64px}
@@ -248,16 +248,16 @@ details p{padding:0 0 22px;color:var(--ink-2);max-width:62ch}
 /* ---------- final ---------- */
 .last{background:radial-gradient(900px 400px at 15% 120%,var(--purple-3),transparent 60%),var(--purple);color:#fff}
 .last h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:16ch}
-.last p{color:#d9cfec;margin:10px 0 28px;font-size:1.15rem}
+.last p{color:#d5d8dc;margin:10px 0 28px;font-size:1.15rem}
 footer{padding:32px 0 96px;color:var(--ink-3);font-size:.88rem}
 footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
 
-.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:rgba(30,11,54,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.12);transition:transform .3s var(--ease)}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:rgba(26,29,34,.96);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.12);transition:transform .3s var(--ease)}
 .sticky-cta.hide{transform:translateY(110%)}
 .sticky-cta .btn{flex:1;padding:12px 10px;font-size:.95rem}
 
 /* ---------- banner de cookies ---------- */
-.cookie{position:fixed;left:16px;bottom:16px;z-index:70;max-width:420px;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:0 20px 60px rgba(30,11,54,.25);padding:20px;display:none}
+.cookie{position:fixed;left:16px;bottom:16px;z-index:70;max-width:420px;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:0 20px 60px rgba(26,29,34,.25);padding:20px;display:none}
 .cookie.show{display:block;animation:rowin .35s var(--ease) both}
 .cookie h2{font-size:1.05rem;margin:0 0 6px;letter-spacing:-.01em}
 .cookie p{font-size:.88rem;color:var(--ink-2);margin-bottom:14px}
@@ -297,13 +297,78 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 /* fábricas: caso real y estados */
 .case-img{margin:0}
 .case-img img{width:100%;height:auto;display:block;border-radius:var(--r-card);border:1px solid rgba(255,255,255,.14)}
-.case-img figcaption{font-size:.8rem;color:#d9cfec;margin-top:8px}
+.case-img figcaption{font-size:.8rem;color:#d5d8dc;margin-top:8px}
 .case-name{font-size:1.15rem;margin:22px 0 8px;color:#fff}
-.trust p.case{color:#d9cfec;margin:0 0 10px}
+.trust p.case{color:#d5d8dc;margin:0 0 10px}
 .trust p.case b{color:#fff}
 .st{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
 .st.ok{background:#d6f8ec;color:#0b6b4c}.st.go{background:#ece3fb;color:#4b1a86}.st.late{background:#ffe1dc;color:#a3271a}.st.wait{background:#f6ecd2;color:#7a5a12}
 .tbl td .st{float:right}
+
+/* TEMA FÁBRICA · planta industrial */
+.hero{background:radial-gradient(900px 480px at 50% -20%,var(--purple-3),transparent 65%),var(--purple);position:relative}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(-45deg,var(--hi) 0 14px,#1a1d22 14px 28px);opacity:.9}
+.hero-grid{grid-template-columns:1fr;gap:44px;text-align:center}
+.hero-grid>div:first-child{max-width:860px;margin:0 auto}
+.hero p.sub{margin-left:auto;margin-right:auto}
+.hero .cta-row{justify-content:center}
+.hero .tag{justify-content:center}
+.hero .tag::before{background:var(--hi)}
+/* tablero de planta */
+.plant{background:#14171b;border:1px solid #353a42;border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,.5);overflow:hidden;text-align:left}
+.plant .bar{background:#1a1d22;border-bottom:1px solid #353a42}
+.plant-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px 0;flex-wrap:wrap}
+.plant-head h2{font-size:1rem;margin:0;color:#f3f4f6;letter-spacing:-.01em}
+.plant-head small{color:#9aa0a8;font-size:.75rem}
+.plant-head small b{color:var(--hi)}
+.lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 18px 18px}
+.lane{background:#20242a;border:1px solid #353a42;border-radius:12px;padding:10px;min-height:190px;display:flex;flex-direction:column;gap:8px}
+.lane h3{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9aa0a8;display:flex;justify-content:space-between}
+.lane h3 span{color:var(--hi)}
+.op{background:#2a2f36;border:1px solid #3d434c;border-left:3px solid var(--hi);border-radius:8px;padding:8px 10px;color:#e4e6e9;font-size:.74rem;line-height:1.35;animation:opin .5s var(--ease) both}
+.op b{display:block;font-size:.8rem;color:#fff}
+.op.done{border-left-color:var(--accent)}
+.op.late{border-left-color:#ff6b5b}
+@keyframes opin{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
+.plant-foot{display:flex;gap:18px;flex-wrap:wrap;padding:0 18px 16px;font-size:.72rem;color:#9aa0a8}
+.plant-foot i{display:inline-block;width:10px;height:3px;margin-right:6px;vertical-align:middle;background:var(--hi)}
+.plant-foot span:nth-child(2) i{background:var(--accent)}.plant-foot span:nth-child(3) i{background:#ff6b5b}
+/* problemas como órdenes */
+.problems{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border-top:0;counter-reset:op}
+.prob{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--rule);border-top:6px solid var(--hi);border-radius:4px 4px 12px 12px;padding:22px 22px 18px;box-shadow:var(--sombra);position:relative;counter-increment:op}
+.prob::before{content:"ORDEN 00" counter(op);font:700 .7rem 'Consolas','Courier New',monospace;letter-spacing:.08em;color:var(--ink-3)}
+.prob::after{content:"";position:absolute;left:12px;right:12px;bottom:52px;border-top:2px dashed var(--rule)}
+.prob .cell{align-self:flex-start;margin-top:auto;transform:rotate(-2deg)}
+/* solución como flujo */
+.tabs{gap:0;padding:12px;background:var(--paper-2)}
+.tabs button{border-radius:0;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%);padding:12px 30px;background:var(--card);margin-right:-8px}
+.tabs button:first-child{clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%);border-radius:8px 0 0 8px}
+.tabs button[aria-selected="true"]{background:var(--hi);color:#1a1d22}
+.panel li::before{background:var(--hi)}
+/* metodología como cinta transportadora */
+.timeline{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:72px 0 0}
+.timeline::before{left:0;right:0;top:20px;bottom:auto;width:auto;height:10px;border-radius:6px;background:repeating-linear-gradient(90deg,#c9c6bd 0 18px,#dedbd3 18px 36px);background-size:36px 10px;animation:belt 1.2s linear infinite}
+@keyframes belt{to{background-position:36px 0}}
+.timeline .line{display:none}
+.tstep .n{left:0;top:-72px;background:var(--card)}
+.tstep.on .n{background:var(--hi);border-color:var(--hi);color:#1a1d22}
+.tstep h3{font-size:1.2rem}
+.trust{border-top:10px solid var(--hi)}
+.tstep:nth-child(n){position:relative}
+@media (max-width:960px){
+  .lanes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .problems{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .lanes{grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+  .lane{min-height:150px}
+  .tabs button{padding:10px 22px;font-size:.85rem}
+  .timeline{grid-template-columns:1fr;padding-top:0;padding-left:64px}
+  .timeline::before{display:none}
+  .tstep .n{left:-64px;top:-4px}
+}
+@media (prefers-reduced-motion:reduce){.timeline::before{animation:none}}
 </style>
 </head>
 <body>
@@ -331,58 +396,16 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
     </div>
 
     <div>
-      <div class="stage" id="stage" role="img" aria-label="Ejemplo conceptual: una hoja de pedidos desordenada se transforma en un tablero de producción ordenado, con datos ficticios.">
-        <!-- tablero (debajo) -->
-        <div class="dash" aria-hidden="true">
-          <div class="bar"><i></i><i></i><i></i><span>panel.tuempresa.com · Producción</span></div>
-          <div class="dash-body">
-            <div class="dash-head">
-              <h2>Órdenes de producción</h2>
-              <div class="seg" id="cur">
-                <button type="button" data-cur="sem" aria-pressed="true">Semana</button>
-                <button type="button" data-cur="mes" aria-pressed="false">Mes</button>
-                <button type="button" data-cur="tri" aria-pressed="false">Trimestre</button>
-              </div>
-            </div>
-            <div class="kpis">
-              <div class="kpi"><small>Órdenes activas</small><b id="k1">—</b></div>
-              <div class="kpi"><small>En producción</small><b id="k2">—</b></div>
-              <div class="kpi"><small>Entregadas a tiempo</small><b id="k3" class="pos">—</b></div>
-            </div>
-            <div class="chart" id="chart"><div><span></span><span></span></div><div><span></span><span></span></div><div><span></span><span></span></div></div>
-            <div class="legend"><span><i></i>Órdenes ingresadas</span><span><i></i>Órdenes entregadas</span></div>
-            <div class="units">
-              <div class="unit"><span>Atrasadas</span><em id="u1">—</em></div>
-              <div class="unit"><span>Material por reponer</span><em id="u2">—</em></div>
-            </div>
-            <p class="note-dash">Cada orden muestra su etapa, responsable y fecha comprometida.</p>
-          </div>
+      <div class="plant" role="img" aria-label="Ejemplo conceptual: órdenes de producción avanzando por etapas en un tablero de planta, con datos ficticios.">
+        <div class="bar"><i></i><i></i><i></i><span>panel.tuempresa.com · Planta</span></div>
+        <div class="plant-head"><h2>Órdenes en planta · hoy</h2><small><b id="pl-n">0</b> órdenes en curso</small></div>
+        <div class="lanes" id="lanes" aria-hidden="true">
+          <div class="lane" data-lane="0"><h3>Corte <span></span></h3></div>
+          <div class="lane" data-lane="1"><h3>Armado <span></span></h3></div>
+          <div class="lane" data-lane="2"><h3>Acabado <span></span></h3></div>
+          <div class="lane" data-lane="3"><h3>Despacho <span></span></h3></div>
         </div>
-        <!-- hoja caótica (encima, se barre) -->
-        <div class="chaos" aria-hidden="true">
-          <div class="xl-bar"><span>pedidos_planta_FINAL(3).xlsx</span><span>Modo de compatibilidad</span></div>
-          <table>
-            <colgroup><col style="width:9%"><col style="width:30%"><col style="width:19%"><col style="width:21%"><col style="width:21%"></colgroup>
-            <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
-            <tbody>
-              <tr><th>1</th><td>Pedido</td><td>Cliente</td><td>Cant.</td><td>¿Entrega?</td></tr>
-              <tr><th>2</th><td>OP-118</td><td>Distrib. Norte</td><td class="n">400</td><td>12/11</td></tr>
-              <tr><th>3</th><td>OP-119</td><td>¿confirmó?</td><td class="n hl">250 / 300</td><td>ver chat</td></tr>
-              <tr><th>4</th><td class="red">sin código</td><td>pedido WhatsApp</td><td class="n">80</td><td class="ref">#REF!</td></tr>
-              <tr><th>5</th><td>OP-121</td><td>Comercial Sur</td><td class="n">1200</td><td>15/11</td></tr>
-              <tr><th>6</th><td>OP-121</td><td>Comercial Sur (dup)</td><td class="n red">1200</td><td>15/11</td></tr>
-              <tr><th>7</th><td>OP-122</td><td>¿en corte?</td><td class="n">—</td><td class="ref">#VALOR!</td></tr>
-              <tr><th>8</th><td>tela azul</td><td>stock</td><td class="n gr">¿quedan?</td><td>?</td></tr>
-              <tr><th>9</th><td></td><td>TOTAL ???</td><td class="n hl">no cuadra</td><td></td></tr>
-              <tr><th>10</th><td>OP-123</td><td>Tienda Lima</td><td class="n">60</td><td>urgente!!</td></tr>
-              <tr><th>11</th><td class="red">nov?</td><td>reproceso</td><td class="n">3O</td><td class="ref">#REF!</td></tr>
-              <tr><th>12</th><td>OP-124</td><td>Mayorista C.</td><td class="n gr">500</td><td>20/11</td></tr>
-            </tbody>
-          </table>
-          <div class="sticky sticky2">¿En qué etapa va la OP-119?</div>
-          <div class="sticky">¿Quién prometió esa fecha?</div>
-        </div>
-        <div class="scan" aria-hidden="true"></div>
+        <div class="plant-foot"><span><i></i>En proceso</span><span><i></i>Lista para despacho</span><span><i></i>En riesgo de atraso</span></div>
       </div>
       <p class="stage-cap">Ejemplo conceptual con datos ficticios.</p>
     </div>
@@ -710,31 +733,41 @@ function countTo(el, to, f, dur=900){
   })(t0);
 }
 
-/* ===== Hero: tablero ===== */
-const DATA = {
-  sem:{k:[24,9,92], u:[2,3],  c:[[18,15],[22,19],[24,21]]},
-  mes:{k:[86,31,89], u:[5,4], c:[[70,61],[78,70],[86,77]]},
-  tri:{k:[240,52,87], u:[11,6], c:[[210,188],[228,205],[240,214]]}
-};
-let cur = 'sem';
-function renderDash(){
-  const d = DATA[cur];
-  countTo($('#k1'), d.k[0], nf); countTo($('#k2'), d.k[1], nf); countTo($('#k3'), d.k[2], pct);
-  countTo($('#u1'), d.u[0], nf); countTo($('#u2'), d.u[1], nf);
-  $('#u1').className = d.u[0] > 0 ? 'neg' : ''; $('#u2').className = '';
-  const max = Math.max(...d.c.flat());
-  $$('#chart div').forEach((g,i)=>{ const s = $$('span',g); s[0].style.height = (d.c[i][0]/max*100)+'%'; s[1].style.height = (d.c[i][1]/max*100)+'%'; });
+/* ===== Hero: órdenes avanzando por etapas ===== */
+const OPS = [
+  {id:'OP-118', c:'Distrib. Norte', q:'400 unid.', st:3},
+  {id:'OP-119', c:'Mayorista A.',   q:'300 unid.', st:2, late:true},
+  {id:'OP-120', c:'Tienda Lima',    q:'60 unid.',  st:3},
+  {id:'OP-121', c:'Comercial Sur',  q:'1 200 unid.', st:1},
+  {id:'OP-122', c:'Hotel Centro',   q:'150 unid.', st:0},
+  {id:'OP-123', c:'Mayorista C.',   q:'500 unid.', st:0}
+];
+const lanes = $$('#lanes .lane');
+function renderPlant(){
+  lanes.forEach((l, k) => {
+    $$('.op', l).forEach(e => e.remove());
+    const here = OPS.filter(o => o.st === k);
+    $('h3 span', l).textContent = here.length;
+    here.forEach(o => {
+      const d = document.createElement('div');
+      d.className = 'op' + (k === 3 ? ' done' : o.late ? ' late' : '');
+      d.innerHTML = '<b>' + o.id + '</b>' + o.c + ' · ' + o.q;
+      l.appendChild(d);
+    });
+  });
+  $('#pl-n').textContent = OPS.filter(o => o.st < 3).length;
 }
-$$('#cur button').forEach(b => b.addEventListener('click', () => {
-  cur = b.dataset.cur;
-  $$('#cur button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  renderDash();
-}));
-const stage = $('#stage');
-if (REDUCED) renderDash();
-else new IntersectionObserver((es, io) => es.forEach(e => {
-  if (e.isIntersecting){ stage.classList.add('play'); setTimeout(renderDash, 1900); io.disconnect(); }
-}), {threshold:.45}).observe(stage);
+renderPlant();
+if (!REDUCED) setInterval(() => {
+  // avanza una orden en curso; la que sale de despacho vuelve como orden nueva
+  const movibles = OPS.filter(o => o.st < 3);
+  const o = movibles[Math.floor(Math.random() * movibles.length)];
+  o.st++;
+  const salida = OPS.find(x => x.st === 3 && x !== o && OPS.filter(y => y.st === 3).length > 2);
+  if (salida) { salida.st = 0; salida.late = false; salida.id = 'OP-' + (124 + Math.floor(Math.random()*20)); }
+  if (o.st === 3) o.late = false;
+  renderPlant();
+}, 2200);
 
 /* ===== Explorador (pestañas) ===== */
 const tabs = $$('.tabs [role=tab]');
