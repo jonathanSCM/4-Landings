@@ -301,6 +301,52 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .js .chaos,.js .scan{display:none}
 }
+
+:root{--ox:#22e3a6}
+/* REVISIÓN · panel operativo en Experiencia + arreglos generales */
+.trust-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:48px}
+.trust .lead{margin-bottom:18px}
+.proof{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border:1px solid rgba(255,255,255,.16);border-radius:var(--r-md);background:rgba(255,255,255,.04)}
+.proof svg{flex:none;width:22px;height:22px;color:var(--ox);margin-top:2px}
+.proof b{color:#fff;display:block;margin-bottom:2px}
+.proof span{color:rgba(255,255,255,.72);font-size:.93rem}
+.ops{background:#fff;color:#1b1d22;border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,.45);overflow:hidden;font-size:.86rem}
+.ops-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #eceef2}
+.ops-top b{font-size:1rem;letter-spacing:-.01em}
+.ops-top small{color:#7a8090;font-size:.75rem}
+.ops-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #eceef2}
+.ops-kpis div{padding:12px 16px;border-right:1px solid #eceef2}
+.ops-kpis div:last-child{border-right:0}
+.ops-kpis small{display:block;color:#7a8090;font-size:.7rem;line-height:1.3}
+.ops-kpis b{display:block;font-size:1.35rem;letter-spacing:-.02em;margin-top:2px}
+.ops-kpis b.good{color:#0f9d74}.ops-kpis b.warn{color:#c2410c}
+.ops table{width:100%;border-collapse:collapse}
+.ops th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:#7a8090;font-weight:700;text-align:left;padding:10px 16px 6px}
+.ops td{padding:9px 16px;border-top:1px solid #f0f1f4;vertical-align:middle}
+.ops td small{display:block;color:#7a8090;font-size:.72rem}
+.ops .tag-s{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag-s.ok{background:#d6f8ec;color:#0b6b4c}.tag-s.go{background:#e0ecff;color:#1d4fa8}.tag-s.late{background:#ffe1dc;color:#a3271a}.tag-s.wait{background:#fbefd5;color:#8a5a00}
+.ops .bar{height:6px;border-radius:6px;background:#eceef2;overflow:hidden;min-width:70px}
+.ops .bar i{display:block;height:100%;border-radius:6px;background:var(--ox)}
+.ops-foot{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;background:#f7f8fa;border-top:1px solid #eceef2;font-size:.78rem;color:#4a5060}
+.ops-foot b{color:#1b1d22}
+.ops-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--ox);margin-top:6px}
+.ops-cap{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:10px}
+/* FAQ alineada con el resto de secciones */
+.faq{max-width:var(--shell)}
+.faq>h2,.faq>div{max-width:840px}
+/* menos aire entre metodología y formulario */
+#metodologia{padding-bottom:clamp(48px,6vw,80px)}
+@media (max-width:960px){
+  .trust-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .ops-kpis{grid-template-columns:1fr 1fr}
+  .ops-kpis div:nth-child(2){border-right:0}
+  .ops-kpis div:nth-child(-n+2){border-bottom:1px solid #eceef2}
+  .ops .hide-m{display:none}
+  .ops td,.ops th{padding-left:12px;padding-right:12px}
+}
 </style>
 </head>
 <body>
@@ -394,17 +440,14 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
       <article class="prob">
         <h3>Información repartida</h3>
         <p>Operaciones y administración consolidan datos de varias fuentes y archivos.</p>
-        <span class="cell" aria-hidden="true">versión_final(2).xlsx</span>
       </article>
       <article class="prob">
         <h3>Reportes demorados</h3>
         <p>El equipo invierte tiempo recopilando datos antes de tomar decisiones.</p>
-        <span class="cell" aria-hidden="true">#CALCULANDO…</span>
       </article>
       <article class="prob">
         <h3>Poca trazabilidad</h3>
         <p>Cuesta identificar responsables, fechas o cambios en registros importantes.</p>
-        <span class="cell" aria-hidden="true">¿quién lo cambió?</span>
       </article>
     </div>
     <p class="closing">No necesitas seguir acumulando herramientas. Necesitas información conectada con tus procesos.</p>
@@ -498,14 +541,32 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   <div class="shell trust-grid">
     <div>
       <h2>Experiencia real. Soluciones a medida.</h2>
-      <p class="lead">ProShop tiene experiencia desarrollando software contable y de control administrativo para una compañía minera pequeña. No es un producto genérico: primero entendemos cómo trabajas y después construimos el sistema alrededor de tus procesos, por fases.</p>
-      <span class="badge">Las pantallas de esta página son ejemplos conceptuales con datos ficticios</span>
+      <p class="lead">No es un producto genérico: primero entendemos cómo trabajas y después construimos el sistema alrededor de tus procesos, por fases.</p>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Experiencia en minería de pequeña escala</b><span>ProShop desarrolló software contable y de control administrativo para una compañía minera pequeña.</span></div></div>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Alcance por escrito antes de desarrollar</b><span>Etapas, entregables y soporte acordados en la propuesta.</span></div></div>
     </div>
-    <ul>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Se adapta a tu forma de operar, no al revés.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Empezamos por el proceso que más trabajo o errores te genera.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Alcance, etapas y soporte por escrito antes de desarrollar.</li>
-    </ul>
+    <div>
+      <div class="ops" role="img" aria-label="Ejemplo conceptual de un panel de control administrativo minero con aprobaciones pendientes e historial de cambios, con datos ficticios.">
+        <div class="ops-top"><b>Control administrativo · Noviembre</b><small>Unidad A · Unidad B</small></div>
+        <div class="ops-kpis">
+          <div><small>Registros del mes</small><b>1 284</b></div>
+          <div><small>Por aprobar</small><b class="warn">7</b></div>
+          <div><small>Aprobados a tiempo</small><b class="good">96%</b></div>
+          <div><small>Reportes enviados</small><b>12</b></div>
+        </div>
+        <table>
+          <thead><tr><th>Solicitud</th><th class="hide-m">Unidad</th><th>Monto</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>Compra de explosivos<small>Registró: Logística · 14/11</small></td><td class="hide-m">Unidad A</td><td>S/ 7 200</td><td><span class="tag-s wait">Por aprobar</span></td></tr>
+            <tr><td>Planilla quincena<small>Registró: RR. HH. · 15/11</small></td><td class="hide-m">Unidad B</td><td>S/ 41 650</td><td><span class="tag-s ok">Aprobado</span></td></tr>
+            <tr><td>Combustible camionetas<small>Registró: Operaciones · 16/11</small></td><td class="hide-m">Unidad A</td><td>S/ 3 300</td><td><span class="tag-s go">En revisión</span></td></tr>
+            <tr><td>Pago a contratista<small>Registró: Administración · 16/11</small></td><td class="hide-m">Unidad B</td><td>S/ 15 650</td><td><span class="tag-s late">Observado</span></td></tr>
+          </tbody>
+        </table>
+        <div class="ops-foot"><span class="ops-dot"></span><span><b>Historial:</b> “Pago a contratista” fue observado por Gerencia el 17/11 a las 09:42 — falta adjuntar comprobante.</span></div>
+      </div>
+      <p class="ops-cap">Ejemplo conceptual con datos ficticios.</p>
+    </div>
   </div>
 </section>
 

@@ -306,9 +306,13 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .tbl td .st{float:right}
 
 /* TEMA FÁBRICA · planta industrial */
+.hero{padding-top:clamp(32px,4.5vw,56px)!important}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+.hero .tag{margin-bottom:14px}
+.hero p.sub{margin:16px auto 22px}
 .hero{background:radial-gradient(900px 480px at 50% -20%,var(--purple-3),transparent 65%),var(--purple);position:relative}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(-45deg,var(--hi) 0 14px,#1a1d22 14px 28px);opacity:.9}
-.hero-grid{grid-template-columns:1fr;gap:44px;text-align:center}
+.hero-grid{grid-template-columns:1fr;gap:30px;text-align:center}
 .hero-grid>div:first-child{max-width:860px;margin:0 auto}
 .hero p.sub{margin-left:auto;margin-right:auto}
 .hero .cta-row{justify-content:center}
@@ -322,7 +326,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .plant-head small{color:#9aa0a8;font-size:.75rem}
 .plant-head small b{color:var(--hi)}
 .lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 18px 18px}
-.lane{background:#20242a;border:1px solid #353a42;border-radius:12px;padding:10px;min-height:190px;display:flex;flex-direction:column;gap:8px}
+.lane{background:#20242a;border:1px solid #353a42;border-radius:12px;padding:10px;min-height:150px;display:flex;flex-direction:column;gap:8px}
 .lane h3{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9aa0a8;display:flex;justify-content:space-between}
 .lane h3 span{color:var(--hi)}
 .op{background:#2a2f36;border:1px solid #3d434c;border-left:3px solid var(--hi);border-radius:8px;padding:8px 10px;color:#e4e6e9;font-size:.74rem;line-height:1.35;animation:opin .5s var(--ease) both}
@@ -337,7 +341,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .problems{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;border-top:0;counter-reset:op}
 .prob{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--rule);border-top:6px solid var(--hi);border-radius:4px 4px 12px 12px;padding:22px 22px 18px;box-shadow:var(--sombra);position:relative;counter-increment:op}
 .prob::before{content:"ORDEN 00" counter(op);font:700 .7rem 'Consolas','Courier New',monospace;letter-spacing:.08em;color:var(--ink-3)}
-.prob::after{content:"";position:absolute;left:12px;right:12px;bottom:52px;border-top:2px dashed var(--rule)}
 .prob .cell{align-self:flex-start;margin-top:auto;transform:rotate(-2deg)}
 /* solución como flujo */
 .tabs{gap:0;padding:12px;background:var(--paper-2)}
@@ -431,8 +434,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   /* órdenes (problemas): se imprimen desde arriba y luego se estampa el sello */
   .mo .prob[data-rv]{opacity:0;transform:translateY(-50px) rotate(-4deg);transition:opacity .5s,transform .7s cubic-bezier(.3,1.4,.5,1);transition-delay:calc(var(--d,0)*160ms)}
   .mo .prob[data-rv].on{opacity:1;transform:none}
-  .mo .prob[data-rv] .cell{opacity:0;transform:scale(2.4) rotate(-12deg)}
-  .mo .prob[data-rv].on .cell{animation:stamp .4s cubic-bezier(.5,0,.75,0) forwards;animation-delay:calc(var(--d,0)*160ms + .7s)}
   @keyframes stamp{to{opacity:1;transform:rotate(-2deg) scale(1)}}
 
   /* módulos, FAQ, formulario: entran deslizándose como piezas */
@@ -456,6 +457,52 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   /* tarjetas con inclinación 3D al pasar el mouse */
   .prob.on,.mod.on,.case-img{transition:transform .2s ease-out,box-shadow .2s}
   .tilt:hover{box-shadow:0 22px 50px rgba(26,29,34,.18)}
+}
+
+:root{--ox:#ff8a2a}
+/* REVISIÓN · panel operativo en Experiencia + arreglos generales */
+.trust-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:48px}
+.trust .lead{margin-bottom:18px}
+.proof{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border:1px solid rgba(255,255,255,.16);border-radius:var(--r-md);background:rgba(255,255,255,.04)}
+.proof svg{flex:none;width:22px;height:22px;color:var(--ox);margin-top:2px}
+.proof b{color:#fff;display:block;margin-bottom:2px}
+.proof span{color:rgba(255,255,255,.72);font-size:.93rem}
+.ops{background:#fff;color:#1b1d22;border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,.45);overflow:hidden;font-size:.86rem}
+.ops-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #eceef2}
+.ops-top b{font-size:1rem;letter-spacing:-.01em}
+.ops-top small{color:#7a8090;font-size:.75rem}
+.ops-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #eceef2}
+.ops-kpis div{padding:12px 16px;border-right:1px solid #eceef2}
+.ops-kpis div:last-child{border-right:0}
+.ops-kpis small{display:block;color:#7a8090;font-size:.7rem;line-height:1.3}
+.ops-kpis b{display:block;font-size:1.35rem;letter-spacing:-.02em;margin-top:2px}
+.ops-kpis b.good{color:#0f9d74}.ops-kpis b.warn{color:#c2410c}
+.ops table{width:100%;border-collapse:collapse}
+.ops th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:#7a8090;font-weight:700;text-align:left;padding:10px 16px 6px}
+.ops td{padding:9px 16px;border-top:1px solid #f0f1f4;vertical-align:middle}
+.ops td small{display:block;color:#7a8090;font-size:.72rem}
+.ops .tag-s{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag-s.ok{background:#d6f8ec;color:#0b6b4c}.tag-s.go{background:#e0ecff;color:#1d4fa8}.tag-s.late{background:#ffe1dc;color:#a3271a}.tag-s.wait{background:#fbefd5;color:#8a5a00}
+.ops .pbar{height:6px;border-radius:6px;background:#eceef2;overflow:hidden;min-width:70px}
+.ops .pbar i{display:block;height:100%;border-radius:6px;background:var(--ox)}
+.ops-foot{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;background:#f7f8fa;border-top:1px solid #eceef2;font-size:.78rem;color:#4a5060}
+.ops-foot b{color:#1b1d22}
+.ops-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--ox);margin-top:6px}
+.ops-cap{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:10px}
+/* FAQ alineada con el resto de secciones */
+.faq{max-width:var(--shell)}
+.faq>h2,.faq>div{max-width:840px}
+/* menos aire entre metodología y formulario */
+#metodologia{padding-bottom:clamp(48px,6vw,80px)}
+@media (max-width:960px){
+  .trust-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .ops-kpis{grid-template-columns:1fr 1fr}
+  .ops-kpis div:nth-child(2){border-right:0}
+  .ops-kpis div:nth-child(-n+2){border-bottom:1px solid #eceef2}
+  .ops .hide-m{display:none}
+  .ops td,.ops th{padding-left:12px;padding-right:12px}
 }
 </style>
 </head>
@@ -510,17 +557,14 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
       <article class="prob">
         <h3>Órdenes que se pierden entre áreas</h3>
         <p>Ventas confirma fechas sin una visión clara de carga y avance de producción.</p>
-        <span class="cell" aria-hidden="true">¿quién confirmó el 15/11?</span>
       </article>
       <article class="prob">
         <h3>Inventario desactualizado</h3>
         <p>Los materiales se registran tarde y dificultan planificar compras o fabricación.</p>
-        <span class="cell" aria-hidden="true">stock: ¿?</span>
       </article>
       <article class="prob">
         <h3>Seguimiento por mensajes</h3>
         <p>Para saber el estado de un pedido hay que llamar o preguntar a varias personas.</p>
-        <span class="cell" aria-hidden="true">“¿ya salió mi pedido?”</span>
       </article>
     </div>
     <p class="closing">No necesitas seguir acumulando herramientas. Necesitas información conectada con tus procesos.</p>
@@ -613,21 +657,31 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   <div class="shell trust-grid">
     <div>
       <h2>Experiencia real. Soluciones a medida.</h2>
-      <p class="lead">ProShop desarrolló el sistema interno de un taller de confección: lleva cada pedido desde la cotización hasta la entrega. No es un producto genérico: primero entendemos cómo trabajas y después construimos el sistema alrededor de tus procesos, por fases.</p>
-      <h3 class="case-name">Santa Isabel · Taller de confección</h3>
-      <p class="case"><b>El reto.</b> Ver cada día qué pedidos estaban en producción, cuáles listos, qué se entregaba en la semana y qué se había atrasado.</p>
-      <span class="badge">Las demás pantallas de esta página son ejemplos conceptuales con datos ficticios</span>
+      <p class="lead">No es un producto genérico: primero entendemos cómo trabaja tu planta y después construimos el sistema alrededor de tus procesos, por fases.</p>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Ya lo hicimos en un taller de producción</b><span>Santa Isabel, taller de confección: su sistema lleva cada pedido desde la cotización hasta la entrega y muestra cada día qué está en producción, listo o atrasado.</span></div></div>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Pensado para usarse en planta</b><span>Pantallas que el equipo actualiza desde el celular, sin volver a la oficina.</span></div></div>
     </div>
     <div>
-      <figure class="case-img">
-        <img src="img/proyectos/santa-isabel-tablero.webp" alt="Tablero real del sistema de Santa Isabel con totales de pedidos en producción, terminados y atrasados" width="800" height="738" loading="lazy" decoding="async">
-        <figcaption>Pantalla real del sistema. Se muestran totales, no datos de clientes.</figcaption>
-      </figure>
-      <ul style="margin-top:18px">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Tablero diario: pedidos activos, en producción, terminados y atrasados.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Planificación de la semana por estado o por responsable.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Calendario de entregas y exportación a Excel.</li>
-      </ul>
+      <div class="ops" role="img" aria-label="Ejemplo conceptual de un panel de control de producción con órdenes, avance y alertas de material, con datos ficticios.">
+        <div class="ops-top"><b>Control de producción · Semana 46</b><small>Actualizado hace 2 min</small></div>
+        <div class="ops-kpis">
+          <div><small>Órdenes activas</small><b>24</b></div>
+          <div><small>En producción</small><b>9</b></div>
+          <div><small>Entregas a tiempo</small><b class="good">92%</b></div>
+          <div><small>Atrasadas</small><b class="warn">2</b></div>
+        </div>
+        <table>
+          <thead><tr><th>Orden</th><th>Avance</th><th class="hide-m">Entrega</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>OP-121 · Comercial Sur<small>1 200 unid. · Acabado</small></td><td><div class="pbar"><i style="width:72%"></i></div></td><td class="hide-m">Jue 15</td><td><span class="tag-s go">En curso</span></td></tr>
+            <tr><td>OP-119 · Mayorista A.<small>300 unid. · Armado</small></td><td><div class="pbar"><i style="width:45%"></i></div></td><td class="hide-m">Mié 14</td><td><span class="tag-s late">Atrasada</span></td></tr>
+            <tr><td>OP-120 · Tienda Lima<small>60 unid. · Empaque</small></td><td><div class="pbar"><i style="width:100%"></i></div></td><td class="hide-m">Mar 13</td><td><span class="tag-s ok">Lista</span></td></tr>
+            <tr><td>OP-124 · Mayorista C.<small>500 unid. · Corte</small></td><td><div class="pbar"><i style="width:12%"></i></div></td><td class="hide-m">Vie 16</td><td><span class="tag-s wait">Falta material</span></td></tr>
+          </tbody>
+        </table>
+        <div class="ops-foot"><span class="ops-dot"></span><span><b>Alerta de material:</b> cajas de empaque bajo el mínimo — OP-124 no puede pasar a empaque sin reposición.</span></div>
+      </div>
+      <p class="ops-cap">Ejemplo conceptual con datos ficticios.</p>
     </div>
   </div>
 </section>
@@ -977,7 +1031,7 @@ document.addEventListener('click', e => {
   const upd = () => { const m = document.documentElement.scrollHeight - innerHeight; prog.style.transform = 'scaleX(' + (m > 0 ? scrollY / m : 0) + ')'; };
   addEventListener('scroll', upd, {passive: true}); upd();
   // apariciones al hacer scroll
-  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.trust li', '#faq details', '.closing', '.explorer', '.case-img', '.form-wrap > div']
+  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.proof', '.ops', '#faq details', '.closing', '.explorer', '.form-wrap > div']
     .forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('[data-rv]:not(.tstep)').forEach(el => io.observe(el));
@@ -997,7 +1051,7 @@ document.addEventListener('click', e => {
     }).observe(lanes, {childList: true, subtree: true});
   }
   // inclinación 3D de tarjetas al pasar el mouse (solo con mouse)
-  if (matchMedia('(hover: hover)').matches) document.querySelectorAll('.prob, .mod, .case-img').forEach(c => {
+  if (matchMedia('(hover: hover)').matches) document.querySelectorAll('.prob, .mod, .ops').forEach(c => {
     c.classList.add('tilt');
     c.addEventListener('mousemove', e => { if (!c.classList.contains('on') && c.hasAttribute('data-rv')) return; const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; c.style.transform = 'perspective(800px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg) translateY(-4px)'; });
     c.addEventListener('mouseleave', () => c.style.transform = '');

@@ -306,6 +306,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .tbl td .st{float:right}
 
 /* TEMA TRANSPORTE · ruta y despacho */
+@media (min-width:961px){.hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px}}
+.hero h1{font-size:clamp(2.2rem,4.4vw,3.6rem)}
 .hero{background:radial-gradient(1000px 520px at 85% -10%,var(--purple-3),transparent 62%),var(--purple)}
 .hero .tag::before{background:var(--hi)}
 /* despachos en vivo */
@@ -328,13 +330,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .live-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 18px 16px}
 .live-foot div{background:#12263f;border:1px solid #24405f;border-radius:10px;padding:8px 10px;font-size:.68rem;color:#8fa3ba}
 .live-foot b{display:block;font-size:1.05rem;color:#fff}
-/* línea de ruta entre secciones */
-@media (min-width:961px){
-  main>section:not(.hero):not(.last):not(.trust)>.shell{border-left:2px dashed rgba(29,95,168,.35);padding-left:56px;margin-left:max(var(--gutter),calc((100% - var(--shell))/2 + var(--gutter)))}
-  main>section:not(.hero):not(.last):not(.trust)>.shell>h2:first-child,main>section:not(.hero):not(.last):not(.trust) .form-wrap>div:first-child>h2:first-child,main>section#faq h2{position:relative}
-  main>section:not(.hero):not(.last):not(.trust) h2:first-child::before{content:"";position:absolute;left:-70px;top:.2em;width:24px;height:24px;border-radius:50%;background:var(--hi);border:5px solid var(--paper);box-shadow:0 0 0 2px var(--hi)}
-  .alt h2:first-child::before{border-color:var(--paper-2)!important}
-}
 /* problemas como incidencias */
 .problems{gap:12px;border-top:0}
 .prob{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--hi);border-radius:12px;padding:20px 24px;box-shadow:var(--sombra);grid-template-columns:auto minmax(0,.9fr) minmax(0,1.4fr) auto}
@@ -395,7 +390,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .mo main>section:not(.hero):not(.trust):not(.last) h2::after{content:"";display:block;width:0;height:4px;border-radius:4px;margin-top:12px;background:var(--hi);transition:width .8s var(--ease) .5s}
   .mo main>section:not(.hero):not(.trust):not(.last) h2.on::after{width:72px}
   /* parada de ruta que late cuando la sección está a la vista */
-  .mo main>section h2.on::before{animation:pin 2.4s ease-out infinite}
   @keyframes pin{0%{box-shadow:0 0 0 2px var(--hi),0 0 0 2px rgba(255,176,32,.6)}70%,100%{box-shadow:0 0 0 2px var(--hi),0 0 0 16px rgba(255,176,32,0)}}
   /* aparición al hacer scroll, en cascada */
   .mo [data-rv]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*110ms)}
@@ -435,6 +429,52 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .road .truck svg{width:18px;height:18px;color:#0b1a2e}
   .road .truck.drive svg{animation:bump .35s ease-in-out infinite}
   @keyframes bump{50%{transform:translateY(-1.5px)}}
+}
+
+:root{--ox:#ffb020}
+/* REVISIÓN · panel operativo en Experiencia + arreglos generales */
+.trust-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:48px}
+.trust .lead{margin-bottom:18px}
+.proof{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border:1px solid rgba(255,255,255,.16);border-radius:var(--r-md);background:rgba(255,255,255,.04)}
+.proof svg{flex:none;width:22px;height:22px;color:var(--ox);margin-top:2px}
+.proof b{color:#fff;display:block;margin-bottom:2px}
+.proof span{color:rgba(255,255,255,.72);font-size:.93rem}
+.ops{background:#fff;color:#1b1d22;border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,.45);overflow:hidden;font-size:.86rem}
+.ops-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid #eceef2}
+.ops-top b{font-size:1rem;letter-spacing:-.01em}
+.ops-top small{color:#7a8090;font-size:.75rem}
+.ops-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #eceef2}
+.ops-kpis div{padding:12px 16px;border-right:1px solid #eceef2}
+.ops-kpis div:last-child{border-right:0}
+.ops-kpis small{display:block;color:#7a8090;font-size:.7rem;line-height:1.3}
+.ops-kpis b{display:block;font-size:1.35rem;letter-spacing:-.02em;margin-top:2px}
+.ops-kpis b.good{color:#0f9d74}.ops-kpis b.warn{color:#c2410c}
+.ops table{width:100%;border-collapse:collapse}
+.ops th{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:#7a8090;font-weight:700;text-align:left;padding:10px 16px 6px}
+.ops td{padding:9px 16px;border-top:1px solid #f0f1f4;vertical-align:middle}
+.ops td small{display:block;color:#7a8090;font-size:.72rem}
+.ops .tag-s{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.tag-s.ok{background:#d6f8ec;color:#0b6b4c}.tag-s.go{background:#e0ecff;color:#1d4fa8}.tag-s.late{background:#ffe1dc;color:#a3271a}.tag-s.wait{background:#fbefd5;color:#8a5a00}
+.ops .bar{height:6px;border-radius:6px;background:#eceef2;overflow:hidden;min-width:70px}
+.ops .bar i{display:block;height:100%;border-radius:6px;background:var(--ox)}
+.ops-foot{display:flex;gap:10px;align-items:flex-start;padding:12px 16px;background:#f7f8fa;border-top:1px solid #eceef2;font-size:.78rem;color:#4a5060}
+.ops-foot b{color:#1b1d22}
+.ops-dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--ox);margin-top:6px}
+.ops-cap{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:10px}
+/* FAQ alineada con el resto de secciones */
+.faq{max-width:var(--shell)}
+.faq>h2,.faq>div{max-width:840px}
+/* menos aire entre metodología y formulario */
+#metodologia{padding-bottom:clamp(48px,6vw,80px)}
+@media (max-width:960px){
+  .trust-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .ops-kpis{grid-template-columns:1fr 1fr}
+  .ops-kpis div:nth-child(2){border-right:0}
+  .ops-kpis div:nth-child(-n+2){border-bottom:1px solid #eceef2}
+  .ops .hide-m{display:none}
+  .ops td,.ops th{padding-left:12px;padding-right:12px}
 }
 </style>
 </head>
@@ -487,17 +527,14 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
       <article class="prob">
         <h3>Despachos difíciles de coordinar</h3>
         <p>Las asignaciones pasan por llamadas, chats y archivos separados.</p>
-        <span class="cell" aria-hidden="true">“¿quién va a Surco?”</span>
       </article>
       <article class="prob">
         <h3>Visibilidad limitada</h3>
         <p>Operaciones no siempre sabe qué servicio está pendiente, en curso o completado.</p>
-        <span class="cell" aria-hidden="true">estado: ¿?</span>
       </article>
       <article class="prob">
         <h3>Incidencias sin historial</h3>
         <p>Es difícil reconstruir demoras, cambios y responsabilidades.</p>
-        <span class="cell" aria-hidden="true">¿por qué se demoró?</span>
       </article>
     </div>
     <p class="closing">No necesitas seguir acumulando herramientas. Necesitas información conectada con tus procesos.</p>
@@ -590,21 +627,31 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   <div class="shell trust-grid">
     <div>
       <h2>Experiencia real. Soluciones a medida.</h2>
-      <p class="lead">ProShop ha desarrollado plataformas de movilidad y delivery urbano para conductores. Esa experiencia es en taxi, reparto y mandados, no en transporte de carga: por eso, en tu caso, primero entendemos cómo funciona tu operación y después construimos el sistema por fases.</p>
-      <h3 class="case-name">GoBot · App de conductores (Bolivia)</h3>
-      <p class="case"><b>Lo que construimos.</b> Una app que recibe solicitudes cercanas mientras el conductor está en línea y reúne viajes, delivery y mandados en una sola herramienta.</p>
-      <span class="badge">Las demás pantallas de esta página son ejemplos conceptuales con datos ficticios</span>
+      <p class="lead">No es un producto genérico: primero entendemos cómo funciona tu operación y después construimos el sistema alrededor de tus procesos, por fases.</p>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Experiencia en movilidad y delivery urbano</b><span>Desarrollamos GoBot, plataforma en producción que asigna viajes, deliveries y mandados a conductores. Es experiencia en movilidad y reparto, no en transporte de carga.</span></div></div>
+      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Por fases y con alcance por escrito</b><span>Empezamos por el proceso que más te cuesta coordinar hoy.</span></div></div>
     </div>
     <div>
-      <figure class="case-img">
-        <img src="img/proyectos/gobot.webp" alt="Pantalla real de la app GoBot para conductores, con el mapa de la zona y una solicitud lista para aceptar" width="800" height="620" loading="lazy" decoding="async">
-        <figcaption>Pantalla real de GoBot (movilidad y delivery urbano).</figcaption>
-      </figure>
-      <ul style="margin-top:18px">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Solicitudes cercanas mientras el conductor está en línea.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Tres tipos de servicio en una sola app: viajes, delivery y mandados.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Indicación de zonas y horarios con más demanda.</li>
-      </ul>
+      <div class="ops" role="img" aria-label="Ejemplo conceptual de un centro de despacho con flota, estados de servicio y seguimiento de una entrega, con datos ficticios.">
+        <div class="ops-top"><b>Centro de despacho · Hoy</b><small>Lima · 14 vehículos</small></div>
+        <div class="ops-kpis">
+          <div><small>Servicios</small><b>51</b></div>
+          <div><small>En ruta</small><b>11</b></div>
+          <div><small>Entregados a tiempo</small><b class="good">94%</b></div>
+          <div><small>Incidencias</small><b class="warn">2</b></div>
+        </div>
+        <table>
+          <thead><tr><th>Vehículo · conductor</th><th>Servicio</th><th class="hide-m">Llegada</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>ABC-123<small>Jorge R.</small></td><td>Ate → Callao<small>Distrib. Norte</small></td><td class="hide-m">10:40</td><td><span class="tag-s go">En ruta</span></td></tr>
+            <tr><td>C2M-881<small>Pedro L.</small></td><td>Lurín → Cercado<small>Comercial Sur</small></td><td class="hide-m">10:12</td><td><span class="tag-s ok">Entregado</span></td></tr>
+            <tr><td>F1T-550<small>Ana M.</small></td><td>SMP → Miraflores<small>Tienda Lima</small></td><td class="hide-m">11:05</td><td><span class="tag-s late">Incidencia</span></td></tr>
+            <tr><td>D9K-302<small>Mario C.</small></td><td>Callao → Ate<small>Mayorista C.</small></td><td class="hide-m">12:30</td><td><span class="tag-s wait">Por salir</span></td></tr>
+          </tbody>
+        </table>
+        <div class="ops-foot"><span class="ops-dot"></span><span><b>Incidencia F1T-550:</b> cliente ausente en Miraflores, 10:58 · registrada por Ana M. con foto · reprogramada para las 15:00.</span></div>
+      </div>
+      <p class="ops-cap">Ejemplo conceptual con datos ficticios.</p>
     </div>
   </div>
 </section>
@@ -930,7 +977,7 @@ document.addEventListener('click', e => {
     h1.innerHTML = txt.split(/\s+/).map((w, i) => '<span class="w' + (/desorden/i.test(w) ? ' hot' : '') + '" style="--i:' + i + '" aria-hidden="true">' + w + '</span>').join(' ');
   }
   // elementos que aparecen al hacer scroll, en cascada por grupo
-  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.trust li', '#faq details', '.closing', '.explorer', '.case-img', '.form-wrap > div']
+  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.proof', '.ops', '#faq details', '.closing', '.explorer', '.form-wrap > div']
     .forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add(e.target.classList.contains('tstep') ? 'vis' : 'on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('[data-rv]').forEach(el => io.observe(el));
