@@ -356,7 +356,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 @media (max-width:960px){
   .prob{grid-template-columns:auto 1fr}
   .prob p,.prob .cell{grid-column:2}
-  .timeline{grid-template-columns:1fr 1fr}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:100px}
   .live-foot{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:640px){
@@ -366,10 +366,81 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   .timeline::before{display:none}
   .tstep .n{left:-64px;top:-4px}
 }
+
+/* MOVIMIENTO · transporte */
+@media (prefers-reduced-motion:no-preference){
+  /* hero: titular palabra por palabra */
+  .mo h1 .w{display:inline-block;opacity:0;transform:translateY(.55em) rotate(4deg);animation:wordup .75s var(--ease) forwards;animation-delay:calc(var(--i)*75ms + .15s)}
+  @keyframes wordup{to{opacity:1;transform:none}}
+  .mo h1 .hot{color:var(--hi);position:relative}
+  .mo h1 .hot::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.09em;border-radius:4px;background:var(--hi);transform:scaleX(0);transform-origin:left;animation:line .7s var(--ease) 1.25s forwards}
+  .mo h1 .hot.w{animation:wordup .75s var(--ease) forwards,jitter 4s ease-in-out infinite;animation-delay:calc(var(--i)*75ms + .15s),2.2s}
+  @keyframes jitter{0%,86%,100%{transform:none}88%{transform:translate(-2px,1px) rotate(-1.5deg)}90%{transform:translate(2px,-1px) rotate(1.5deg)}92%{transform:translate(-1px,0) rotate(-.5deg)}94%{transform:none}}
+  @keyframes line{to{transform:scaleX(1)}}
+  /* hero: etiqueta, bajada y botones en cascada */
+  .mo .hero .tag::before{width:0;animation:grow .6s var(--ease) .1s forwards}
+  @keyframes grow{to{width:28px}}
+  .mo .hero .tag,.mo .hero p.sub,.mo .hero .cta-row>*,.mo .hero .micro{opacity:0;animation:fadeup .7s var(--ease) forwards}
+  .mo .hero .tag{animation-delay:.05s}
+  .mo .hero p.sub{animation-delay:.95s}
+  .mo .hero .cta-row>*:nth-child(1){animation-delay:1.15s}
+  .mo .hero .cta-row>*:nth-child(2){animation-delay:1.28s}
+  .mo .hero .micro{animation-delay:1.45s}
+  .mo .live{opacity:0;animation:livein 1s var(--ease) .5s forwards}
+  @keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes livein{from{opacity:0;transform:translateX(40px) rotate(1.5deg)}to{opacity:1;transform:none}}
+  /* títulos de sección: se descubren y se subrayan */
+  .mo main>section:not(.hero) h2{clip-path:inset(-20% 100% -20% -40px);transition:clip-path .9s var(--ease)}
+  .mo main>section:not(.hero) h2.on{clip-path:inset(-20% -10px -20% -90px)}
+  .mo main>section:not(.hero):not(.trust):not(.last) h2::after{content:"";display:block;width:0;height:4px;border-radius:4px;margin-top:12px;background:var(--hi);transition:width .8s var(--ease) .5s}
+  .mo main>section:not(.hero):not(.trust):not(.last) h2.on::after{width:72px}
+  /* parada de ruta que late cuando la sección está a la vista */
+  .mo main>section h2.on::before{animation:pin 2.4s ease-out infinite}
+  @keyframes pin{0%{box-shadow:0 0 0 2px var(--hi),0 0 0 2px rgba(255,176,32,.6)}70%,100%{box-shadow:0 0 0 2px var(--hi),0 0 0 16px rgba(255,176,32,0)}}
+  /* aparición al hacer scroll, en cascada */
+  .mo [data-rv]{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*110ms)}
+  .mo [data-rv].prob{transform:translateX(-36px)}
+  .mo [data-rv].on{opacity:1;transform:none}
+  .mo .tstep[data-rv] .n{transform:scale(.4);transition:transform .5s cubic-bezier(.3,1.6,.5,1);transition-delay:calc(var(--d,0)*110ms + .2s)}
+  .mo .tstep[data-rv].on .n{transform:none}
+  /* botones: brillo que cruza y flecha que empuja */
+  .btn-primary{background-image:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%);background-size:260% 100%;background-repeat:no-repeat;background-position:130% 0;animation:shine 3.6s ease-in-out 2s infinite}
+  @keyframes shine{0%,55%{background-position:130% 0}85%,100%{background-position:-30% 0}}
+  a.btn-primary::after{content:"→";display:inline-block;transition:transform .25s var(--ease)}
+  a.btn-primary:hover::after{transform:translateX(5px)}
+  .btn-wa,.btn-ghost[data-wa]{position:relative}
+  .btn-wa::before,.btn-ghost[data-wa]::before{content:"";position:absolute;inset:-2px;border-radius:inherit;border:2px solid #25d366;opacity:0;animation:ring 2.8s ease-out 2.4s infinite;pointer-events:none}
+  @keyframes ring{0%{opacity:.8;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.12,1.35)}}
+  .top .btn-primary{animation:shine 3.6s ease-in-out 2s infinite,nudge 6s ease-in-out 3s infinite}
+  @keyframes nudge{0%,92%,100%{transform:none}94%{transform:translateY(-3px)}96%{transform:translateY(0)}98%{transform:translateY(-2px)}}
+  /* tarjetas con elevación al pasar el mouse */
+  .prob,.mod,.trip,.trust li{transition:transform .25s var(--ease),box-shadow .25s var(--ease),opacity .7s var(--ease)}
+  .prob.on:hover,.trust li.on:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,26,46,.14)}
+  .trip:hover{transform:translateX(4px)}
+  .tabs button{transition:background .2s,color .2s,transform .2s var(--ease)}
+  .tabs button:hover{transform:translateY(-2px)}
+  details summary{transition:color .2s,padding-left .25s var(--ease)}
+  details summary:hover{color:var(--accent-ink);padding-left:6px}
+  /* números del panel en vivo con rebote */
+  .live-foot b.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.35);color:var(--hi)}100%{transform:scale(1)}}
+}
+/* camión que recorre la página con el scroll (escritorio) */
+.road{display:none}
+@media (min-width:1280px) and (prefers-reduced-motion:no-preference){
+  .road{display:block;position:fixed;left:18px;top:84px;bottom:24px;width:28px;z-index:40;pointer-events:none}
+  .road::before{content:"";position:absolute;left:13px;top:0;bottom:0;border-left:2px dashed rgba(255,176,32,.45)}
+  .road .fill{position:absolute;left:12px;top:0;width:4px;border-radius:4px;background:var(--hi);height:0}
+  .road .truck{position:absolute;left:0;top:0;width:28px;height:28px;border-radius:8px;background:var(--hi);display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+  .road .truck svg{width:18px;height:18px;color:#0b1a2e}
+  .road .truck.drive svg{animation:bump .35s ease-in-out infinite}
+  @keyframes bump{50%{transform:translateY(-1.5px)}}
+}
 </style>
 </head>
 <body>
 
+<div class="road" aria-hidden="true"><span class="fill"></span><span class="truck"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span></div>
 <header class="top">
   <div class="shell">
     <a href="https://proshop.lat/" aria-label="ProShop, ir al inicio"><img src="img/logo-proshop.png" alt="ProShop" width="120" height="30"></a>
@@ -845,6 +916,49 @@ document.addEventListener('click', e => {
   const a = e.target.closest('a[href^="mailto:"],a[href^="tel:"]');
   if (a) track('contact_click', {type: a.href.startsWith('tel:') ? 'phone' : 'email'});
 });
+</script>
+<script>
+/* ===== Movimiento (transporte) ===== */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('mo');
+  // titular palabra por palabra; "desorden" destacado
+  const h1 = document.querySelector('.hero h1');
+  if (h1) {
+    const txt = h1.textContent.trim();
+    h1.setAttribute('aria-label', txt);
+    h1.innerHTML = txt.split(/\s+/).map((w, i) => '<span class="w' + (/desorden/i.test(w) ? ' hot' : '') + '" style="--i:' + i + '" aria-hidden="true">' + w + '</span>').join(' ');
+  }
+  // elementos que aparecen al hacer scroll, en cascada por grupo
+  ['.problems .prob', '.mods .mod', '.timeline .tstep', '.trust li', '#faq details', '.closing', '.explorer', '.case-img', '.form-wrap > div']
+    .forEach(sel => document.querySelectorAll(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .15, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('[data-rv]').forEach(el => io.observe(el));
+  // los títulos se observan a través de su sección (un título recortado no dispara el observador)
+  const ioS = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('h2').forEach(h => h.classList.add('on')); ioS.unobserve(e.target); } }), {threshold: 0, rootMargin: '0px 0px -25% 0px'});
+  document.querySelectorAll('main > section:not(.hero)').forEach(el => ioS.observe(el));
+  // rebote de los contadores del panel en vivo
+  ['lv1', 'lv2', 'lv3'].forEach(id => {
+    const b = document.getElementById(id); if (!b) return;
+    let prev = b.textContent;
+    new MutationObserver(() => { if (b.textContent !== prev) { prev = b.textContent; b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop'); } })
+      .observe(b, {childList: true, characterData: true, subtree: true});
+  });
+  // camión que avanza con el scroll
+  const road = document.querySelector('.road');
+  if (road) {
+    const truck = road.querySelector('.truck'), fill = road.querySelector('.fill');
+    let t;
+    const move = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      const p = max > 0 ? Math.min(1, scrollY / max) : 0, h = road.clientHeight - 28;
+      truck.style.transform = 'translateY(' + (p * h) + 'px)';
+      fill.style.height = (p * h + 14) + 'px';
+      truck.classList.add('drive'); clearTimeout(t); t = setTimeout(() => truck.classList.remove('drive'), 180);
+    };
+    addEventListener('scroll', move, {passive: true}); addEventListener('resize', move); move();
+  }
+})();
 </script>
 </body>
 </html>
