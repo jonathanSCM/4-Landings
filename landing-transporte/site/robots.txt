@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://landing_transportes.proshop.lat/sitemap.xml
+Sitemap: https://landing-transportes.proshop.lat/sitemap.xml

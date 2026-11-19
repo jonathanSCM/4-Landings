@@ -9,7 +9,7 @@ No hay CRM: el formulario valida los datos y abre WhatsApp con el mensaje ya arm
 
 ## Despliegue en Coolify
 Build Pack: Dockerfile · Puerto: 8080 · Health check: `/healthz`.
-Dominio: `landing_transportes.proshop.lat` (ojo: con guion bajo puede fallar el certificado HTTPS).
+Dominio: `landing-transportes.proshop.lat`.
 
 ## Antes de publicar (en `site/index.html`, objeto `CONFIG`)
 - `whatsapp`: +51 900 534 161 (número comercial oficial).

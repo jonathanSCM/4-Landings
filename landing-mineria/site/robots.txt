@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://landing_minerias.proshop.lat/sitemap.xml
+Sitemap: https://landing-minerias.proshop.lat/sitemap.xml

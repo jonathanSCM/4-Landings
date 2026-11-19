@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://landing_fabricas.proshop.lat/sitemap.xml
+Sitemap: https://landing-fabricas.proshop.lat/sitemap.xml
