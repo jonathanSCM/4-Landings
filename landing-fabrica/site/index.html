@@ -307,7 +307,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 
 /* TEMA FÁBRICA · planta industrial */
 .hero{padding-top:clamp(32px,4.5vw,56px)!important}
-.hero h1{font-size:clamp(2.1rem,4.4vw,3.5rem)}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);line-height:1.04}
+.hero h1 .mk{color:var(--hi)}
 .hero .tag{margin-bottom:14px}
 .hero p.sub{margin:16px auto 22px}
 .hero{background:radial-gradient(900px 480px at 50% -20%,var(--purple-3),transparent 65%),var(--purple);position:relative}
@@ -399,9 +400,10 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   @keyframes thud{0%{transform:none}30%{transform:scaleY(.86) scaleX(1.06)}60%{transform:scaleY(1.04)}100%{transform:none}}
   /* "controlar cada orden" resaltado con cinta de seguridad que se pega */
   .mo h1 .mk{position:relative;z-index:0}
-  .mo h1 .w.mk{animation:press .55s cubic-bezier(.5,0,.75,0) forwards,thud .35s ease-out forwards,ink .25s forwards;animation-delay:calc(var(--i)*90ms + .2s),calc(var(--i)*90ms + .75s),calc(var(--i)*90ms + 1.45s)}
+  .mo h1 .w.mk{animation:press .55s cubic-bezier(.5,0,.75,0) forwards,thud .35s ease-out forwards,inkhi .25s forwards;animation-delay:calc(var(--i)*90ms + .2s),calc(var(--i)*90ms + .75s),calc(var(--i)*90ms + 1.45s)}
   @keyframes ink{to{color:#fff}}
-  .mo h1 .mk::before{content:"";position:absolute;inset:.1em -.12em .02em;z-index:-1;border-radius:4px;background:repeating-linear-gradient(-45deg,var(--hi) 0 16px,#9b7be0 16px 32px);transform:scaleX(0);transform-origin:left;animation:tape .5s var(--ease) forwards,stripes 1.6s linear infinite;animation-delay:calc(var(--i)*90ms + 1.3s),2s;background-size:45px 45px}
+  @keyframes inkhi{to{color:var(--hi)}}
+  .mo h1 .mk::before{display:none;content:"";position:absolute;inset:.1em -.12em .02em;z-index:-1;border-radius:4px;background:repeating-linear-gradient(-45deg,var(--hi) 0 16px,#9b7be0 16px 32px);transform:scaleX(0);transform-origin:left;animation:tape .5s var(--ease) forwards,stripes 1.6s linear infinite;animation-delay:calc(var(--i)*90ms + 1.3s),2s;background-size:45px 45px}
   @keyframes tape{to{transform:scaleX(1)}}
   @keyframes stripes{to{background-position:45px 0}}
 
@@ -580,8 +582,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   <div class="shell hero-grid">
     <div>
       <span class="tag">Software a medida para fábricas y talleres</span>
-      <h1>¿Tu fábrica produce más, pero controlar cada orden es más difícil?</h1>
-      <p class="sub">Centraliza pedidos, etapas de producción, materiales y entregas en un sistema diseñado alrededor de cómo trabaja tu fábrica.</p>
+      <h1>Cada orden, a la vista.</h1>
+      <p class="sub">Un solo sistema para seguir cada pedido, de la orden a la entrega: producción, materiales y despachos en un mismo lugar.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#diagnostico" data-cta="hero">Solicitar diagnóstico gratuito</a>
         <a class="btn btn-ghost" href="#" data-wa="hero">Hablar por WhatsApp</a>
@@ -1142,11 +1144,11 @@ document.addEventListener('click', e => {
     const type = () => { tt.textContent = full.slice(0, ++k); if (k < full.length) setTimeout(type, 28); else setTimeout(() => tt.style.borderRightColor = 'transparent', 1800); };
     setTimeout(type, 150);
   }
-  // titular: palabras que caen como prensa; resalta "controlar cada orden"
+  // titular: palabras que caen como prensa; resalta "a la vista."
   const h1 = document.querySelector('.hero h1');
   if (h1) {
     const txt = h1.textContent.trim(); h1.setAttribute('aria-label', txt);
-    const ws = txt.split(/\s+/), mk = ['controlar', 'cada', 'orden'];
+    const ws = txt.split(/\s+/), mk = ['a', 'la', 'vista.'];
     h1.innerHTML = ws.map((w, i) => '<span class="w' + (mk.includes(w) ? ' mk' : '') + '" style="--i:' + i + '" aria-hidden="true">' + w + '</span>').join(' ');
   }
   // engranajes que también giran con el scroll
