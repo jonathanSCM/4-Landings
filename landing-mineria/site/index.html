@@ -970,8 +970,18 @@ $$('#cur button').forEach(b => b.addEventListener('click', () => {
 const stage = $('#stage');
 if (REDUCED) renderDash();
 else new IntersectionObserver((es, io) => es.forEach(e => {
-  if (e.isIntersecting){ stage.classList.add('play'); setTimeout(renderDash, 1900); io.disconnect(); }
+  if (e.isIntersecting){ io.disconnect(); playStage(); }
 }), {threshold:.45}).observe(stage);
+// se repite: Excel -> tablero, 3 s mostrando el tablero y vuelve a empezar
+function playStage(){
+  stage.classList.remove('play');
+  ['k1','k2','k3','u1','u2'].forEach(id => $('#'+id).textContent = '—');
+  $$('#chart span').forEach(sp => sp.style.height = '0');
+  void stage.offsetWidth;
+  stage.classList.add('play');
+  setTimeout(renderDash, 1900);
+  setTimeout(playStage, 1900 + 1600 + 3000);
+}
 
 /* ===== Explorador (pestañas) ===== */
 const tabs = $$('.tabs [role=tab]');
