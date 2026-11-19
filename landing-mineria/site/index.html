@@ -478,6 +478,124 @@ main,footer{overflow-x:clip}
 /* barra superior: línea verde simple (paleta oficial) */
 .prog,.prog-au{background:#00fea7!important;box-shadow:none!important;height:3px!important}
 .btn-primary::before{background:none!important}
+
+/* ===== UNIFICADO 19/11 · reunión + ajustes de Mariana ===== */
+/* etiqueta del hero en verde */
+.hero .tag{color:var(--accent)!important;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem!important;font-weight:800!important}
+.hero .tag::before{background:var(--accent)!important}
+.hero .tag .tt{border-right-color:var(--accent)!important}
+/* sin línea decorativa bajo los títulos */
+main h2::after{display:none!important;content:none!important}
+/* botón de WhatsApp: secundario con borde (no compite con el verde principal) */
+.btn-wa{background:transparent!important;color:#5a2bc0!important;border:2px solid #5a2bc0!important;box-shadow:none!important}
+.btn-wa:hover{background:rgba(90,43,192,.08)!important}
+.sticky-cta .btn-wa,.last .btn-wa,.thanks .btn-wa{color:#fff!important;border-color:#6b5a8c!important}
+.thanks .btn-wa{color:#5a2bc0!important;border-color:#5a2bc0!important}
+.btn-wa::before{content:"";width:16px;height:16px;flex:none;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;position:static!important;inset:auto!important;opacity:1!important;animation:none!important}
+.btn-wa:not(.sticky-cta .btn-wa):not(.last .btn-wa)::before{background:#5a2bc0}
+/* metodología: 5 pasos compactos, siempre visibles */
+.timeline{display:grid!important;grid-template-columns:1fr!important;gap:18px!important;padding:0 0 0 56px!important;margin-top:28px!important;max-width:680px;position:relative}
+.timeline::before{display:block!important;content:""!important;position:absolute!important;left:17px!important;right:auto!important;top:18px!important;bottom:18px!important;width:2px!important;height:auto!important;background:#d9d0ea!important;animation:none!important;border-radius:2px}
+.timeline .line{display:none!important}
+.tstep,.tstep[data-rv],.mo .tstep[data-rv]{opacity:1!important;transform:none!important;position:relative}
+.tstep .n,.tstep.on .n,.mo .tstep .n{position:absolute!important;left:-56px!important;top:0!important;width:36px!important;height:36px!important;background:#5a2bc0!important;border:0!important;color:#fff!important;font-size:.9rem!important;animation:none!important;box-shadow:none!important;transform:none!important}
+.tstep h3{font-size:1.08rem!important;margin:0 0 2px!important;line-height:1.3}
+.tstep p{font-size:.95rem;color:var(--ink-2)}
+/* formulario: visible sin animación, campos de 48 px, WhatsApp debajo */
+.form-wrap>div,.mo .form-wrap>div,.form-wrap>div[data-rv]{opacity:1!important;transform:none!important;transition:none!important}
+form{gap:14px!important}
+form input,form select{min-height:48px;border-radius:10px!important}
+form textarea{min-height:72px!important;border-radius:10px!important}
+label[for="f-nec"]{display:block!important}
+label[for="f-nec"] .opt{color:var(--ink-3)}
+.check input{width:22px!important;height:22px!important;min-height:22px!important;accent-color:#5a2bc0!important}
+.next-step{text-align:center;font-size:.82rem;color:var(--ink-2);margin:-4px 0 0}
+.wa-alt{margin-top:16px;text-align:center}
+.wa-alt .btn{width:100%}
+/* casos reales: etiqueta CASO REAL */
+.case-tag{display:inline-block;color:var(--accent);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+/* FAQ */
+summary::after{color:#5a2bc0!important}
+/* CTA final */
+.last h2{max-width:none!important}
+/* pie morado, un enlace por línea */
+footer{background:#160827!important;color:#c7bcd9;padding:36px 0 110px!important}
+footer .shell{display:grid!important;gap:14px;justify-content:start!important}
+.ft-logo img{height:28px;width:auto}
+.ft-links{list-style:none;padding:0;margin:0;display:grid}
+.ft-links a,.ft-links .linkish{display:flex;align-items:center;min-height:44px;color:#c7bcd9;text-decoration:none;font:inherit;font-size:.95rem}
+.ft-links a:hover,.ft-links .linkish:hover{color:#fff}
+.ft-copy{font-size:.8rem;color:#9a8eb2}
+/* barra fija: solo entre el hero y el formulario */
+.sticky-cta{background:#1e0b36!important;border-top:1px solid #31254a!important;transition:transform .3s var(--ease)}
+.sticky-cta.off{transform:translateY(110%)!important}
+.sticky-cta .btn-primary{flex:1.4!important}
+.sticky-cta .btn-wa{flex:1!important}
+
+/* ===== MINERÍA 19/11 ===== */
+.trust{background:var(--purple)!important}
+.mo .prob::before{display:none!important}
+.btn-primary{background-image:none!important}
+.nugs i{background:radial-gradient(circle at 35% 35%,#d9fff1,#00fea7 55%,#0b6b4c)!important;box-shadow:0 0 10px rgba(0,254,167,.5)!important}
+.last .nugs i:nth-child(2n){background:radial-gradient(circle at 35% 35%,#efe6ff,#9b7be0 55%,#5a2bc0)!important;box-shadow:0 0 10px rgba(155,123,224,.5)!important}
+/* problemas compactos */
+.problems.pc{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin-top:24px!important;border:0!important}
+.problems.pc .prob{display:flex!important;flex-direction:row!important;gap:14px!important;align-items:flex-start!important;padding:16px 18px!important;background:#fff!important;border:1px solid var(--rule)!important;border-left:4px solid var(--accent)!important;border-radius:16px!important;box-shadow:none!important}
+.pc-ic{flex:none;width:36px;height:36px;border-radius:10px;background:var(--paper-2);color:#5a2bc0;display:grid;place-items:center}
+.pc-ic svg{width:20px;height:20px}
+.problems.pc h3{font-size:1.05rem!important;margin:0 0 4px!important}
+.problems.pc p{font-size:.93rem;color:var(--ink-2);margin:0}
+.pc-close{margin-top:16px;padding:20px 22px;border-radius:16px;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pc-close p{margin:0;font-weight:700;font-size:1.08rem;line-height:1.35}
+.pc-close b{color:var(--accent)}
+/* solución: selector segmentado y checks */
+.explorer{border-radius:16px!important}
+.tabs{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:4px!important;padding:6px!important;margin:12px!important;background:var(--paper-2)!important;border:0!important;border-radius:12px!important}
+.tabs button{border-radius:9px!important;padding:0 8px!important;min-height:44px!important;background:transparent!important;color:var(--ink-2)!important;font-size:.92rem!important;text-align:center}
+.tabs button[aria-selected="true"]{background:var(--purple)!important;color:#fff!important}
+.panel{gap:20px!important;padding:8px 18px 20px!important}
+.panel h3{font-size:1.2rem!important;margin-bottom:4px!important}
+.panel ul{margin-top:10px!important;gap:6px!important}
+.panel li{padding-left:26px!important}
+.panel li::before{content:""!important;width:16px!important;height:16px!important;top:.2em!important;border-radius:0!important;background:#14a57a!important;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.sim{border-radius:12px!important;padding:14px 16px!important}
+.bars-h .fill{background:#5a2bc0!important}
+.bars-h .bh:first-child .fill{background:var(--accent)!important}
+.loan-sum{margin:6px 0!important}
+.loan-tot{font-size:.9rem;color:var(--ink-2);margin:0 0 12px}
+.simu summary{list-style:none;display:inline-flex;width:100%}
+.simu summary::-webkit-details-marker{display:none}
+.simu summary::after{display:none!important}
+.simu[open] summary{margin-bottom:14px}
+/* caso real: carrusel de la demo */
+.pros{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+.pros li{display:flex;gap:10px;align-items:flex-start;color:#c7bcd9}
+.pros li svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:2px}
+.pros b{color:#fff}
+.dcar{background:#2c1052;border:1px solid #4b1a86;border-radius:16px;overflow:hidden}
+.dcar-stage{padding:14px}
+.ds{margin:0}
+.ds[hidden]{display:none}
+.ds.on{animation:dsin .45s var(--ease) both}
+@keyframes dsin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.ds-img{background:#fff;border-radius:10px;overflow:hidden;min-height:120px;display:grid;place-items:center}
+.ds-img{padding:10px}
+.ds-img img{width:auto;max-width:100%;height:auto;margin:0 auto}
+.tstep,.tstep *{opacity:1!important;filter:none!important}
+.tstep h3{color:var(--ink)!important}
+.ds figcaption{margin-top:14px;color:#c7bcd9;font-size:.95rem}
+.ds figcaption b{display:block;color:#fff;font-size:1.15rem;margin-bottom:2px}
+.dcar-ctl{display:flex;align-items:center;gap:12px;padding:0 14px 14px}
+.dcar-dots{display:flex;gap:6px;margin-right:auto}
+.dcar-dots button{width:8px;height:8px;border-radius:99px;border:0;padding:0;background:#6b5a8c;cursor:pointer;transition:width .3s}
+.dcar-dots button[aria-current="true"]{width:26px;background:var(--accent)}
+.dcar-count{color:#9a8eb2;font-size:.85rem;font-variant-numeric:tabular-nums}
+.dcar-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:1px solid #6b5a8c;background:transparent;color:#fff}
+.dcar-btn svg{width:20px;height:20px}
+.dcar-btn.next{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.dcar-note{margin-top:10px;font-size:.8rem;color:#9a8eb2}
+@media (max-width:960px){.problems.pc{grid-template-columns:1fr!important}}
+@media (max-width:640px){.pc-close .btn{width:100%}.tabs button{font-size:.85rem!important}.ds-img{min-height:90px}}
 </style>
 </head>
 <body>
@@ -496,9 +614,9 @@ main,footer{overflow-x:clip}
   <div class="spot" aria-hidden="true"></div><div class="nugs" aria-hidden="true"></div>
   <div class="shell hero-grid">
     <div>
-      <span class="tag">Software a medida para empresas y cooperativas mineras</span>
+      <span class="tag">Software a medida para minería</span>
       <h1>Tu operación minera necesita control, no más hojas de Excel.</h1>
-      <p class="sub">Hacemos un sistema a tu medida para ordenar la información de la mina y la oficina, saber quién registró cada cosa y tener reportes claros para decidir.</p>
+      <p class="sub">Ordena la información de mina y oficina y decide con reportes claros.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#diagnostico" data-cta="hero">Solicitar diagnóstico gratuito</a>
         <a class="btn btn-ghost" href="#" data-wa="hero">Hablar por WhatsApp</a>
@@ -560,7 +678,6 @@ main,footer{overflow-x:clip}
         </div>
         <div class="scan" aria-hidden="true"></div>
       </div>
-      <p class="stage-cap">Imagen de ejemplo.</p>
     </div>
   </div>
 </section>
@@ -569,21 +686,15 @@ main,footer{overflow-x:clip}
 <section id="problemas">
   <div class="shell">
     <h2>¿Te ocurre algo de esto?</h2>
-    <div class="problems">
-      <article class="prob">
-        <h3>Información repartida</h3>
-        <p>Operaciones y administración juntan datos de muchos archivos distintos.</p>
-      </article>
-      <article class="prob">
-        <h3>Reportes demorados</h3>
-        <p>Se pierde tiempo reuniendo números antes de poder decidir.</p>
-      </article>
-      <article class="prob">
-        <h3>Poca trazabilidad</h3>
-        <p>No se sabe quién cambió un dato, ni cuándo.</p>
-      </article>
+    <div class="problems pc">
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><div><h3>Información repartida</h3><p>Mina y oficina juntan datos de muchos archivos distintos.</p></div></article>
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Reportes demorados</h3><p>Reunir los números toma tanto que el reporte llega tarde.</p></div></article>
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></span><div><h3>Poca trazabilidad</h3><p>No se sabe quién cambió un dato, ni cuándo.</p></div></article>
     </div>
-    <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="problems">Solicitar diagnóstico gratuito</a></div>
+    <div class="pc-close">
+      <p><span>Menos hojas de Excel.</span> <b>Más control sobre tu operación.</b></p>
+      <a class="btn btn-primary" href="#diagnostico" data-cta="problems">Solicitar diagnóstico gratuito</a>
+    </div>
   </div>
 </section>
 
@@ -591,20 +702,20 @@ main,footer{overflow-x:clip}
 <section class="alt" id="solucion">
   <div class="shell">
     <h2>Software construido alrededor de tu operación</h2>
-    <p class="lead">Toca cada pestaña para ver un ejemplo. El sistema final lo armamos contigo.</p>
+    <p class="lead">Así podría verse. Lo definimos contigo.</p>
 
     <div class="explorer">
       <div class="tabs" role="tablist" aria-label="Ejemplos de módulos">
-        <button role="tab" id="t1" aria-selected="true" aria-controls="p1">Tesorería por unidad</button>
-        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Socios y cuotas</button>
-        <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Préstamos en dinero u oro</button>
+        <button role="tab" id="t1" aria-selected="true" aria-controls="p1">Tesorería</button>
+        <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Socios</button>
+        <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Préstamos</button>
       </div>
 
       <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
         <div>
-          <h3>Caja y contabilidad separadas por unidad</h3>
-          <p>Cada unidad con su propia caja, sin mezclar lo que entra y lo que sale.</p>
-          <ul><li>Egresos por categoría: planillas, contratistas, explosivos, combustible.</li><li>Comparas las unidades una al lado de la otra.</li><li>Cierre del mes y descarga en Excel para gerencia.</li></ul>
+          <h3>Caja separada por unidad</h3>
+          <p>Lo que entra y sale de cada unidad, sin mezclar.</p>
+          <ul><li>Egresos por categoría</li><li>Unidades lado a lado</li><li>Cierre del mes en Excel</li></ul>
         </div>
         <div class="sim" aria-label="Ejemplo conceptual de egresos por categoría">
           <div class="sim-title">Egresos por categoría <small>Ejemplo</small></div>
@@ -613,7 +724,6 @@ main,footer{overflow-x:clip}
             <div class="bh"><div class="bh-top"><span>Contratistas</span><b>S/ 31,300</b></div><div class="track"><div class="fill wa" data-w="38"></div></div></div>
             <div class="bh"><div class="bh-top"><span>Madera</span><b>S/ 8,880</b></div><div class="track"><div class="fill wa" data-w="11"></div></div></div>
             <div class="bh"><div class="bh-top"><span>Explosivos</span><b>S/ 7,200</b></div><div class="track"><div class="fill wa" data-w="9"></div></div></div>
-            <div class="bh"><div class="bh-top"><span>Combustible</span><b>S/ 6,600</b></div><div class="track"><div class="fill wa" data-w="8"></div></div></div>
           </div>
         </div>
       </div>
@@ -621,8 +731,8 @@ main,footer{overflow-x:clip}
       <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
         <div>
           <h3>Quién aportó, quién debe</h3>
-          <p>Un registro claro de socios o accionistas, con sus cuotas y lo que aún está pendiente.</p>
-          <ul><li>Cuotas por socio con estado actualizado.</li><li>Cobro de cuotas con su comprobante.</li><li>Permisos por rol para quien registra y quien aprueba.</li></ul>
+          <p>Las cuotas de cada socio y lo que falta pagar.</p>
+          <ul><li>Estado de cuotas por socio</li><li>Cobros con comprobante</li><li>Permisos para registrar y aprobar</li></ul>
         </div>
         <div class="sim" aria-label="Ejemplo conceptual de cuotas por socio">
           <div class="sim-title">Cuotas por socio <small>Ejemplo</small></div>
@@ -638,11 +748,14 @@ main,footer{overflow-x:clip}
       <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
         <div>
           <h3>Préstamos en soles, dólares u oro</h3>
-          <p>Registra cada préstamo en su moneda, con su calendario de pagos y su saldo. Prueba el simulador.</p>
-          <ul><li>Cuota fija, solo intereses o capital más intereses.</li><li>Pagos en dinero o en gramos de oro.</li><li>Cada moneda por separado, sin sumar soles con dólares.</li></ul>
+          <p>Cada préstamo con su calendario y su saldo.</p>
+          <ul><li>Cuota fija o solo intereses</li><li>Pagos en dinero o en oro</li><li>Cada moneda por separado</li></ul>
         </div>
         <div class="sim" aria-label="Simulador conceptual de préstamos">
-          <div class="sim-title">Simulador de préstamo <small>Ejemplo</small></div>
+          <div class="sim-title">Préstamo de ejemplo <small>Ejemplo</small></div>
+          <div class="sum loan-sum"><div><small>Monto</small><b>S/ 50,000</b></div><div><small>Plazo</small><b>6 meses</b></div><div><small>Primera cuota</small><b>S/ 9,229.88</b></div></div>
+          <p class="loan-tot">Total a pagar: <b>S/ 55,379.25</b></p>
+          <details class="simu"><summary class="btn btn-primary">Probar el simulador</summary>
           <form id="loan" class="loan-form" style="background:none;border:0;box-shadow:none;padding:0" onsubmit="return false">
             <label>Monto<input id="l-m" type="number" min="1" step="any" value="50000" inputmode="decimal"></label>
             <label>Moneda<select id="l-c"><option value="pen">Soles (S/)</option><option value="usd">Dólares (US$)</option><option value="oro">Oro (g)</option></select></label>
@@ -650,20 +763,14 @@ main,footer{overflow-x:clip}
             <label>Plazo (meses)<input id="l-n" type="number" min="1" max="60" step="1" value="6" inputmode="numeric"></label>
             <label style="grid-column:1/-1">Tipo de pago<select id="l-t"><option value="fija">Cuota fija</option><option value="capint">Capital + intereses</option><option value="int">Solo intereses</option></select></label>
           </form>
+      <div class="wa-alt" id="wa-alt"><a class="btn btn-wa" href="#" data-wa="form">¿Prefieres WhatsApp? Escríbenos directo</a></div>
           <div class="sum" aria-live="polite"><div><small>Primera cuota</small><b id="s1">—</b></div><div><small>Total intereses</small><b id="s2">—</b></div><div><small>Total a pagar</small><b id="s3">—</b></div></div>
           <table class="tbl"><thead><tr><th>Cuota</th><th>Capital</th><th>Interés</th><th>Saldo</th></tr></thead><tbody id="sched"></tbody></table>
           <p class="concept" id="more"></p>
+          </details>
         </div>
       </div>
     </div>
-
-    <div class="mods">
-      <article class="mod"><h3>Registros operativos</h3><p>Registro ordenado de lo que pasa cada día en la operación.</p></article>
-      <article class="mod"><h3>Control administrativo</h3><p>Pedidos, comprobantes y aprobaciones en un solo lugar.</p></article>
-      <article class="mod"><h3>Documentación trazable</h3><p>Historial de quién hizo qué, con permisos por persona.</p></article>
-      <article class="mod"><h3>Reportes de gestión</h3><p>Reportes listos para administración y gerencia.</p></article>
-    </div>
-    <p class="note">Qué incluye tu sistema lo decidimos juntos después de la primera conversación.</p>
     <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="solution">Solicitar diagnóstico gratuito</a></div>
   </div>
 </section>
@@ -672,32 +779,42 @@ main,footer{overflow-x:clip}
 <section class="trust" id="experiencia">
   <div class="shell trust-grid">
     <div>
+      <span class="case-tag">Caso real</span>
       <h2>Experiencia real. Soluciones a medida.</h2>
-      <p class="lead">No vendemos un programa de caja: primero vemos cómo trabajas y después hacemos el sistema a tu medida, por partes.</p>
-      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Experiencia en minería de pequeña escala</b><span>ProShop desarrolló software contable y de control administrativo para una compañía minera pequeña.</span></div></div>
-      <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Alcance por escrito antes de desarrollar</b><span>Etapas, entregables y soporte acordados en la propuesta.</span></div></div>
+      <p class="lead">No es un programa de caja genérico: primero vemos cómo trabajas y después lo construimos por partes.</p>
+      <ul class="pros">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Experiencia en minería de pequeña escala.</b> Hicimos el software contable y administrativo para una empresa de pequeña minería.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span><b>Alcance por escrito antes de desarrollar.</b> Etapas, entregables y soporte acordados en la propuesta.</span></li>
+      </ul>
     </div>
     <div>
-      <div class="ops" role="img" aria-label="Ejemplo conceptual de un panel de control administrativo minero con aprobaciones pendientes e historial de cambios, con datos ficticios.">
-        <div class="ops-top"><b>Control administrativo · Noviembre</b><small>Unidad A · Unidad B</small></div>
-        <div class="ops-kpis">
-          <div><small>Registros del mes</small><b>1 284</b></div>
-          <div><small>Por aprobar</small><b class="warn">7</b></div>
-          <div><small>Aprobados a tiempo</small><b class="good">96%</b></div>
-          <div><small>Reportes enviados</small><b>12</b></div>
+      <div class="dcar" id="dcar" role="region" aria-roledescription="carrusel" aria-label="Pantallas reales del sistema contable minero">
+        <div class="dcar-stage">
+          <figure class="ds on" data-k="0">
+            <div class="ds-img"><img src="img/demo/1-caja.webp" alt="Pantalla real del sistema: registro de caja" width="521" height="346" loading="lazy" decoding="async"></div>
+            <figcaption><b>Registro de caja</b><span>Cada ingreso y egreso con su fecha, concepto y monto.</span></figcaption>
+          </figure>
+          <figure class="ds" data-k="1" hidden>
+            <div class="ds-img"><img src="img/demo/2-ventas.webp" alt="Pantalla real del sistema: ventas de mineral" width="324" height="353" loading="lazy" decoding="async"></div>
+            <figcaption><b>Ventas de mineral</b><span>Lo vendido, lo cobrado y lo pendiente por cobrar a la planta.</span></figcaption>
+          </figure>
+          <figure class="ds" data-k="2" hidden>
+            <div class="ds-img"><img src="img/demo/3-cuotas.webp" alt="Pantalla real del sistema: cuotas de accionistas" width="324" height="353" loading="lazy" decoding="async"></div>
+            <figcaption><b>Cuotas de accionistas</b><span>Cuota asignada y abonos recibidos.</span></figcaption>
+          </figure>
+          <figure class="ds" data-k="3" hidden>
+            <div class="ds-img"><img src="img/demo/4-reportes.webp" alt="Pantalla real del sistema: reportes por unidad" width="488" height="128" loading="lazy" decoding="async"></div>
+            <figcaption><b>Reportes por unidad</b><span>Ingresos, egresos y resultado de caja de cada unidad.</span></figcaption>
+          </figure>
         </div>
-        <table>
-          <thead><tr><th>Solicitud</th><th class="hide-m">Unidad</th><th>Monto</th><th>Estado</th></tr></thead>
-          <tbody>
-            <tr><td>Compra de explosivos<small>Registró: Logística · 14/11</small></td><td class="hide-m">Unidad A</td><td>S/ 7 200</td><td><span class="tag-s wait">Por aprobar</span></td></tr>
-            <tr><td>Planilla quincena<small>Registró: RR. HH. · 15/11</small></td><td class="hide-m">Unidad B</td><td>S/ 41 650</td><td><span class="tag-s ok">Aprobado</span></td></tr>
-            <tr><td>Combustible camionetas<small>Registró: Operaciones · 16/11</small></td><td class="hide-m">Unidad A</td><td>S/ 3 300</td><td><span class="tag-s go">En revisión</span></td></tr>
-            <tr><td>Pago a contratista<small>Registró: Administración · 16/11</small></td><td class="hide-m">Unidad B</td><td>S/ 15 650</td><td><span class="tag-s late">Observado</span></td></tr>
-          </tbody>
-        </table>
-        <div class="ops-foot"><span class="ops-dot"></span><span><b>Historial:</b> “Pago a contratista” fue observado por Gerencia el 17/11 a las 09:42 — falta adjuntar comprobante.</span></div>
+        <div class="dcar-ctl">
+          <div class="dcar-dots" id="dDots"><button type="button" aria-label="Ver Registro de caja" aria-current="true"></button><button type="button" aria-label="Ver Ventas de mineral"></button><button type="button" aria-label="Ver Cuotas de accionistas"></button><button type="button" aria-label="Ver Reportes por unidad"></button></div>
+          <span class="dcar-count" id="dCount" aria-live="polite">1 / 4</span>
+          <button type="button" class="dcar-btn prev" aria-label="Pantalla anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button type="button" class="dcar-btn next" aria-label="Pantalla siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
       </div>
-      <p class="ops-cap">Imagen de ejemplo.</p>
+      <p class="dcar-note">Pantallas reales del sistema, con datos de prueba.</p>
     </div>
   </div>
 </section>
@@ -711,8 +828,9 @@ main,footer{overflow-x:clip}
       <span class="line" id="tline"></span>
       <div class="tstep"><span class="n">1</span><h3>Conversamos</h3><p>Nos cuentas cómo trabajas y qué te da más problemas hoy.</p></div>
       <div class="tstep"><span class="n">2</span><h3>Priorizamos</h3><p>Elegimos juntos qué conviene resolver primero.</p></div>
-      <div class="tstep"><span class="n">3</span><h3>Mostramos el enfoque</h3><p>Te mostramos la propuesta y, si se puede, una demo en 48 horas.</p></div>
-      <div class="tstep"><span class="n">4</span><h3>Desarrollamos por fases</h3><p>Lo construimos por partes, lo pruebas y lo mejoramos.</p></div>
+      <div class="tstep"><span class="n">3</span><h3>Mostramos el enfoque</h3><p>Te mostramos la propuesta y, si es viable, una demo en 48 horas.</p></div>
+      <div class="tstep"><span class="n">4</span><h3>Desarrollamos por fases</h3><p>Lo construimos por partes, empezando por lo más importante.</p></div>
+      <div class="tstep"><span class="n">5</span><h3>Probamos y lanzamos</h3><p>Lo pruebas con tu equipo, ajustamos y lo ponemos en marcha.</p></div>
     </div>
     <div class="cta-row" style="margin-top:44px"><a class="btn btn-primary" href="#diagnostico" data-cta="method">Solicitar diagnóstico gratuito</a></div>
   </div>
@@ -724,7 +842,6 @@ main,footer{overflow-x:clip}
     <div>
       <h2>Cuéntanos sobre tu empresa</h2>
       <p class="lead">En 20 minutos vemos cómo trabajas y qué quieres mejorar. Sin costo y sin compromiso.</p>
-      <div class="wa-side"><a class="btn btn-wa" href="#" data-wa="form">Hablar por WhatsApp</a></div>
     </div>
     <div>
       <form id="lead-form" novalidate>
@@ -734,7 +851,9 @@ main,footer{overflow-x:clip}
         <label for="f-empresa">Empresa *</label>
         <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="e-empresa"><span class="err" id="e-empresa" data-for="empresa"></span>
         <label for="f-actividad">Actividad empresarial *</label>
-        <input id="f-actividad" name="actividad" type="text" value="Minería" required aria-describedby="e-actividad"><span class="err" id="e-actividad" data-for="actividad"></span>
+        <input id="f-actividad" name="actividad" type="text" value="Minería" placeholder="Ej.: minería aurífera, contratista minero" required aria-describedby="e-actividad"><span class="err" id="e-actividad" data-for="actividad"></span>
+        <label for="f-email">Correo *</label>
+        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="nombre@empresa.com" required aria-describedby="e-email"><span class="err" id="e-email" data-for="email"></span>
         <label for="f-wa">WhatsApp *</label>
         <div class="tel">
           <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="País: Perú +51">
@@ -746,9 +865,10 @@ main,footer{overflow-x:clip}
         </div><span class="err" id="e-whatsapp" data-for="whatsapp"></span>
         <label for="f-nec">¿Qué parte de tu operación necesitas mejorar? <span class="opt">(opcional)</span></label>
         <textarea id="f-nec" name="necesidad"></textarea>
-        <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos personales para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
+        <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
         <span class="err" id="e-consent" data-for="consent"></span>
         <button class="btn btn-primary" type="submit" id="submit">Solicitar mi diagnóstico gratuito</button>
+        <p class="next-step">Te escribimos por WhatsApp para coordinar el día y la hora.</p>
         <div class="msg" id="msg" role="alert"></div>
       </form>
 
@@ -768,10 +888,10 @@ main,footer{overflow-x:clip}
   <div class="shell faq">
     <h2>Preguntas frecuentes</h2>
     <div style="margin-top:28px">
-      <details><summary>¿Es un software minero listo para instalar?</summary><p>No. Vemos cómo trabaja tu empresa y hacemos un sistema a su medida.</p></details>
+      <details><summary>¿Es un software minero listo para instalar?</summary><p>No es un paquete genérico: vemos cómo trabaja tu empresa y hacemos un sistema a su medida.</p></details>
       <details><summary>¿Sirve para administración y operaciones?</summary><p>Sí. Puede tener partes para las dos áreas, según lo que necesites primero.</p></details>
       <details><summary>¿Se puede integrar con programas actuales?</summary><p>Depende del programa que uses. Lo revisamos en la primera conversación.</p></details>
-      <details><summary>¿Puedo generar los reportes que me piden las autoridades?</summary><p>Sí, diseñamos reportes con la información y el formato que necesitas presentar. En el diagnóstico revisamos cuáles son y los incluimos en el alcance.</p></details>
+      <details><summary>¿Puedo generar los reportes que me piden las autoridades?</summary><p>Podemos incluirlos. En el diagnóstico revisamos qué reportes te piden y validamos que el sistema pueda cubrirlos antes de comprometerlos.</p></details>
     </div>
     <div class="cta-row" style="margin-top:32px"><a class="btn btn-primary" href="#diagnostico" data-cta="faq">Solicitar diagnóstico gratuito</a></div>
   </div>
@@ -781,7 +901,7 @@ main,footer{overflow-x:clip}
 <section class="last">
   <div class="nugs" aria-hidden="true"></div>
   <div class="shell">
-    <h2>Solicitar diagnóstico gratuito</h2>
+    <h2>¿Conversamos 20 minutos?</h2>
     <p>Primero entendemos tu empresa. Después, el sistema.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#diagnostico" data-cta="final">Solicitar diagnóstico gratuito</a>
@@ -793,8 +913,14 @@ main,footer{overflow-x:clip}
 
 <footer>
   <div class="shell">
-    <span>© 2026 ProShop · Lima, Perú</span>
-    <span><a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a> · <a href="https://proshop.lat/privacidad">Política de privacidad</a> · <button type="button" class="linkish" id="ck-open">Preferencias de cookies</button> · <a href="https://proshop.lat/">proshop.lat</a></span>
+    <a class="ft-logo" href="https://proshop.lat/" aria-label="ProShop"><img src="img/logo-proshop.png" alt="ProShop" width="120" height="30" loading="lazy"></a>
+    <ul class="ft-links">
+      <li><a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a></li>
+      <li><a href="https://proshop.lat/privacidad">Política de privacidad</a></li>
+      <li><button type="button" class="linkish" id="ck-open">Preferencias de cookies</button></li>
+      <li><a href="https://proshop.lat/">proshop.lat</a></li>
+    </ul>
+    <small class="ft-copy">© 2026 ProShop</small>
   </div>
 </footer>
 
@@ -825,14 +951,15 @@ const CC = {code: '51'};
   let act = 0;
   const open = v => { list.hidden = !v; btn.setAttribute('aria-expanded', v); if (v) { act = COUNTRIES.findIndex(x => x[2] === CC.code); hi(); items[act].scrollIntoView({block: 'nearest'}); } };
   const hi = () => items.forEach((li, k) => li.classList.toggle('act', k === act));
-  const pick = i => {
+  const pick = (i, silent) => {
     const [iso, name, c] = COUNTRIES[i];
     CC.code = c; flag.src = 'https://flagcdn.com/w40/' + iso + '.png'; code.textContent = '+' + c;
     btn.setAttribute('aria-label', 'País: ' + name + ' +' + c);
     items.forEach((li, k) => li.setAttribute('aria-selected', k === i));
     input.placeholder = c === '51' ? '9XX XXX XXX' : 'Número de WhatsApp';
-    open(false); input.focus();
+    open(false); if (!silent) input.focus();
   };
+  window.pickCountry = iso => { const k = COUNTRIES.findIndex(x => x[0] === iso); if (k >= 0) pick(k, true); };
   btn.addEventListener('click', () => open(list.hidden));
   list.addEventListener('click', e => { const li = e.target.closest('li'); if (li) pick(+li.dataset.i); });
   btn.addEventListener('keydown', e => {
@@ -1064,6 +1191,7 @@ function validate(d){
   let ok = true, first = null;
   const bad = (n, t) => { setErr(n, t); if (t){ ok = false; first = first || form.elements[n]; } };
   ['nombre','empresa','actividad'].forEach(n => bad(n, (!d[n] || d[n].trim().length < 2) ? 'Completa este campo.' : ''));
+  bad('email', /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((d.email || '').trim()) ? '' : 'Escribe un correo válido.');
   bad('whatsapp', /^\+\d{8,15}$/.test(d.whatsapp) && d.whatsapp.length - CC.code.length - 1 >= 6 ? '' : 'Escribe tu número de WhatsApp.');
   bad('consent', d.consent ? '' : 'Acepta el tratamiento de datos para continuar.');
   if (first) first.focus();
@@ -1082,7 +1210,7 @@ form.addEventListener('submit', async e => {
   const ref = subId.replace(/-/g,'').slice(0, 8);
   const tel = d.whatsapp.replace(/[\s\-().]/g,'');
   const nec = (d.necesidad||'').trim().slice(0, 800);
-  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel];
+  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel, 'Correo: ' + d.email.trim()];
   if (nec) lines.push('Necesito mejorar: ' + nec);
   const origen = attr.utm_campaign || attr.utm_source || (attr.gclid ? 'google-ads' : '');
   if (origen) lines.push('Origen: ' + origen);
@@ -1091,7 +1219,7 @@ form.addEventListener('submit', async e => {
   sent = true;
   // Sin CRM: generate_lead marca el envío válido del formulario; la conversación ocurre en WhatsApp.
   track('generate_lead', {lead_ref: ref, canal_entrega: 'whatsapp', geo_country: geo ? geo.pais : ''});
-  form.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
+  form.hidden = true; const wa2 = $('#wa-alt'); if (wa2) wa2.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
   history.replaceState(null, '', '#gracias');
   th.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'center'});
   const wl = $('#wa-lead'); wl.href = url;
@@ -1177,6 +1305,52 @@ document.addEventListener('click', e => {
     b.addEventListener('mousemove', e => { const r = b.getBoundingClientRect(); b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .15) + 'px,' + ((e.clientY - r.top - r.height / 2) * .25 - 2) + 'px)'; });
     b.addEventListener('mouseleave', () => b.style.transform = '');
   });
+})();
+</script>
+<script>
+/* ===== UNIFICADO 19/11: barra fija y país por ubicación ===== */
+(function(){
+  // barra fija: oculta mientras se ve el hero, el formulario o el CTA final
+  const bar = document.getElementById('sticky');
+  const zonas = [document.querySelector('.hero'), document.getElementById('diagnostico'), document.querySelector('.last')].filter(Boolean);
+  if (bar && zonas.length) {
+    const vis = new Set(zonas.filter(z => { const r = z.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }));
+    const upd = () => bar.classList.toggle('off', vis.size > 0);
+    upd();
+    const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? vis.add(e.target) : vis.delete(e.target)); upd(); }, {threshold: 0});
+    zonas.forEach(z => io.observe(z));
+  }
+  // país del WhatsApp según la zona horaria / idioma del navegador (sin enviar datos a terceros)
+  try {
+    const TZ = {'America/Lima':'pe','America/La_Paz':'bo','America/Santiago':'cl','America/Bogota':'co','America/Guayaquil':'ec',
+      'America/Argentina/Buenos_Aires':'ar','America/Buenos_Aires':'ar','America/Mexico_City':'mx','America/Asuncion':'py','America/Montevideo':'uy',
+      'America/Caracas':'ve','America/Sao_Paulo':'br','America/New_York':'us','America/Chicago':'us','America/Los_Angeles':'us','Europe/Madrid':'es'};
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    let iso = TZ[tz] || (tz.startsWith('America/Argentina') ? 'ar' : '');
+    if (!iso) { const m = (navigator.language || '').match(/-([A-Za-z]{2})$/); if (m) iso = m[1].toLowerCase(); }
+    if (iso && window.pickCountry) window.pickCountry(iso);
+  } catch (e) {}
+})();
+</script>
+<script>
+/* ===== Carrusel de pantallas reales (sin avance automático) ===== */
+(function(){
+  const root = document.getElementById('dcar'); if (!root) return;
+  const sl = [...root.querySelectorAll('.ds')], dots = [...root.querySelectorAll('#dDots button')], cnt = document.getElementById('dCount');
+  let i = 0;
+  const go = n => {
+    i = (n + sl.length) % sl.length;
+    sl.forEach((x, k) => { x.hidden = k !== i; x.classList.toggle('on', k === i); });
+    dots.forEach((d, k) => k === i ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current'));
+    cnt.textContent = (i + 1) + ' / ' + sl.length;
+    if (window.dataLayer) dataLayer.push({event: 'carousel_view', landing: 'software-mineria', slide: i + 1});
+  };
+  root.querySelector('.prev').addEventListener('click', () => go(i - 1));
+  root.querySelector('.next').addEventListener('click', () => go(i + 1));
+  dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+  let x0 = null;
+  root.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, {passive: true});
+  root.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
 })();
 </script>
 </body>

@@ -515,6 +515,87 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 /* barra superior: línea verde simple (paleta oficial) */
 .prog,.prog-au{background:#00fea7!important;box-shadow:none!important;height:3px!important}
 .btn-primary::before{background:none!important}
+
+/* ===== UNIFICADO 19/11 · reunión + ajustes de Mariana ===== */
+/* etiqueta del hero en verde */
+.hero .tag{color:var(--accent)!important;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem!important;font-weight:800!important}
+.hero .tag::before{background:var(--accent)!important}
+.hero .tag .tt{border-right-color:var(--accent)!important}
+/* sin línea decorativa bajo los títulos */
+main h2::after{display:none!important;content:none!important}
+/* botón de WhatsApp: secundario con borde (no compite con el verde principal) */
+.btn-wa{background:transparent!important;color:#5a2bc0!important;border:2px solid #5a2bc0!important;box-shadow:none!important}
+.btn-wa:hover{background:rgba(90,43,192,.08)!important}
+.sticky-cta .btn-wa,.last .btn-wa,.thanks .btn-wa{color:#fff!important;border-color:#6b5a8c!important}
+.thanks .btn-wa{color:#5a2bc0!important;border-color:#5a2bc0!important}
+.btn-wa::before{content:"";width:16px;height:16px;flex:none;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z'/%3E%3C/svg%3E") center/contain no-repeat;position:static!important;inset:auto!important;opacity:1!important;animation:none!important}
+.btn-wa:not(.sticky-cta .btn-wa):not(.last .btn-wa)::before{background:#5a2bc0}
+/* metodología: 5 pasos compactos, siempre visibles */
+.timeline{display:grid!important;grid-template-columns:1fr!important;gap:18px!important;padding:0 0 0 56px!important;margin-top:28px!important;max-width:680px;position:relative}
+.timeline::before{display:block!important;content:""!important;position:absolute!important;left:17px!important;right:auto!important;top:18px!important;bottom:18px!important;width:2px!important;height:auto!important;background:#d9d0ea!important;animation:none!important;border-radius:2px}
+.timeline .line{display:none!important}
+.tstep,.tstep[data-rv],.mo .tstep[data-rv]{opacity:1!important;transform:none!important;position:relative}
+.tstep .n,.tstep.on .n,.mo .tstep .n{position:absolute!important;left:-56px!important;top:0!important;width:36px!important;height:36px!important;background:#5a2bc0!important;border:0!important;color:#fff!important;font-size:.9rem!important;animation:none!important;box-shadow:none!important;transform:none!important}
+.tstep h3{font-size:1.08rem!important;margin:0 0 2px!important;line-height:1.3}
+.tstep p{font-size:.95rem;color:var(--ink-2)}
+/* formulario: visible sin animación, campos de 48 px, WhatsApp debajo */
+.form-wrap>div,.mo .form-wrap>div,.form-wrap>div[data-rv]{opacity:1!important;transform:none!important;transition:none!important}
+form{gap:14px!important}
+form input,form select{min-height:48px;border-radius:10px!important}
+form textarea{min-height:72px!important;border-radius:10px!important}
+label[for="f-nec"]{display:block!important}
+label[for="f-nec"] .opt{color:var(--ink-3)}
+.check input{width:22px!important;height:22px!important;min-height:22px!important;accent-color:#5a2bc0!important}
+.next-step{text-align:center;font-size:.82rem;color:var(--ink-2);margin:-4px 0 0}
+.wa-alt{margin-top:16px;text-align:center}
+.wa-alt .btn{width:100%}
+/* casos reales: etiqueta CASO REAL */
+.case-tag{display:inline-block;color:var(--accent);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+/* FAQ */
+summary::after{color:#5a2bc0!important}
+/* CTA final */
+.last h2{max-width:none!important}
+/* pie morado, un enlace por línea */
+footer{background:#160827!important;color:#c7bcd9;padding:36px 0 110px!important}
+footer .shell{display:grid!important;gap:14px;justify-content:start!important}
+.ft-logo img{height:28px;width:auto}
+.ft-links{list-style:none;padding:0;margin:0;display:grid}
+.ft-links a,.ft-links .linkish{display:flex;align-items:center;min-height:44px;color:#c7bcd9;text-decoration:none;font:inherit;font-size:.95rem}
+.ft-links a:hover,.ft-links .linkish:hover{color:#fff}
+.ft-copy{font-size:.8rem;color:#9a8eb2}
+/* barra fija: solo entre el hero y el formulario */
+.sticky-cta{background:#1e0b36!important;border-top:1px solid #31254a!important;transition:transform .3s var(--ease)}
+.sticky-cta.off{transform:translateY(110%)!important}
+.sticky-cta .btn-primary{flex:1.4!important}
+.sticky-cta .btn-wa{flex:1!important}
+
+/* ===== TRANSPORTE 19/11 ===== */
+.trust{background:var(--purple)!important}
+/* problemas compactos */
+.problems.pc{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin-top:24px!important;border:0!important}
+.problems.pc .prob{display:flex!important;flex-direction:row!important;gap:14px!important;align-items:flex-start!important;padding:16px 18px!important;background:#fff!important;border:1px solid var(--rule)!important;border-left:4px solid var(--accent)!important;border-radius:16px!important;box-shadow:none!important}
+.pc-ic{flex:none;width:36px;height:36px;border-radius:10px;background:var(--paper-2);color:#5a2bc0;display:grid;place-items:center}
+.pc-ic svg{width:20px;height:20px}
+.problems.pc h3{font-size:1.05rem!important;margin:0 0 4px!important}
+.problems.pc p{font-size:.93rem;color:var(--ink-2);margin:0}
+.pc-close{margin-top:16px;padding:20px 22px;border-radius:16px;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pc-close p{margin:0;font-weight:700;font-size:1.08rem;line-height:1.35}
+.pc-close b{color:var(--accent)}
+/* solución: selector segmentado y checks */
+.explorer{border-radius:16px!important}
+.tabs{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:4px!important;padding:6px!important;margin:12px!important;background:var(--paper-2)!important;border:0!important;border-radius:12px!important}
+.tabs button{border-radius:9px!important;padding:0 8px!important;min-height:44px!important;background:transparent!important;color:var(--ink-2)!important;font-size:.92rem!important;text-align:center}
+.tabs button[aria-selected="true"]{background:var(--purple)!important;color:#fff!important}
+.panel{gap:20px!important;padding:8px 18px 20px!important}
+.panel h3{font-size:1.2rem!important;margin-bottom:4px!important}
+.panel ul{margin-top:10px!important;gap:6px!important}
+.panel li{padding-left:26px!important}
+.panel li::before{content:""!important;width:16px!important;height:16px!important;top:.2em!important;border-radius:0!important;background:#14a57a!important;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+.sim{border-radius:12px!important;padding:14px 16px!important}
+
+.mo .prob::before{display:none!important}
+@media (max-width:960px){.problems.pc{grid-template-columns:1fr!important}}
+@media (max-width:640px){.pc-close .btn{width:100%}.tabs button{font-size:.85rem!important}}
 </style>
 </head>
 <body>
@@ -553,7 +634,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
           <div>Incidencias<b id="lv3">0</b></div>
         </div>
       </div>
-      <p class="stage-cap">Imagen de ejemplo.</p>
     </div>
   </div>
 </section>
@@ -562,21 +642,15 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <section id="problemas">
   <div class="shell">
     <h2>¿Te ocurre algo de esto?</h2>
-    <div class="problems">
-      <article class="prob">
-        <h3>Despachos difíciles de coordinar</h3>
-        <p>Los servicios se reparten por llamadas, chats y Excel.</p>
-      </article>
-      <article class="prob">
-        <h3>Visibilidad limitada</h3>
-        <p>No siempre se sabe qué servicio falta, cuál va en camino y cuál terminó.</p>
-      </article>
-      <article class="prob">
-        <h3>Incidencias sin historial</h3>
-        <p>Cuando algo sale mal, cuesta saber qué pasó y quién fue.</p>
-      </article>
+    <div class="problems pc">
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h6a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h6"/></svg></span><div><h3>Despachos difíciles de coordinar</h3><p>Los servicios se reparten por llamadas, chats y Excel.</p></div></article>
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h3>Visibilidad limitada</h3><p>No siempre se sabe qué servicio falta, cuál va en camino y cuál terminó.</p></div></article>
+      <article class="prob"><span class="pc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></span><div><h3>Incidencias sin historial</h3><p>Cuando algo sale mal, cuesta saber qué pasó y quién fue.</p></div></article>
     </div>
-    <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="problems">Solicitar diagnóstico gratuito</a></div>
+    <div class="pc-close">
+      <p><span>No necesitas más herramientas.</span> <b>Necesitas que tu información esté conectada.</b></p>
+      <a class="btn btn-primary" href="#diagnostico" data-cta="problems">Solicitar diagnóstico gratuito</a>
+    </div>
   </div>
 </section>
 
@@ -584,7 +658,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <section class="alt" id="solucion">
   <div class="shell">
     <h2>Software construido alrededor de tu operación</h2>
-    <p class="lead">Toca cada pestaña para ver un ejemplo. El sistema final lo armamos contigo.</p>
+    <p class="lead">Así podría verse. Lo definimos contigo.</p>
 
     <div class="explorer">
       <div class="tabs" role="tablist" aria-label="Ejemplos de módulos">
@@ -639,23 +713,15 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
         <div class="sim" aria-label="Ejemplo conceptual de incidencias registradas">
           <div class="sim-title">Incidencias de la semana <small>Ejemplo</small></div>
           <table class="tbl"><thead><tr><th>Servicio</th><th>Registro</th><th>Estado</th></tr></thead><tbody>
-            <tr><td>Surco → SJL · demora</td><td>Lun 09:40</td><td><span class="st ok">Cerrada</span></td></tr>
-            <tr><td>Lurín → Lima · dirección errada</td><td>Mar 11:15</td><td><span class="st ok">Cerrada</span></td></tr>
-            <tr><td>Callao → Ate · cliente ausente</td><td>Mié 16:05</td><td><span class="st go">En revisión</span></td></tr>
-            <tr><td>SMP → Miraflores · carga dañada</td><td>Jue 10:30</td><td><span class="st late">Abierta</span></td></tr>
+            <tr><td>Ruta norte · demora</td><td>Lun 09:40</td><td><span class="st ok">Cerrada</span></td></tr>
+            <tr><td>Ruta sur · dirección errada</td><td>Mar 11:15</td><td><span class="st ok">Cerrada</span></td></tr>
+            <tr><td>Ruta este · cliente ausente</td><td>Mié 16:05</td><td><span class="st go">En revisión</span></td></tr>
+            <tr><td>Ruta centro · carga dañada</td><td>Jue 10:30</td><td><span class="st late">Abierta</span></td></tr>
           </tbody></table>
           <p class="concept">Datos de ejemplo.</p>
         </div>
       </div>
     </div>
-
-    <div class="mods">
-      <article class="mod"><h3>Gestión de despachos</h3><p>Cada servicio con su conductor y su estado.</p></article>
-      <article class="mod"><h3>Vehículos y conductores</h3><p>Fichas y disponibilidad en un solo lugar.</p></article>
-      <article class="mod"><h3>Seguimiento operativo</h3><p>Estado, problemas y pruebas de entrega.</p></article>
-      <article class="mod"><h3>Reportes e integraciones</h3><p>Reportes y conexión con lo que ya usas, si se puede.</p></article>
-    </div>
-    <p class="note">Qué incluye tu sistema lo decidimos juntos después de la primera conversación.</p>
     <div class="cta-row" style="margin-top:28px"><a class="btn btn-primary" href="#diagnostico" data-cta="solution">Solicitar diagnóstico gratuito</a></div>
   </div>
 </section>
@@ -664,6 +730,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <section class="trust" id="experiencia">
   <div class="shell trust-grid">
     <div>
+      <span class="case-tag">Caso real</span>
       <h2>Experiencia real. Soluciones a medida.</h2>
       <p class="lead">No vendemos un programa de caja: primero vemos cómo trabajas y después hacemos el sistema a tu medida, por partes.</p>
       <div class="proof"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><div><b>Experiencia en movilidad y delivery urbano</b><span>Desarrollamos GoBot, plataforma en producción que asigna viajes, deliveries y mandados a conductores. Es experiencia en movilidad y reparto, no en transporte de carga.</span></div></div>
@@ -702,8 +769,9 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
       <span class="line" id="tline"></span>
       <div class="tstep"><span class="n">1</span><h3>Conversamos</h3><p>Nos cuentas cómo trabajas y qué te da más problemas hoy.</p></div>
       <div class="tstep"><span class="n">2</span><h3>Priorizamos</h3><p>Elegimos juntos qué conviene resolver primero.</p></div>
-      <div class="tstep"><span class="n">3</span><h3>Mostramos el enfoque</h3><p>Te mostramos la propuesta y, si se puede, una demo en 48 horas.</p></div>
-      <div class="tstep"><span class="n">4</span><h3>Desarrollamos por fases</h3><p>Lo construimos por partes, lo pruebas y lo mejoramos.</p></div>
+      <div class="tstep"><span class="n">3</span><h3>Mostramos el enfoque</h3><p>Te mostramos la propuesta y, si es viable, una demo en 48 horas.</p></div>
+      <div class="tstep"><span class="n">4</span><h3>Desarrollamos por fases</h3><p>Lo construimos por partes, empezando por lo más importante.</p></div>
+      <div class="tstep"><span class="n">5</span><h3>Probamos y lanzamos</h3><p>Lo pruebas con tu equipo, ajustamos y lo ponemos en marcha.</p></div>
     </div>
     <div class="cta-row" style="margin-top:44px"><a class="btn btn-primary" href="#diagnostico" data-cta="method">Solicitar diagnóstico gratuito</a></div>
   </div>
@@ -715,7 +783,6 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
     <div>
       <h2>Cuéntanos sobre tu empresa</h2>
       <p class="lead">En 20 minutos vemos cómo trabajas y qué quieres mejorar. Sin costo y sin compromiso.</p>
-      <div class="wa-side"><a class="btn btn-wa" href="#" data-wa="form">Hablar por WhatsApp</a></div>
     </div>
     <div>
       <form id="lead-form" novalidate>
@@ -726,6 +793,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
         <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="e-empresa"><span class="err" id="e-empresa" data-for="empresa"></span>
         <label for="f-actividad">Actividad empresarial *</label>
         <input id="f-actividad" name="actividad" type="text" placeholder="Ej.: transporte de carga, reparto, distribución" required aria-describedby="e-actividad"><span class="err" id="e-actividad" data-for="actividad"></span>
+        <label for="f-email">Correo *</label>
+        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="nombre@empresa.com" required aria-describedby="e-email"><span class="err" id="e-email" data-for="email"></span>
         <label for="f-wa">WhatsApp *</label>
         <div class="tel">
           <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="País: Perú +51">
@@ -737,11 +806,13 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
         </div><span class="err" id="e-whatsapp" data-for="whatsapp"></span>
         <label for="f-nec">¿Qué parte de tu operación necesitas mejorar? <span class="opt">(opcional)</span></label>
         <textarea id="f-nec" name="necesidad"></textarea>
-        <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos personales para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
+        <label class="check" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required aria-describedby="e-consent"><span>Acepto el tratamiento de mis datos para que ProShop me contacte, según su <a href="https://proshop.lat/privacidad" target="_blank" rel="noopener">política de privacidad</a>. *</span></label>
         <span class="err" id="e-consent" data-for="consent"></span>
         <button class="btn btn-primary" type="submit" id="submit">Solicitar mi diagnóstico gratuito</button>
+        <p class="next-step">Te escribimos por WhatsApp para coordinar el día y la hora.</p>
         <div class="msg" id="msg" role="alert"></div>
       </form>
+      <div class="wa-alt" id="wa-alt"><a class="btn btn-wa" href="#" data-wa="form">¿Prefieres WhatsApp? Escríbenos directo</a></div>
 
       <div class="thanks" id="thanks" tabindex="-1" hidden>
         <svg class="checkmark" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 15-17"/></svg>
@@ -771,7 +842,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 <!-- CTA FINAL -->
 <section class="last">
   <div class="shell">
-    <h2>Solicitar diagnóstico gratuito</h2>
+    <h2>¿Conversamos 20 minutos?</h2>
     <p>Primero entendemos tu empresa. Después, el sistema.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#diagnostico" data-cta="final">Solicitar diagnóstico gratuito</a>
@@ -783,8 +854,14 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 
 <footer>
   <div class="shell">
-    <span>© 2026 ProShop · Lima, Perú</span>
-    <span><a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a> · <a href="https://proshop.lat/privacidad">Política de privacidad</a> · <button type="button" class="linkish" id="ck-open">Preferencias de cookies</button> · <a href="https://proshop.lat/">proshop.lat</a></span>
+    <a class="ft-logo" href="https://proshop.lat/" aria-label="ProShop"><img src="img/logo-proshop.png" alt="ProShop" width="120" height="30" loading="lazy"></a>
+    <ul class="ft-links">
+      <li><a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a></li>
+      <li><a href="https://proshop.lat/privacidad">Política de privacidad</a></li>
+      <li><button type="button" class="linkish" id="ck-open">Preferencias de cookies</button></li>
+      <li><a href="https://proshop.lat/">proshop.lat</a></li>
+    </ul>
+    <small class="ft-copy">© 2026 ProShop</small>
   </div>
 </footer>
 
@@ -815,14 +892,15 @@ const CC = {code: '51'};
   let act = 0;
   const open = v => { list.hidden = !v; btn.setAttribute('aria-expanded', v); if (v) { act = COUNTRIES.findIndex(x => x[2] === CC.code); hi(); items[act].scrollIntoView({block: 'nearest'}); } };
   const hi = () => items.forEach((li, k) => li.classList.toggle('act', k === act));
-  const pick = i => {
+  const pick = (i, silent) => {
     const [iso, name, c] = COUNTRIES[i];
     CC.code = c; flag.src = 'https://flagcdn.com/w40/' + iso + '.png'; code.textContent = '+' + c;
     btn.setAttribute('aria-label', 'País: ' + name + ' +' + c);
     items.forEach((li, k) => li.setAttribute('aria-selected', k === i));
     input.placeholder = c === '51' ? '9XX XXX XXX' : 'Número de WhatsApp';
-    open(false); input.focus();
+    open(false); if (!silent) input.focus();
   };
+  window.pickCountry = iso => { const k = COUNTRIES.findIndex(x => x[0] === iso); if (k >= 0) pick(k, true); };
   btn.addEventListener('click', () => open(list.hidden));
   list.addEventListener('click', e => { const li = e.target.closest('li'); if (li) pick(+li.dataset.i); });
   btn.addEventListener('keydown', e => {
@@ -939,11 +1017,11 @@ function countTo(el, to, f, dur=900){
 /* ===== Hero: despachos en vivo ===== */
 const EST = ['Pendiente', 'En ruta', 'Entregado', 'Incidencia'];
 const TRIPS = [
-  {v:'ABC-123', r:'Ate → Callao', d:'Jorge R.', h:'08:10', s:2},
-  {v:'C2M-881', r:'Lurín → Cercado', d:'Pedro L.', h:'08:40', s:1},
-  {v:'F1T-550', r:'SMP → Miraflores', d:'Ana M.', h:'09:15', s:1},
-  {v:'D9K-302', r:'Callao → Ate', d:'Mario C.', h:'09:30', s:0},
-  {v:'B7Q-418', r:'Surco → SJL', d:'Luis T.', h:'10:00', s:0}
+  {v:'ABC-123', r:'Almacén → Ruta norte', d:'Jorge R.', h:'08:10', s:2},
+  {v:'C2M-881', r:'Almacén → Ruta sur', d:'Pedro L.', h:'08:40', s:1},
+  {v:'F1T-550', r:'Almacén → Ruta centro', d:'Ana M.', h:'09:15', s:1},
+  {v:'D9K-302', r:'Planta → Ruta este', d:'Mario C.', h:'09:30', s:0},
+  {v:'B7Q-418', r:'Planta → Ruta oeste', d:'Luis T.', h:'10:00', s:0}
 ];
 let entregados = 37;
 function renderTrips(flash){
@@ -1008,6 +1086,7 @@ function validate(d){
   let ok = true, first = null;
   const bad = (n, t) => { setErr(n, t); if (t){ ok = false; first = first || form.elements[n]; } };
   ['nombre','empresa','actividad'].forEach(n => bad(n, (!d[n] || d[n].trim().length < 2) ? 'Completa este campo.' : ''));
+  bad('email', /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((d.email || '').trim()) ? '' : 'Escribe un correo válido.');
   bad('whatsapp', /^\+\d{8,15}$/.test(d.whatsapp) && d.whatsapp.length - CC.code.length - 1 >= 6 ? '' : 'Escribe tu número de WhatsApp.');
   bad('consent', d.consent ? '' : 'Acepta el tratamiento de datos para continuar.');
   if (first) first.focus();
@@ -1026,7 +1105,7 @@ form.addEventListener('submit', async e => {
   const ref = subId.replace(/-/g,'').slice(0, 8);
   const tel = d.whatsapp.replace(/[\s\-().]/g,'');
   const nec = (d.necesidad||'').trim().slice(0, 800);
-  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel];
+  const lines = [CONFIG.waText, '', 'Nombre: ' + d.nombre.trim(), 'Empresa: ' + d.empresa.trim(), 'Actividad: ' + d.actividad.trim(), 'WhatsApp: ' + tel, 'Correo: ' + d.email.trim()];
   if (nec) lines.push('Necesito mejorar: ' + nec);
   const origen = attr.utm_campaign || attr.utm_source || (attr.gclid ? 'google-ads' : '');
   if (origen) lines.push('Origen: ' + origen);
@@ -1035,7 +1114,7 @@ form.addEventListener('submit', async e => {
   sent = true;
   // Sin CRM: generate_lead marca el envío válido del formulario; la conversación ocurre en WhatsApp.
   track('generate_lead', {lead_ref: ref, canal_entrega: 'whatsapp', geo_country: geo ? geo.pais : ''});
-  form.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
+  form.hidden = true; const wa2 = $('#wa-alt'); if (wa2) wa2.hidden = true; const th = $('#thanks'); th.hidden = false; th.focus();
   history.replaceState(null, '', '#gracias');
   th.scrollIntoView({behavior: REDUCED ? 'auto' : 'smooth', block:'center'});
   const wl = $('#wa-lead'); wl.href = url;
@@ -1096,6 +1175,31 @@ document.addEventListener('click', e => {
     };
     addEventListener('scroll', move, {passive: true}); addEventListener('resize', move); move();
   }
+})();
+</script>
+<script>
+/* ===== UNIFICADO 19/11: barra fija y país por ubicación ===== */
+(function(){
+  // barra fija: oculta mientras se ve el hero, el formulario o el CTA final
+  const bar = document.getElementById('sticky');
+  const zonas = [document.querySelector('.hero'), document.getElementById('diagnostico'), document.querySelector('.last')].filter(Boolean);
+  if (bar && zonas.length) {
+    const vis = new Set(zonas.filter(z => { const r = z.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }));
+    const upd = () => bar.classList.toggle('off', vis.size > 0);
+    upd();
+    const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? vis.add(e.target) : vis.delete(e.target)); upd(); }, {threshold: 0});
+    zonas.forEach(z => io.observe(z));
+  }
+  // país del WhatsApp según la zona horaria / idioma del navegador (sin enviar datos a terceros)
+  try {
+    const TZ = {'America/Lima':'pe','America/La_Paz':'bo','America/Santiago':'cl','America/Bogota':'co','America/Guayaquil':'ec',
+      'America/Argentina/Buenos_Aires':'ar','America/Buenos_Aires':'ar','America/Mexico_City':'mx','America/Asuncion':'py','America/Montevideo':'uy',
+      'America/Caracas':'ve','America/Sao_Paulo':'br','America/New_York':'us','America/Chicago':'us','America/Los_Angeles':'us','Europe/Madrid':'es'};
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+    let iso = TZ[tz] || (tz.startsWith('America/Argentina') ? 'ar' : '');
+    if (!iso) { const m = (navigator.language || '').match(/-([A-Za-z]{2})$/); if (m) iso = m[1].toLowerCase(); }
+    if (iso && window.pickCountry) window.pickCountry(iso);
+  } catch (e) {}
 })();
 </script>
 </body>
