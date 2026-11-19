@@ -14,4 +14,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://landing_software.proshop.lat/sitemap.xml
+Sitemap: https://landing-software.proshop.lat/sitemap.xml
