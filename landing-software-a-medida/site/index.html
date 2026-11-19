@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desarrollo de software a medida para empresas en Perú | ProShop</title>
 <meta name="description" content="Desarrollamos software a medida para conectar áreas, ordenar procesos y mejorar el control de tu empresa. Solicita un diagnóstico gratuito de 20 minutos.">
-<link rel="canonical" href="https://landing-software.proshop.lat/">
+<link rel="canonical" href="https://landing_software.proshop.lat/">
 <meta name="theme-color" content="#1e0b36">
 <meta name="color-scheme" content="light">
 <meta property="og:title" content="Desarrollo de software a medida para empresas en Perú | ProShop">
 <meta property="og:description" content="Conecta áreas, ordena procesos y ten información y control en un solo lugar. Diagnóstico gratuito de 20 minutos.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://landing-software.proshop.lat/">
+<meta property="og:url" content="https://landing_software.proshop.lat/">
 <meta property="og:locale" content="es_PE">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "ProShop", "url": "https://proshop.lat/", "logo": "https://proshop.lat/img/logo-proshop.png", "areaServed": "PE"}, {"@type": "WebPage", "name": "Desarrollo de software a medida para empresas", "url": "https://landing-software.proshop.lat/", "inLanguage": "es-PE", "isPartOf": {"@type": "WebSite", "url": "https://proshop.lat/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito reemplazar todos mis sistemas?", "acceptedAnswer": {"@type": "Answer", "text": "No necesariamente. Primero evaluamos qué funciona y qué conviene conectar, mantener o reemplazar."}}, {"@type": "Question", "name": "¿Cuánto cuesta desarrollar un sistema?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de los procesos, integraciones y alcance. El diagnóstico inicial permite definir una primera fase realista."}}, {"@type": "Question", "name": "¿Debo tener requerimientos técnicos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Podemos empezar por conocer tu operación y los problemas que afectan al equipo."}}, {"@type": "Question", "name": "¿Podré ver una demostración antes del desarrollo completo?", "acceptedAnswer": {"@type": "Answer", "text": "Podemos evaluar un prototipo demostrativo de la solución prioritaria después del diagnóstico."}}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "ProShop", "url": "https://proshop.lat/", "logo": "https://proshop.lat/img/logo-proshop.png", "areaServed": "PE"}, {"@type": "WebPage", "name": "Desarrollo de software a medida para empresas", "url": "https://landing_software.proshop.lat/", "inLanguage": "es-PE", "isPartOf": {"@type": "WebSite", "url": "https://proshop.lat/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Necesito reemplazar todos mis sistemas?", "acceptedAnswer": {"@type": "Answer", "text": "No necesariamente. Primero evaluamos qué funciona y qué conviene conectar, mantener o reemplazar."}}, {"@type": "Question", "name": "¿Cuánto cuesta desarrollar un sistema?", "acceptedAnswer": {"@type": "Answer", "text": "Depende de los procesos, integraciones y alcance. El diagnóstico inicial permite definir una primera fase realista."}}, {"@type": "Question", "name": "¿Debo tener requerimientos técnicos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Podemos empezar por conocer tu operación y los problemas que afectan al equipo."}}, {"@type": "Question", "name": "¿Podré ver una demostración antes del desarrollo completo?", "acceptedAnswer": {"@type": "Answer", "text": "Podemos evaluar un prototipo demostrativo de la solución prioritaria después del diagnóstico."}}]}]}
 </script>
 <style>
 :root{
@@ -413,11 +413,11 @@ main,footer{overflow-x:clip}
 
 /* fondo: aurora + cuadrícula + partículas */
 .aurora,.gridbg,#fx{position:absolute;inset:0;pointer-events:none}
-.aurora{z-index:0;filter:blur(60px);opacity:.55}
-.aurora i{position:absolute;border-radius:50%}
-.aurora i:nth-child(1){width:520px;height:520px;left:-120px;top:-160px;background:#5a2bc0}
-.aurora i:nth-child(2){width:420px;height:420px;right:-80px;top:30%;background:#7a4fd0}
-.aurora i:nth-child(3){width:360px;height:360px;left:35%;bottom:-200px;background:#0f9d74;opacity:.6}
+.aurora{z-index:0;opacity:.6}
+.aurora i{position:absolute;border-radius:50%;will-change:transform}
+.aurora i:nth-child(1){width:520px;height:520px;left:-120px;top:-160px;background:radial-gradient(closest-side,#5a2bc0,transparent)}
+.aurora i:nth-child(2){width:420px;height:420px;right:-80px;top:30%;background:radial-gradient(closest-side,#7a4fd0,transparent)}
+.aurora i:nth-child(3){width:360px;height:360px;left:35%;bottom:-200px;background:radial-gradient(closest-side,#0f9d74,transparent);opacity:.6}
 .gridbg{z-index:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 70%);mask-image:radial-gradient(ellipse at 60% 40%,#000 20%,transparent 70%)}
 #fx{z-index:1;width:100%;height:100%}
 .spot{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(420px circle at var(--sx,-999px) var(--sy,-999px),rgba(122,79,208,.22),transparent 60%)}
@@ -439,7 +439,7 @@ main,footer{overflow-x:clip}
 .hub .t-v{fill:#fff;font-size:13px;font-weight:800;font-variant-numeric:tabular-nums}
 .hub .t-v.ok{fill:var(--accent)}
 .hub .ring{fill:none;stroke:var(--hi);stroke-width:2;opacity:0}
-.hub .pk{filter:drop-shadow(0 0 6px currentColor)}
+.hub .pk{}
 .hub .pk.m{fill:#22e3a6;color:#22e3a6}.hub .pk.p{fill:#c9b5f5;color:#c9b5f5}
 .hub-cap{margin-top:8px;font-size:.78rem;color:#b9abd2;text-align:center}
 .toasts{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);width:min(320px,80%);height:46px;pointer-events:none}
@@ -610,7 +610,6 @@ main,footer{overflow-x:clip}
   .aurora i:nth-child(2){animation-duration:20s;animation-direction:alternate-reverse}
   .aurora i:nth-child(3){animation-duration:24s}
   @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,40px) scale(1.15)}100%{transform:translate(-40px,70px) scale(.92)}}
-  .gridbg{animation:gridmove 22s linear infinite}
   @keyframes gridmove{to{background-position:44px 44px,44px 44px}}
 
   /* etiqueta y titular */
@@ -667,10 +666,9 @@ main,footer{overflow-x:clip}
 
   /* botones: brillo que cruza, magnetismo, onda al clic */
   .btn{position:relative;overflow:hidden;will-change:transform}
-  .btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 3.6s ease-in-out infinite;pointer-events:none}
-  .btn-ghost::after,.btn-no::after{display:none}
-  @keyframes sweep{0%,60%{left:-60%}100%{left:130%}}
-  .btn-primary{animation:glow 3s ease-in-out 2.2s infinite}
+  .btn::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;will-change:transform;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 3.6s ease-in-out infinite;pointer-events:none}
+  .btn:not(.btn-primary)::after{display:none}
+  @keyframes sweep{0%,60%{transform:translateX(-150%) skewX(-20deg)}100%{transform:translateX(330%) skewX(-20deg)}}
   @keyframes glow{0%,100%{box-shadow:0 8px 24px rgba(34,227,166,.28)}50%{box-shadow:0 8px 34px rgba(34,227,166,.55),0 0 0 5px rgba(122,79,208,.25)}}
   .btn-ghost[data-wa],.btn-wa{animation:wiggle 5s ease-in-out 3s infinite}
   @keyframes wiggle{0%,90%,100%{transform:none}92%{transform:rotate(-3deg)}94%{transform:rotate(3deg)}96%{transform:rotate(-2deg)}98%{transform:rotate(1deg)}}
@@ -685,6 +683,11 @@ main,footer{overflow-x:clip}
 }
 @media (prefers-reduced-motion:reduce){.mq-in{animation:none}.flowsim::after,.fnode i,.ill *{animation:none!important}}
 @media (hover:none){.cdot,.cring{display:none}}
+/* fluidez: sin desenfoque de fondo (caro al hacer scroll) y capas aisladas */
+header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,11,54,.97)}
+.sticky-cta{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,11,54,.98)}
+.hero,.band,.trust,.last{contain:paint}
+.mq-in,.hub .chip,.cdot,.cring{will-change:transform}
 
 </style>
 </head>
@@ -704,7 +707,6 @@ main,footer{overflow-x:clip}
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="gridbg" aria-hidden="true"></div>
   <canvas id="fx" aria-hidden="true"></canvas>
-  <div class="spot" aria-hidden="true"></div>
   <div class="shell hero-grid">
     <div>
       <span class="tag">Software a medida para empresas</span>
@@ -1367,9 +1369,9 @@ document.addEventListener('click', e => {
   const cv = q('#fx'), hero = q('.hero');
   if (cv && cv.getContext) {
     const g = cv.getContext('2d'); let W, H, pts = [], on = true, mx = -999, my = -999;
-    const size = () => { const r = hero.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; g.setTransform(d, 0, 0, d, 0, 0); const n = Math.round(Math.min(70, W * H / 16000)); pts = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45})); };
+    const size = () => { const r = hero.getBoundingClientRect(), d = 1; W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; g.setTransform(d, 0, 0, d, 0, 0); const n = Math.round(Math.min(innerWidth < 700 ? 18 : 38, W * H / 22000)); pts = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45})); };
     size(); addEventListener('resize', size);
-    hero.addEventListener('mousemove', e => { const r = hero.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; hero.style.setProperty('--sx', mx + 'px'); hero.style.setProperty('--sy', my + 'px'); q('.spot').style.setProperty('--sx', mx + 'px'); q('.spot').style.setProperty('--sy', my + 'px'); });
+    hero.addEventListener('mousemove', e => { const r = hero.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
     hero.addEventListener('mouseleave', () => { mx = my = -999; });
     new IntersectionObserver(es => es.forEach(e => on = e.isIntersecting)).observe(hero);
     (function draw(){
@@ -1440,7 +1442,8 @@ document.addEventListener('click', e => {
   dot.className = 'cdot'; ring.className = 'cring'; document.body.append(dot, ring);
   let tx = -100, ty = -100, rx = -100, ry = -100;
   addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; dot.style.transform = 'translate(' + tx + 'px,' + ty + 'px)'; });
-  (function follow(){ rx += (tx - rx) * .18; ry += (ty - ry) * .18; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)'; requestAnimationFrame(follow); })();
+  let moving = false; addEventListener('mousemove', () => { if (!moving) { moving = true; requestAnimationFrame(follow); } });
+  function follow(){ rx += (tx - rx) * .2; ry += (ty - ry) * .2; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)'; if (Math.abs(tx - rx) + Math.abs(ty - ry) > .5) requestAnimationFrame(follow); else moving = false; }
   document.addEventListener('mouseover', e => document.body.classList.toggle('cur-big', !!e.target.closest('a, button, summary, input, textarea, label')));
 })();
 </script>
