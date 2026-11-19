@@ -137,6 +137,11 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(30,11,54,.92);backdr
 .stage.play .scan{animation:scan 1.25s var(--ease) .9s forwards}
 @keyframes wipe{to{clip-path:inset(0 0 0 100%)}}
 @keyframes scan{0%{left:0;opacity:1}95%{opacity:1}100%{left:100%;opacity:0}}
+/* vuelta: la línea regresa de derecha a izquierda y el Excel reaparece */
+.stage.back .chaos{animation:unwipe 1.25s var(--ease) forwards}
+.stage.back .scan{animation:scanback 1.25s var(--ease) forwards}
+@keyframes unwipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes scanback{0%{left:100%;opacity:1}95%{opacity:1}100%{left:0;opacity:0}}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-1.5px)}75%{transform:translateX(1.5px)}}
 .js .chaos{clip-path:inset(0 0 0 0)}
 .stage-cap{margin-top:12px;font-size:.78rem;color:#b9abd2}
@@ -972,15 +977,16 @@ if (REDUCED) renderDash();
 else new IntersectionObserver((es, io) => es.forEach(e => {
   if (e.isIntersecting){ io.disconnect(); playStage(); }
 }), {threshold:.45}).observe(stage);
-// se repite: Excel -> tablero, 3 s mostrando el tablero y vuelve a empezar
+// se repite: Excel -> tablero (línea a la derecha), 4 s de tablero, la línea vuelve a la izquierda y empieza otra vez
 function playStage(){
-  stage.classList.remove('play');
+  stage.classList.remove('play', 'back');
   ['k1','k2','k3','u1','u2'].forEach(id => $('#'+id).textContent = '—');
   $$('#chart span').forEach(sp => sp.style.height = '0');
   void stage.offsetWidth;
   stage.classList.add('play');
   setTimeout(renderDash, 1900);
-  setTimeout(playStage, 1900 + 1600 + 3000);
+  setTimeout(() => { stage.classList.remove('play'); stage.classList.add('back'); }, 2150 + 4000);
+  setTimeout(playStage, 2150 + 4000 + 1250 + 600);
 }
 
 /* ===== Explorador (pestañas) ===== */
