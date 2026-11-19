@@ -505,6 +505,9 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .gb figcaption{margin-top:16px}
 .gb figcaption>b{display:block;color:#fff;font-size:1.05rem;margin-bottom:10px}
 .gb-dl{display:grid;gap:10px;margin:0}
+.gb-link{display:inline-flex;align-items:center;gap:6px;margin:-2px 0 12px;color:#00fea7;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(0,254,167,.4);padding-bottom:2px;min-height:32px}
+.gb-link:hover{border-bottom-color:#00fea7}
+.gb-link span{transition:transform .2s}.gb-link:hover span{transform:translateX(4px)}
 .gb-dl div{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
 .gb-dl dt{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#00fea7;margin-bottom:2px}
 .gb-dl dd{margin:0;color:#e6ddf5;font-size:.92rem}
@@ -673,11 +676,12 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
           <img src="img/gobot-panel.webp" alt="Pantalla real del panel de administración de GoBot: menú con conductores, pruebas de entrega, viajes, bot de WhatsApp y tarifas" width="1900" height="670" loading="lazy" decoding="async">
         </div>
         <div class="gb-win gb-app">
-          <div class="gb-bar"><i></i><i></i><i></i><span>App del conductor</span></div>
-          <img src="img/gobot-app.webp" alt="Pantalla real de la app GoBot: mapa de la zona, conductor en línea y una nueva oportunidad lista para aceptar" width="782" height="620" loading="lazy" decoding="async">
+          <div class="gb-bar"><i></i><i></i><i></i><span>gobotapp.net</span></div>
+          <img src="img/gobot-app.webp" alt="Página de GoBot: app inteligente para conductores que usa IA para encontrar zonas y horas con más servicios" width="1232" height="860" loading="lazy" decoding="async">
         </div>
         <figcaption>
           <b>GoBot · caso real desarrollado por ProShop</b>
+          <a class="gb-link" href="https://gobotapp.net/" target="_blank" rel="noopener" data-out="gobot">Conócela más a fondo en gobotapp.net <span aria-hidden="true">→</span></a>
           <dl class="gb-dl">
             <div><dt>Qué necesitaban</dt><dd>Que cada conductor encuentre servicios seguidos y recorra menos kilómetros vacío.</dd></div>
             <div><dt>Qué construimos</dt><dd>Una app para conductores conectada a WhatsApp: viajes, delivery y mandados con asignación automática y seguimiento GPS.</dd></div>
@@ -1044,6 +1048,7 @@ addEventListener('scroll', () => {
   const p = (scrollY + innerHeight) / document.documentElement.scrollHeight * 100;
   [50,90].forEach(k => { if (!sc[k] && p >= k){ sc[k] = true; track('scroll_depth', {percent: k}); } });
 }, {passive:true});
+$$('[data-out]').forEach(a => a.addEventListener('click', () => track('outbound_click', {destino: a.dataset.out})));
 $$('details').forEach(d => d.addEventListener('toggle', () => { if (d.open) track('faq_open', {question: d.querySelector('summary').textContent.trim()}); }));
 document.addEventListener('click', e => {
   const a = e.target.closest('a[href^="mailto:"],a[href^="tel:"]');
