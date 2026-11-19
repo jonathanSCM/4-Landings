@@ -295,6 +295,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .js .chaos,.js .scan{display:none}
 }
+
 :root{--ox:#7a4fd0}
 /* REVISIÓN · panel operativo en Experiencia + arreglos generales */
 .trust-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:48px}
@@ -396,6 +397,11 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .cc-list li:hover,.cc-list li[aria-selected="true"],.cc-list li.act{background:var(--paper-2)}
 .cc-list li b{margin-left:auto;color:var(--ink-3);font-weight:600}
 .cc-list img{border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+
+/* barra superior: línea verde simple (paleta oficial) */
+.prog,.prog-au{background:#00fea7!important;box-shadow:none!important;height:3px!important}
+.btn-primary::before{background:none!important}
+
 
 /* ================= SOFTWARE A MEDIDA · tema "todo conectado" ================= */
 :root{--hi:#7a4fd0;--hi-2:#9b7be0;--hi-3:#c9b5f5}
@@ -701,10 +707,26 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
 }
 @media (hover:none){.spot2{display:none}}
 
-
-/* barra superior: línea verde simple (paleta oficial) */
 .prog,.prog-au{background:#00fea7!important;box-shadow:none!important;height:3px!important}
 .btn-primary::before{background:none!important}
+
+/* caso real único */
+.case{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;margin-top:36px;align-items:center}
+.case-shot{margin:0;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 90px rgba(0,0,0,.45);background:#150a26}
+.case-shot img{width:100%;height:auto;display:block}
+.gb-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#1b0f30;border-bottom:1px solid rgba(255,255,255,.08)}
+.gb-bar i{width:9px;height:9px;border-radius:50%;background:#3a2c57}
+.gb-bar i:first-child{background:#ff5f57}.gb-bar i:nth-child(2){background:#febc2e}.gb-bar i:nth-child(3){background:#28c840}
+.gb-bar span{margin-left:10px;font-size:.75rem;color:#9a8eb2}
+.gb-bar em{margin-left:auto;font-style:normal;font-size:.72rem;font-weight:800;color:#00fea7}
+.case-txt h3{font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.03em;color:#fff}
+.case-txt .pf-sub{color:#c9b5f5;font-weight:700;margin:4px 0 16px}
+.gb-dl{display:grid;gap:10px;margin:0}
+.gb-dl div{padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+.gb-dl dt{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#00fea7;margin-bottom:2px}
+.gb-dl dd{margin:0;color:#e6ddf5;font-size:.92rem}
+@media (max-width:960px){.case{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -928,18 +950,24 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
 <section class="trust" id="experiencia">
   <div class="shell">
     <h2>Experiencia real. Soluciones a medida.</h2>
-    <p class="lead">Proyectos y productos que ProShop ha desarrollado para distintos sectores. Elige uno para ver qué problema resolvió.</p>
-    <div class="stats">
-      <div class="stat"><b data-count="7">7</b><span>proyectos y productos</span></div>
-      <div class="stat"><b data-count="6">6</b><span>en producción</span></div>
-      <div class="stat"><b data-count="20">20</b><span>minutos de diagnóstico</span></div>
-      <div class="stat"><b data-count="48" data-suf=" h">48 h</b><span>para una demo, si es viable</span></div>
+    <p class="lead">Un caso real desarrollado por ProShop: qué problema tenía el cliente y qué construimos.</p>
+    <div class="case">
+      <figure class="case-shot">
+        <div class="gb-bar"><i></i><i></i><i></i><span>Sala de ventas</span><em>En producción</em></div>
+        <img src="img/proyectos/inmol-panel.webp" alt="Pantalla real del panel táctil de INMOL: proyecto Urbanización El Encanto con 1.101 terrenos y 64,58 hectáreas" width="800" height="620" loading="lazy" decoding="async">
+      </figure>
+      <div class="case-txt">
+        <div class="pf-badges"><span>Proyecto para cliente</span><span class="live">En producción</span><span>Inmobiliario</span></div>
+        <h3>INMOL · Panel interactivo</h3>
+        <p class="pf-sub">Panel táctil para la sala de ventas de una desarrolladora inmobiliaria.</p>
+        <dl class="gb-dl">
+          <div><dt>El problema</dt><dd>Presentaban sus proyectos con planos en papel y el visitante no podía imaginar bien el terreno.</dd></div>
+          <div><dt>Qué construimos</dt><dd>Un panel táctil a pantalla completa con recorrido del terreno en 360 grados y los datos de cada proyecto siempre a la vista.</dd></div>
+          <div><dt>Cómo se usa hoy</dt><dd>En la sala de ventas, el cliente toca la pantalla, recorre el proyecto y consulta los terrenos y la superficie de cada lote.</dd></div>
+        </dl>
+        <div class="cta-row" style="margin-top:22px"><a class="btn btn-primary" href="#diagnostico" data-cta="case">Tengo un proceso parecido</a></div>
+      </div>
     </div>
-    <div class="pf" id="pf">
-      <div class="pf-list" role="tablist" aria-label="Proyectos" id="pfList"></div>
-      <div class="pf-card" role="tabpanel" id="pfCard" aria-live="polite"></div>
-    </div>
-    <p class="pf-note">Información publicada en proshop.lat. Los nombres se muestran solo como referencia del tipo de proyecto.</p>
   </div>
 </section>
 
@@ -1415,7 +1443,7 @@ document.addEventListener('click', e => {
   addEventListener('scroll', upd, {passive: true}); upd();
 
   /* apariciones al hacer scroll */
-  ['.problems .prob', '.stats .stat', '.timeline .tstep', '#faq details', '.explorer', '.pf-list', '.pf-card', '.form-wrap > div', '.note']
+  ['.problems .prob', '.stats .stat', '.timeline .tstep', '#faq details', '.explorer', '.case-shot', '.case-txt', '.form-wrap > div', '.note']
     .forEach(sel => qa(sel).forEach((el, i) => { el.setAttribute('data-rv', ''); el.style.setProperty('--d', i); }));
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), {threshold: .12, rootMargin: '0px 0px -40px 0px'});
   qa('[data-rv]:not(.tstep)').forEach(el => io.observe(el));
@@ -1447,7 +1475,7 @@ document.addEventListener('click', e => {
     b.addEventListener('mouseleave', () => b.style.transform = '');
   });
   /* tarjetas: inclinación 3D y luz que sigue al mouse */
-  qa('.prob, .pf-card, .sim, .stat').forEach(c => {
+  qa('.prob, .case-shot, .sim').forEach(c => {
     c.classList.add('tilt');
     c.addEventListener('mousemove', e => {
       if (c.hasAttribute('data-rv') && !c.classList.contains('on')) return;
