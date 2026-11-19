@@ -333,6 +333,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .lane h3 span{color:var(--hi)}
 .op{background:#2a1a45;border:1px solid #3d2d5c;border-left:3px solid var(--hi);border-radius:8px;padding:8px 10px;color:#e6ddf5;font-size:.74rem;line-height:1.35;animation:opin .5s var(--ease) both}
 .op b{display:block;font-size:.8rem;color:#fff}
+.op small{display:block;margin-top:3px;font-size:.66rem;font-weight:700;color:#9a8eb2;letter-spacing:.02em}
 .op.done{border-left-color:var(--accent)}
 .op.late{border-left-color:#ff6b5b}
 @keyframes opin{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
@@ -654,7 +655,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
           <ul><li>Etapas definidas según tu proceso: corte, armado, acabado, empaque…</li><li>Cada pedido con su responsable y su fecha de entrega.</li><li>Aviso cuando un pedido se está atrasando.</li></ul>
         </div>
         <div class="sim" aria-label="Ejemplo conceptual de avance de una orden por etapas">
-          <div class="sim-title">Pedido #121 · Comercial Sur · 1 200 unid. <small>Ejemplo</small></div>
+          <div class="sim-title">Mueblería El Roble · Sillas de comedor <small>Ejemplo</small></div>
           <div class="bars-h" data-bars>
             <div class="bh"><div class="bh-top"><span>Corte</span><b>100%</b></div><div class="track"><div class="fill" data-w="100"></div></div></div>
             <div class="bh"><div class="bh-top"><span>Armado</span><b>85%</b></div><div class="track"><div class="fill" data-w="85"></div></div></div>
@@ -691,12 +692,12 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
         </div>
         <div class="sim" aria-label="Ejemplo conceptual de despachos de la semana">
           <div class="sim-title">Despachos de esta semana <small>Ejemplo</small></div>
-          <table class="tbl"><thead><tr><th>Orden</th><th>Entrega</th><th>Estado</th></tr></thead><tbody>
-            <tr><td>Pedido #118 · Distrib. Norte</td><td>Lun 12</td><td><span class="st ok">Entregado</span></td></tr>
-            <tr><td>Pedido #120 · Tienda Lima</td><td>Mar 13</td><td><span class="st ok">Listo</span></td></tr>
-            <tr><td>Pedido #121 · Comercial Sur</td><td>Jue 15</td><td><span class="st go">En acabado</span></td></tr>
-            <tr><td>Pedido #119 · Mayorista A.</td><td>Mié 14</td><td><span class="st late">Atrasado</span></td></tr>
-            <tr><td>Pedido #124 · Mayorista C.</td><td>Vie 16</td><td><span class="st wait">Esperando material</span></td></tr>
+          <table class="tbl"><thead><tr><th>Cliente</th><th>Entrega</th><th>Estado</th></tr></thead><tbody>
+            <tr><td>Boutique Valentina</td><td>Lun 12</td><td><span class="st ok">Entregado</span></td></tr>
+            <tr><td>Colegio San Martín</td><td>Mar 13</td><td><span class="st ok">Listo</span></td></tr>
+            <tr><td>Mueblería El Roble</td><td>Jue 15</td><td><span class="st go">En acabado</span></td></tr>
+            <tr><td>Textiles Andinos</td><td>Mié 14</td><td><span class="st late">Atrasado</span></td></tr>
+            <tr><td>Distribuidora Sol</td><td>Vie 16</td><td><span class="st wait">Esperando material</span></td></tr>
           </tbody></table>
           <p class="concept">Datos de ejemplo.</p>
         </div>
@@ -1007,14 +1008,21 @@ function countTo(el, to, f, dur=900){
 }
 
 /* ===== Hero: órdenes avanzando por etapas ===== */
+// Tarjetas: cliente como título, producto y cantidad debajo; el n.º de pedido va en segundo plano
 const OPS = [
-  {id:'Pedido #118', c:'Distrib. Norte', q:'400 unid.', st:3},
-  {id:'Pedido #119', c:'Mayorista A.',   q:'300 unid.', st:2, late:true},
-  {id:'Pedido #120', c:'Tienda Lima',    q:'60 unid.',  st:3},
-  {id:'Pedido #121', c:'Comercial Sur',  q:'1 200 unid.', st:1},
-  {id:'Pedido #122', c:'Hotel Centro',   q:'150 unid.', st:0},
-  {id:'Pedido #123', c:'Mayorista C.',   q:'500 unid.', st:0}
+  {c:'Boutique Valentina',  p:'Blusas de lino',       q:'300 unid.',   n:1018, st:3},
+  {c:'Textiles Andinos',    p:'Camisas drill',        q:'400 unid.',   n:1019, st:2, late:true},
+  {c:'Colegio San Martín',  p:'Buzos escolares',      q:'60 unid.',    n:1020, st:3},
+  {c:'Mueblería El Roble',  p:'Sillas de comedor',    q:'1 200 unid.', n:1021, st:1},
+  {c:'Hotel Bella Vista',   p:'Uniformes de cocina',  q:'150 unid.',   n:1022, st:0},
+  {c:'Distribuidora Sol',   p:'Mochilas escolares',   q:'500 unid.',   n:1023, st:0}
 ];
+const NUEVOS = [
+  ['Panadería La Espiga', 'Mandiles bordados', '80 unid.'], ['Club Deportivo Águilas', 'Camisetas de fútbol', '250 unid.'],
+  ['Clínica Santa Ana', 'Uniformes médicos', '120 unid.'], ['Cafetería Aroma', 'Mesas de madera', '24 unid.'],
+  ['Tienda Moda Urbana', 'Casacas jean', '180 unid.'], ['Restaurante Don Lucho', 'Sillas de bar', '40 unid.']
+];
+let nextN = 1024, nextC = 0;
 const lanes = $$('#lanes .lane');
 function renderPlant(){
   lanes.forEach((l, k) => {
@@ -1024,7 +1032,7 @@ function renderPlant(){
     here.forEach(o => {
       const d = document.createElement('div');
       d.className = 'op' + (k === 3 ? ' done' : o.late ? ' late' : '');
-      d.innerHTML = '<b>' + o.id + '</b>' + o.c + ' · ' + o.q;
+      d.innerHTML = '<b>' + o.c + '</b>' + o.p + ' · ' + o.q + '<small>Pedido N.º ' + o.n + '</small>';
       l.appendChild(d);
     });
   });
@@ -1038,7 +1046,7 @@ if (!REDUCED) setInterval(() => {
   const o = movibles[Math.floor(Math.random() * movibles.length)];
   o.st++;
   const salida = OPS.find(x => x.st === 3 && x !== o && OPS.filter(y => y.st === 3).length > 2);
-  if (salida) { salida.st = 0; salida.late = false; salida.id = 'Pedido #' + (124 + Math.floor(Math.random()*20)); }
+  if (salida) { const [c, p, q] = NUEVOS[nextC++ % NUEVOS.length]; Object.assign(salida, {st: 0, late: false, c, p, q, n: nextN++}); }
   if (o.st === 3) o.late = false;
   renderPlant();
 }, 2200);
