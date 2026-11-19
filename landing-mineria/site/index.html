@@ -593,6 +593,9 @@ footer .shell{display:grid!important;gap:14px;justify-content:start!important}
 .dcar-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:1px solid #6b5a8c;background:transparent;color:#fff}
 .dcar-btn svg{width:20px;height:20px}
 .dcar-btn.next{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+#experiencia .trust-grid{grid-template-columns:1fr!important;gap:28px!important}
+.dshot{margin:0;border-radius:16px;overflow:hidden;border:1px solid #4b1a86;box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.dshot img{width:100%;height:auto;display:block}
 .dcar-note{margin-top:10px;font-size:.8rem;color:#9a8eb2}
 @media (max-width:960px){.problems.pc{grid-template-columns:1fr!important}}
 @media (max-width:640px){.pc-close .btn{width:100%}.tabs button{font-size:.85rem!important}.ds-img{min-height:90px}}
@@ -788,32 +791,9 @@ footer .shell{display:grid!important;gap:14px;justify-content:start!important}
       </ul>
     </div>
     <div>
-      <div class="dcar" id="dcar" role="region" aria-roledescription="carrusel" aria-label="Pantallas reales del sistema contable minero">
-        <div class="dcar-stage">
-          <figure class="ds on" data-k="0">
-            <div class="ds-img"><img src="img/demo/1-caja.webp" alt="Pantalla real del sistema: registro de caja" width="521" height="346" loading="lazy" decoding="async"></div>
-            <figcaption><b>Registro de caja</b><span>Cada ingreso y egreso con su fecha, concepto y monto.</span></figcaption>
-          </figure>
-          <figure class="ds" data-k="1" hidden>
-            <div class="ds-img"><img src="img/demo/2-ventas.webp" alt="Pantalla real del sistema: ventas de mineral" width="324" height="353" loading="lazy" decoding="async"></div>
-            <figcaption><b>Ventas de mineral</b><span>Lo vendido, lo cobrado y lo pendiente por cobrar a la planta.</span></figcaption>
-          </figure>
-          <figure class="ds" data-k="2" hidden>
-            <div class="ds-img"><img src="img/demo/3-cuotas.webp" alt="Pantalla real del sistema: cuotas de accionistas" width="324" height="353" loading="lazy" decoding="async"></div>
-            <figcaption><b>Cuotas de accionistas</b><span>Cuota asignada y abonos recibidos.</span></figcaption>
-          </figure>
-          <figure class="ds" data-k="3" hidden>
-            <div class="ds-img"><img src="img/demo/4-reportes.webp" alt="Pantalla real del sistema: reportes por unidad" width="488" height="128" loading="lazy" decoding="async"></div>
-            <figcaption><b>Reportes por unidad</b><span>Ingresos, egresos y resultado de caja de cada unidad.</span></figcaption>
-          </figure>
-        </div>
-        <div class="dcar-ctl">
-          <div class="dcar-dots" id="dDots"><button type="button" aria-label="Ver Registro de caja" aria-current="true"></button><button type="button" aria-label="Ver Ventas de mineral"></button><button type="button" aria-label="Ver Cuotas de accionistas"></button><button type="button" aria-label="Ver Reportes por unidad"></button></div>
-          <span class="dcar-count" id="dCount" aria-live="polite">1 / 4</span>
-          <button type="button" class="dcar-btn prev" aria-label="Pantalla anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-          <button type="button" class="dcar-btn next" aria-label="Pantalla siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-        </div>
-      </div>
+      <figure class="dshot">
+        <img src="img/demo/tablero.webp" alt="Pantalla real del sistema contable minero: tablero general con filtros por fecha, unidad y moneda, y accesos rápidos para registrar gastos, ventas, cobros y cuotas" width="1917" height="522" loading="lazy" decoding="async">
+      </figure>
       <p class="dcar-note">Pantallas reales del sistema, con datos de prueba.</p>
     </div>
   </div>
