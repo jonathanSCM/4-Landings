@@ -689,6 +689,18 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
 .hero,.band,.trust,.last{contain:paint}
 .mq-in,.hub .chip,.cdot,.cring{will-change:transform}
 
+/* efectos de vuelta, en versión ligera (solo transform y opacity) */
+.gridbg{inset:-44px}
+.spot2{position:absolute;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:radial-gradient(closest-side,rgba(122,79,208,.28),transparent);pointer-events:none;z-index:1;opacity:0;transition:opacity .4s;will-change:transform}
+.hero:hover .spot2{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .gridbg{animation:gridslide 22s linear infinite;will-change:transform}
+  @keyframes gridslide{to{transform:translate(44px,44px)}}
+  .btn-primary::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 140% at 50% 0,rgba(255,255,255,.45),transparent 60%);opacity:0;animation:breathe 3s ease-in-out 2.2s infinite;pointer-events:none}
+  @keyframes breathe{50%{opacity:1}}
+}
+@media (hover:none){.spot2{display:none}}
+
 </style>
 </head>
 <body>
@@ -707,6 +719,7 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="gridbg" aria-hidden="true"></div>
   <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="spot2" aria-hidden="true"></div>
   <div class="shell hero-grid">
     <div>
       <span class="tag">Software a medida para empresas</span>
@@ -725,6 +738,8 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
     <div class="hub-wrap">
       <svg class="hub" viewBox="0 0 520 470" role="img" aria-label="Ejemplo conceptual: Excel, WhatsApp, ventas, almacén, administración y correo conectados a un solo sistema.">
         <defs>
+          <radialGradient id="gm"><stop offset="0" stop-color="#22e3a6" stop-opacity=".7"/><stop offset="1" stop-color="#22e3a6" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gp"><stop offset="0" stop-color="#c9b5f5" stop-opacity=".7"/><stop offset="1" stop-color="#c9b5f5" stop-opacity="0"/></radialGradient>
           <path id="w1" d="M90 62 C200 62 200 235 260 235"/>
           <path id="w2" d="M430 62 C320 62 320 235 260 235"/>
           <path id="w3" d="M70 235 L260 235"/>
@@ -738,15 +753,15 @@ header.top{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(30,
           <use href="#w1" class="flow"/><use href="#w2" class="flow"/><use href="#w3" class="flow"/><use href="#w4" class="flow"/><use href="#w5" class="flow"/><use href="#w6" class="flow"/>
         </g>
         <g>
-          <circle r="5" class="pk m"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0s"><mpath href="#w1"/></animateMotion></circle>
-          <circle r="5" class="pk p"><animateMotion dur="2.6s" repeatCount="indefinite" begin=".6s"><mpath href="#w2"/></animateMotion></circle>
-          <circle r="5" class="pk m"><animateMotion dur="1.8s" repeatCount="indefinite" begin=".3s"><mpath href="#w3"/></animateMotion></circle>
-          <circle r="5" class="pk p"><animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath href="#w4"/></animateMotion></circle>
-          <circle r="5" class="pk p"><animateMotion dur="2.4s" repeatCount="indefinite" begin=".9s"><mpath href="#w5"/></animateMotion></circle>
-          <circle r="5" class="pk m"><animateMotion dur="2.3s" repeatCount="indefinite" begin=".2s"><mpath href="#w6"/></animateMotion></circle>
-          <circle r="4" class="pk m"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1.1s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w1"/></animateMotion></circle>
-          <circle r="4" class="pk m"><animateMotion dur="2.3s" repeatCount="indefinite" begin="1.3s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w6"/></animateMotion></circle>
-          <circle r="4" class="pk p"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.4s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w4"/></animateMotion></circle>
+          <g class="pk m"><circle r="13" fill="url(#gm)"/><circle r="5"/><animateMotion dur="2.2s" repeatCount="indefinite" begin="0s"><mpath href="#w1"/></animateMotion></g>
+          <g class="pk p"><circle r="13" fill="url(#gp)"/><circle r="5"/><animateMotion dur="2.6s" repeatCount="indefinite" begin=".6s"><mpath href="#w2"/></animateMotion></g>
+          <g class="pk m"><circle r="13" fill="url(#gm)"/><circle r="5"/><animateMotion dur="1.8s" repeatCount="indefinite" begin=".3s"><mpath href="#w3"/></animateMotion></g>
+          <g class="pk p"><circle r="13" fill="url(#gp)"/><circle r="5"/><animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath href="#w4"/></animateMotion></g>
+          <g class="pk p"><circle r="13" fill="url(#gp)"/><circle r="5"/><animateMotion dur="2.4s" repeatCount="indefinite" begin=".9s"><mpath href="#w5"/></animateMotion></g>
+          <g class="pk m"><circle r="13" fill="url(#gm)"/><circle r="5"/><animateMotion dur="2.3s" repeatCount="indefinite" begin=".2s"><mpath href="#w6"/></animateMotion></g>
+          <g class="pk m"><circle r="13" fill="url(#gm)"/><circle r="4"/><animateMotion dur="2.2s" repeatCount="indefinite" begin="1.1s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w1"/></animateMotion></g>
+          <g class="pk m"><circle r="13" fill="url(#gm)"/><circle r="4"/><animateMotion dur="2.3s" repeatCount="indefinite" begin="1.3s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w6"/></animateMotion></g>
+          <g class="pk p"><circle r="13" fill="url(#gp)"/><circle r="4"/><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.4s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#w4"/></animateMotion></g>
         </g>
         <g class="chip-in" style="--k:0"><g class="chip" style="--k:0"><rect x="20" y="39" width="140" height="46" rx="23"/><circle cx="46" cy="62" r="9" fill="#21a366"/><text x="62" y="67">Excel</text></g></g>
         <g class="chip-in" style="--k:1"><g class="chip" style="--k:1"><rect x="350" y="39" width="160" height="46" rx="23"/><circle cx="376" cy="62" r="9" fill="#25d366"/><text x="392" y="67">WhatsApp</text></g></g>
@@ -1369,10 +1384,11 @@ document.addEventListener('click', e => {
   const cv = q('#fx'), hero = q('.hero');
   if (cv && cv.getContext) {
     const g = cv.getContext('2d'); let W, H, pts = [], on = true, mx = -999, my = -999;
-    const size = () => { const r = hero.getBoundingClientRect(), d = 1; W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; g.setTransform(d, 0, 0, d, 0, 0); const n = Math.round(Math.min(innerWidth < 700 ? 18 : 38, W * H / 22000)); pts = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45})); };
+    const size = () => { const r = hero.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 1.5); W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; g.setTransform(d, 0, 0, d, 0, 0); const n = Math.round(Math.min(innerWidth < 700 ? 24 : 55, W * H / 16000)); pts = Array.from({length: n}, () => ({x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .45, vy: (Math.random() - .5) * .45})); };
     size(); addEventListener('resize', size);
     hero.addEventListener('mousemove', e => { const r = hero.getBoundingClientRect(); mx = e.clientX - r.left; my = e.clientY - r.top; });
     hero.addEventListener('mouseleave', () => { mx = my = -999; });
+    const sp2 = q('.spot2'); let spRaf = 0; hero.addEventListener('mousemove', () => { if (spRaf) return; spRaf = requestAnimationFrame(() => { spRaf = 0; sp2.style.transform = 'translate(' + mx + 'px,' + my + 'px)'; }); });
     new IntersectionObserver(es => es.forEach(e => on = e.isIntersecting)).observe(hero);
     (function draw(){
       requestAnimationFrame(draw); if (!on || document.hidden) return;
