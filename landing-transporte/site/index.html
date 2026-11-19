@@ -500,6 +500,8 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .gb-bar em{margin-left:auto;font-style:normal;font-size:.72rem;font-weight:800;color:#00fea7}
 .gb-bar em::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#00fea7;margin-right:6px}
 .gb-win img{width:100%;height:auto;display:block}
+.gb-app{width:62%;margin:-40px 0 0 auto;position:relative;z-index:1}
+@media (max-width:640px){.gb-app{width:100%;margin:14px 0 0}}
 .gb figcaption{margin-top:16px}
 .gb figcaption>b{display:block;color:#fff;font-size:1.05rem;margin-bottom:10px}
 .gb-dl{display:grid;gap:10px;margin:0}
@@ -667,7 +669,11 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
     <div>
       <figure class="gb">
         <div class="gb-win">
-          <div class="gb-bar"><i></i><i></i><i></i><span>gobotapp.net</span><em>En producción</em></div>
+          <div class="gb-bar"><i></i><i></i><i></i><span>Panel del administrador</span><em>En producción</em></div>
+          <img src="img/gobot-panel.webp" alt="Pantalla real del panel de administración de GoBot: menú con conductores, pruebas de entrega, viajes, bot de WhatsApp y tarifas" width="1900" height="670" loading="lazy" decoding="async">
+        </div>
+        <div class="gb-win gb-app">
+          <div class="gb-bar"><i></i><i></i><i></i><span>App del conductor</span></div>
           <img src="img/gobot-app.webp" alt="Pantalla real de la app GoBot: mapa de la zona, conductor en línea y una nueva oportunidad lista para aceptar" width="782" height="620" loading="lazy" decoding="async">
         </div>
         <figcaption>
