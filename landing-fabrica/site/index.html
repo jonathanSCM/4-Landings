@@ -329,7 +329,7 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 .plant-head small b{color:var(--hi)}
 .plant-head small b+b{color:inherit}
 .lanes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 18px 18px}
-.lane{background:#1f1236;border:1px solid #31254a;border-radius:12px;padding:10px;min-height:150px;display:flex;flex-direction:column;gap:8px}
+.lane{background:#1f1236;border:1px solid #31254a;border-radius:12px;padding:10px;min-height:150px;height:190px;overflow:hidden;display:flex;flex-direction:column;gap:8px}
 .lane h3{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9a8eb2;display:flex;justify-content:space-between}
 .lane h3 span{color:var(--hi)}
 .op{background:#2a1a45;border:1px solid #3d2d5c;border-left:3px solid var(--hi);border-radius:8px;padding:8px 10px;color:#e6ddf5;font-size:.74rem;line-height:1.35;animation:opin .5s var(--ease) both}
@@ -369,11 +369,17 @@ footer .shell{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-be
 }
 @media (max-width:640px){
   .lanes{grid-template-columns:1fr 1fr;gap:8px;padding:12px}
-  .lane{min-height:150px}
+  .lane{min-height:0;height:262px}
   .tabs button{padding:10px 22px;font-size:.85rem}
   .timeline{grid-template-columns:1fr;padding-top:0;padding-left:64px}
   .timeline::before{display:none}
   .tstep .n{left:-64px;top:-4px}
+}
+@media (max-width:380px){
+  .lane{height:300px}
+}
+@media (max-width:340px){
+  .lane{height:340px}
 }
 @media (prefers-reduced-motion:reduce){.timeline::before{animation:none}}
 
@@ -1139,13 +1145,18 @@ function renderPlant(){
 renderPlant();
 if (!REDUCED) setInterval(() => {
   // avanza una orden en curso; la que sale de despacho vuelve como orden nueva
-  const movibles = OPS.filter(o => o.st < 3 && OPS.filter(x => x.st === o.st).length > 1);
-  if (!movibles.length) return;
-  const o = movibles[Math.floor(Math.random() * movibles.length)];
-  o.st++;
-  const salida = OPS.find(x => x.st === 3 && x !== o && OPS.filter(y => y.st === 3).length > 2);
-  if (salida) { const [c, p, q] = NUEVOS[nextC++ % NUEVOS.length]; Object.assign(salida, {st: 0, late: false, c, p, q, n: nextN++}); }
-  if (o.st === 3) o.late = false;
+  // máximo 2 tarjetas por columna y ninguna vacía: el tablero nunca cambia de alto (evita saltos al hacer scroll en celular)
+  const cuenta = k => OPS.filter(x => x.st === k).length;
+  if (cuenta(3) >= 2 && cuenta(0) < 2) {
+    const salida = OPS.find(x => x.st === 3);
+    const [c, p, q] = NUEVOS[nextC++ % NUEVOS.length]; Object.assign(salida, {st: 0, late: false, c, p, q, n: nextN++});
+  }
+  const movibles = OPS.filter(o => o.st < 3 && cuenta(o.st) > 1 && cuenta(o.st + 1) < 2);
+  if (movibles.length) {
+    const o = movibles[Math.floor(Math.random() * movibles.length)];
+    o.st++;
+    if (o.st === 3) o.late = false;
+  }
   renderPlant();
 }, 2200);
 
