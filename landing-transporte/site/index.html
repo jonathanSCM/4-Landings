@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="es-PE">
 <head>
+<!-- Google Tag Manager (GTM-PMRBWJ8D) con Consent Mode v2: primero el consentimiento, luego el contenedor -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {ad_storage:'denied', analytics_storage:'denied', ad_user_data:'denied', ad_personalization:'denied', wait_for_update:500});
+  try { if (localStorage.getItem('cookie_consent') === 'granted') gtag('consent', 'update', {ad_storage:'granted', analytics_storage:'granted', ad_user_data:'granted', ad_personalization:'granted'}); } catch (e) {}
+  gtag('js', new Date());
+  window.__gtmEnHead = true;
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PMRBWJ8D');
+</script>
+<!-- Fin Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software a medida para transporte y logística | ProShop Perú</title>
@@ -600,6 +611,8 @@ footer .shell{display:grid!important;gap:14px;justify-content:start!important}
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMRBWJ8D" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="road" aria-hidden="true"><span class="fill"></span><span class="truck"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h11v9H3zM14 9h4l3 3v3h-7z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span></div>
 <header class="top">
@@ -930,7 +943,7 @@ const CONFIG = {
   waText: 'Hola, llego desde la landing de software para transporte. Quiero un diagnóstico gratuito para mejorar mis operaciones logísticas.',
   landing: 'software-transporte',
   industry: 'transporte',
-  gtmId: '',                        // PENDIENTE: ID del contenedor de GTM (GTM-XXXXXXX). Vacío = no se carga GTM
+  gtmId: 'GTM-PMRBWJ8D',            // contenedor de GTM (se carga en el <head>, con Consent Mode v2)
   geoEndpoint: 'https://ipwho.is/'  // ubicación aproximada por IP (solo tras aceptar cookies). Ideal: resolverla también en el servidor del CRM
 };
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -952,14 +965,14 @@ const attr = (() => {
 })();
 
 /* ===== Consentimiento (Google Consent Mode v2) ===== */
-window.gtag = function(){ dataLayer.push(arguments); };
-gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+window.gtag = window.gtag || function(){ dataLayer.push(arguments); };
+if (!window.__gtmEnHead) gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
 const CK = 'cookie_consent';
 const getConsent = () => { try { return localStorage.getItem(CK); } catch(e){ return null; } };
 const setConsent = v => { try { localStorage.setItem(CK, v); } catch(e){} };
 let gtmLoaded = false, geo = null;
 function loadGTM(){
-  if (gtmLoaded || !CONFIG.gtmId) return; gtmLoaded = true;
+  if (gtmLoaded || !CONFIG.gtmId || window.__gtmEnHead) return; gtmLoaded = true;
   dataLayer.push({'gtm.start': Date.now(), event: 'gtm.js'});
   const s = document.createElement('script'); s.async = true;
   s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(CONFIG.gtmId);
