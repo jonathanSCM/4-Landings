@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminación de datos | ProShop</title>
+<meta name="description" content="Cómo pedir a ProShop que elimine los datos personales que nos enviaste.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1e0b36">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#1e0b36;--paper:#f7f5fa;--paper-2:#efebf5;--card:#fff;--ink:#1b0f30;--ink-2:#554a6a;--ink-3:#857a9b;--rule:#e3dded;--accent:#00fea7;--accent-ink:#5a2bc0;--on-accent:#16082b}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink)}
+.top{background:var(--purple);position:sticky;top:0;z-index:5}
+.top .in{max-width:860px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.top img{height:28px;width:auto;display:block}
+.back{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.back:hover{color:var(--accent)}
+header.hd{background:var(--purple);color:#fff;padding:36px 0 44px}
+header.hd .in,main{max-width:860px;margin:0 auto;padding:0 20px}
+.tag{color:var(--accent);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.03em;margin:8px 0 10px}
+.hd p{color:#c7bcd9;max-width:60ch}
+main{padding-top:32px;padding-bottom:64px}
+section{padding:22px 0;border-top:1px solid var(--rule)}
+section:first-child{border-top:0;padding-top:0}
+section h2{font-size:1.25rem;letter-spacing:-.02em;margin-bottom:8px;line-height:1.3}
+section p,section li{color:var(--ink-2)}
+section p+p{margin-top:10px}
+section ul,section ol{padding-left:20px;margin-top:8px;display:grid;gap:6px}
+b{color:var(--ink)}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.way{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:16px;padding:18px}
+.way h3{font-size:1.05rem;margin-bottom:4px}
+.way p{font-size:.93rem;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .95rem 'Manrope',sans-serif;padding:12px 18px;border-radius:10px;border:2px solid transparent;cursor:pointer;text-decoration:none;min-height:46px;width:100%}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-line{background:transparent;color:var(--accent-ink);border-color:var(--accent-ink)}
+.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+.local{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px;margin-top:14px}
+.local .btn{width:auto}
+.ok{display:none;margin-top:10px;font-weight:700;color:#0b6b4c}
+.ok.on{display:block}
+.upd{margin-top:28px;font-size:.88rem;color:var(--ink-3)}
+footer{background:#160827;color:#9a8eb2;padding:28px 0;font-size:.85rem}
+footer .in{max-width:860px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer a{color:#c7bcd9}
+@media (max-width:640px){.ways{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><div class="in">
+  <a href="/" aria-label="Volver a la página principal"><img src="/img/logo-proshop.png" alt="ProShop" width="120" height="30"></a>
+  <a class="back" href="/">← Volver</a>
+</div></div>
+
+<header class="hd"><div class="in">
+  <span class="tag">Privacidad y seguridad</span>
+  <h1>Eliminación de datos</h1>
+  <p>Puedes pedir en cualquier momento que borremos los datos que nos enviaste. Aquí te explicamos cómo hacerlo.</p>
+</div></header>
+
+<main>
+  <section>
+    <h2>1. Pide la eliminación</h2>
+    <p>Elige el canal que prefieras. Ya dejamos el mensaje escrito; solo completa tu nombre y el número de WhatsApp o el correo que usaste en el formulario.</p>
+    <div class="ways">
+      <div class="way">
+        <h3>Por correo</h3>
+        <p>Escríbenos a <b>soporte@proshop.lat</b> con el asunto «Eliminar mis datos».</p>
+        <a class="btn btn-primary" id="mail" href="mailto:soporte@proshop.lat?subject=Eliminar%20mis%20datos&body=Hola%20ProShop%2C%20quiero%20que%20eliminen%20mis%20datos%20personales.%0A%0ANombre%3A%20%0AWhatsApp%20o%20correo%20que%20us%C3%A9%3A%20%0A">Escribir un correo</a>
+      </div>
+      <div class="way">
+        <h3>Por WhatsApp</h3>
+        <p>Escríbenos al <b>+51 900 534 161</b> con el mensaje «Eliminar mis datos».</p>
+        <a class="btn btn-line" href="https://wa.me/51900534161?text=Hola%20ProShop%2C%20quiero%20que%20eliminen%20mis%20datos%20personales.%20Nombre%3A%20" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Qué pasa después</h2>
+    <ol>
+      <li>Confirmamos que la solicitud es tuya, con el mismo número de WhatsApp o correo que usaste.</li>
+      <li>Borramos tus datos de contacto (nombre, empresa, actividad, correo, WhatsApp y lo que nos contaste en el formulario) de nuestros registros.</li>
+      <li>Te avisamos por el mismo canal cuando esté hecho, en un plazo máximo de 30 días.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>3. Qué datos se eliminan</h2>
+    <ul>
+      <li>Los datos que enviaste en el formulario de diagnóstico.</li>
+      <li>Las notas que hayamos guardado sobre tu solicitud.</li>
+      <li>Tu correo de nuestra lista de contacto, para que no te escribamos más.</li>
+    </ul>
+    <p>Solo conservaremos lo que la ley nos obligue a guardar (por ejemplo, comprobantes si llegaste a contratar un servicio) y te lo diremos en nuestra respuesta.</p>
+  </section>
+
+  <section>
+    <h2>4. Datos en servicios de terceros</h2>
+    <p><b>WhatsApp:</b> los mensajes que nos enviaste también quedan en tu propia app y en los servidores de Meta. Podemos borrar la conversación de nuestro lado; para eliminarla del tuyo, bórrala desde tu WhatsApp.</p>
+    <p><b>Google:</b> si aceptaste las cookies, la medición se guarda de forma agregada en Google Analytics y Google Ads. Puedes gestionar tus datos de Google en <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener">myaccount.google.com</a>.</p>
+  </section>
+
+  <section>
+    <h2>5. Borra lo guardado en este navegador</h2>
+    <p>La página guarda en tu navegador tu decisión sobre las cookies y desde qué campaña llegaste. Puedes borrarlo ahora mismo:</p>
+    <div class="local">
+      <button type="button" class="btn btn-line" id="limpiar">Borrar datos de este navegador</button>
+      <p class="ok" id="ok" role="status">Listo: borramos tus preferencias y datos de campaña guardados en este navegador.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>6. ¿Dudas?</h2>
+    <p>Escríbenos a <a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a>. Puedes leer cómo usamos tus datos en nuestra <a href="/privacidad">política de privacidad</a>.</p>
+  </section>
+
+  <p class="upd">Última actualización: 23 de noviembre de 2026.</p>
+</main>
+
+<footer><div class="in">
+  <span>© 2026 ProShop</span>
+  <span><a href="/privacidad">Política de privacidad</a> · <a href="mailto:soporte@proshop.lat">soporte@proshop.lat</a> · <a href="https://proshop.lat/">proshop.lat</a></span>
+</div></footer>
+
+<script>
+document.getElementById('limpiar').addEventListener('click', function () {
+  try { ['cookie_consent'].forEach(function (k) { localStorage.removeItem(k); }); } catch (e) {}
+  try { ['attr', 'geo'].forEach(function (k) { sessionStorage.removeItem(k); }); } catch (e) {}
+  document.cookie.split(';').forEach(function (c) {
+    var n = c.split('=')[0].trim();
+    if (/^(_ga|_gid|_gcl|_gat|_fbp)/.test(n)) {
+      ['', '; domain=' + location.hostname, '; domain=.' + location.hostname.split('.').slice(-2).join('.')].forEach(function (d) {
+        document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+      });
+    }
+  });
+  document.getElementById('ok').classList.add('on');
+});
+</script>
+</body>
+</html>
